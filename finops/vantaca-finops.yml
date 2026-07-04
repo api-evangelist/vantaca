@@ -1,0 +1,87 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Vantaca
+providerId: vantaca
+created: '2026-07-04'
+modified: '2026-07-04'
+reconciled: false
+tags:
+- HOA
+- Community Association Management
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Vantaca spend. Vantaca's Standard APIs are not sold as a
+  usage-metered product with public per-call rates. API access is a capability of
+  the Vantaca platform subscription (licensed to management companies, quoted by
+  sales) and, for third parties, a customer-authorized vendor grant. There is no
+  published API invoice line item; cost is embedded in the platform relationship.
+  The dominant integration costs are therefore the platform subscription and the
+  vendor's own engineering/hosting to consume the API - not a per-request Vantaca fee.
+notes: >-
+  Vantaca publishes no API meter or per-unit rate, so FOCUS meters below are
+  modeled as internal cost-tracking dimensions rather than reconciled Vantaca
+  billing units. Verify commercial terms with Vantaca during reconciliation.
+sources:
+- https://www.vantaca.com/
+- https://www.vantaca.com/vantaca-faq/why-do-api-capabilities-matter
+- https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Vantaca
+serviceCategory: Management Tools and Governance
+billingModel:
+  pricingCategory: Subscription
+  billingFrequency: Annual
+  billingCurrency: USD
+  chargeCategories:
+  - Purchase
+focusColumns:
+  ServiceName: Vantaca Standard APIs
+  ServiceCategory: Management Tools and Governance
+  ProviderName: Vantaca
+  PublisherName: Vantaca
+  InvoiceIssuerName: Vantaca
+  BillingCurrency: USD
+  ChargeCategory: Purchase
+  PricingCategory: Subscription
+meters:
+- name: platform_subscription
+  description: Vantaca platform license under which API access is provisioned (quoted by sales; not public).
+  unit: contract
+  aggregation: sum
+  dimensions:
+  - management_company
+- name: api_requests
+  description: Standard API calls made against a granted dataset - tracked internally by the integrator; Vantaca publishes no per-call price.
+  unit: requests
+  aggregation: sum
+  dimensions:
+  - credential
+  - association
+  - endpoint
+- name: integration_compute
+  description: Vendor's own compute/hosting cost to poll and process Vantaca data (no Vantaca invoice).
+  unit: hours
+  aggregation: sum
+  dimensions:
+  - integration
+principles:
+- name: Visibility
+  description: Track API call volume per credential and association even though Vantaca does not bill per call, to understand load and integration health.
+- name: Allocation
+  description: Map each set of vendor credentials to the management company / associations it serves so integration effort maps to internal cost centers.
+- name: Optimization
+  description: Batch bulk reads with zip=true and cache reference data (association lists, provider types, GL codes) to minimize redundant calls and bandwidth.
+- name: Accountability
+  description: Assign an owner per integration credential; review platform subscription and integration engineering cost against value delivered.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

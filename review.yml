@@ -1,0 +1,98 @@
+aid: vantaca
+name: Vantaca
+review:
+  question: Does Vantaca expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-04'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Vantaca's Standard APIs are a
+    request/response JSON web service over HTTPS (base api.vantaca.net),
+    authenticated with HTTP Basic auth plus per-request company/login/pwd
+    parameters and IP whitelisting. There is no server-push transport
+    (WebSocket or SSE) documented on Vantaca's own API - integrations pull data
+    on demand or write records back over REST. There is no ws:// or wss://
+    endpoint to model.
+findings:
+  summary: |
+    Vantaca does not publish a documented public WebSocket API. Vantaca is a
+    community association / HOA management software platform. It exposes a real,
+    documented public REST API - "Vantaca's Standard APIs" (v3.8.0) - whose
+    OpenAPI 3.0 definition is published on SwaggerHub
+    (app.swaggerhub.com/apis/Vantaca/vantacaStandard). The production base URL is
+    https://api.vantaca.net. Every call is JSON over HTTPS/SSL and uses HTTP Basic
+    authorization together with three required parameters on all endpoints:
+    company, login, and pwd. Access is NOT self-serve: a Vantaca customer grants a
+    vendor scoped credentials to that customer's own dataset, and the vendor's IP
+    address(es) must be whitelisted; credentials vary per customer and are
+    requested through vendorsupport@vantaca.com. The surface is pure
+    request/response REST (GET and POST are both accepted; /read/ methods support
+    an optional zip=true param to return a compressed data.json for bulk pulls).
+    No realtime, bidirectional, or streaming WebSocket endpoint is documented
+    anywhere in the specification as of the review date.
+  accessModel: |
+    Documented-but-gated. The OpenAPI is public on SwaggerHub and endpoints are
+    fully specified, but obtaining working credentials requires an existing
+    Vantaca customer to authorize a vendor's access to their dataset, plus IP
+    whitelisting arranged with Vantaca (vendorsupport@vantaca.com). There is no
+    open sign-up developer portal and no public pricing for API access.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.vantaca.net
+      documented: true
+      note: Vantaca's Standard APIs v3.8.0. JSON web service; HTTP Basic auth plus required company/login/pwd params on all endpoints. Historical Azure hosts (vantacaserviceeast.azurewebsites.net production, vantacaservicebeta.azurewebsites.net testing) appear in older spec versions.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in Vantaca's Standard APIs as of the review date.
+  endpointsConfirmedRest:
+    - GET  https://api.vantaca.net/read/Association
+    - GET  https://api.vantaca.net/read/associationDetails
+    - GET  https://api.vantaca.net/read/homeownerAccountInfo
+    - GET  https://api.vantaca.net/read/homeownerSearch
+    - GET  https://api.vantaca.net/read/homeownerTransactions
+    - GET  https://api.vantaca.net/read/homeownerAssessment
+    - GET  https://api.vantaca.net/read/violationList
+    - GET  https://api.vantaca.net/read/workOrderList
+    - GET  https://api.vantaca.net/read/ARCList
+    - GET  https://api.vantaca.net/read/CollectionList
+    - GET  https://api.vantaca.net/read/provider
+    - POST https://api.vantaca.net/write/createViolation
+    - POST https://api.vantaca.net/write/createWorkOrder
+    - POST https://api.vantaca.net/write/createARC
+    - POST https://api.vantaca.net/write/createLedger
+    - POST https://api.vantaca.net/write/createProvider
+    - GET  https://api.vantaca.net/AP/listInvoices
+    - POST https://api.vantaca.net/AP/createInvoice
+    - POST https://api.vantaca.net/AP/payInvoices
+    - GET  https://api.vantaca.net/AP/bankAccountBalance
+  endpointNote: |
+    The published OpenAPI 3.0 spec (v3.8.0) defines 75 operations across three
+    groups: /read/ (associations, homeowners, ledger/GL history, violations,
+    work orders, ARC, collections, providers, documents, action items), /write/
+    (homeowner contact CRUD, ledger, violations, work orders, ARC, providers,
+    action-item notes) and /AP/ (invoices, payments, bank accounts, funds, GL
+    codes). The list above is a representative subset, not exhaustive.
+sources:
+  - url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
+    type: APIReference
+    note: Published OpenAPI 3.0 for Vantaca's Standard APIs v3.8.0; 75 operations; Basic auth + company/login/pwd; production base api.vantaca.net. All REST, no WebSocket.
+  - url: https://www.vantaca.com/vantaca-faq/why-do-api-capabilities-matter
+    type: Documentation
+    note: Vantaca describes an "open API" for custom integrations; endpoints return basic/advanced homeowner and association info; request credentials via vendorsupport@vantaca.com.
+  - url: https://www.vantaca.com/partners
+    type: Website
+    note: Partner ecosystem / CommonArea marketplace - banking, payments, collections, communications, resale documents, voting, AI vendors integrate with Vantaca.
+  - url: https://www.vantaca.com
+    type: Website
+    note: Company/product homepage for the HOA / community association management platform.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists. Vantaca's own public API is
+    request/response REST (Vantaca's Standard APIs v3.8.0 over HTTPS with Basic
+    auth). No AsyncAPI document was created because there is no server-push
+    transport on Vantaca's API to model.

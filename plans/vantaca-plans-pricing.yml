@@ -1,0 +1,81 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Vantaca
+providerId: vantaca
+created: '2026-07-04'
+modified: '2026-07-04'
+reconciled: false
+tags:
+- HOA
+- Community Association Management
+- Property Management
+- Plans
+description: >-
+  Vantaca does not publish public, self-serve pricing for its Standard APIs.
+  API access is a capability of the Vantaca platform rather than a standalone
+  metered product: an existing Vantaca customer (a management company) authorizes
+  a vendor to access that customer's dataset, and Vantaca provisions scoped
+  credentials (company, login, pwd) plus IP whitelisting. Vendors and integrators
+  request access through vendorsupport@vantaca.com; management companies contact
+  Vantaca sales for platform pricing. No per-call or per-seat API fee is published.
+notes: >-
+  Plan structure below is modeled from Vantaca's documented access model (public
+  OpenAPI on SwaggerHub, customer-granted per-dataset credentials, IP whitelisting)
+  - Vantaca publishes no numeric API price. Verify commercial terms directly with
+  Vantaca during reconciliation.
+sources:
+- https://www.vantaca.com/
+- https://www.vantaca.com/vantaca-faq/why-do-api-capabilities-matter
+- https://www.vantaca.com/partners
+- https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
+plans:
+- id: vantaca-platform
+  name: Vantaca Platform (Management Company)
+  type: enterprise
+  description: >-
+    Community association management platform licensed to management companies.
+    Pricing is quoted by Vantaca sales and is not published. API access to the
+    company's own dataset is included as a platform capability.
+  entries:
+  - label: Platform License
+    name: platform_license
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Standard APIs Access (own dataset)
+  - name: Accounting and Accounts Payable
+  - name: Action-Item Workflow Automation
+  - name: Homeowner and Association Records
+- id: vantaca-vendor-integration
+  name: Vendor / Integration Access
+  type: partner
+  description: >-
+    Third-party vendors and integrators access a Vantaca customer's dataset only
+    after that customer authorizes them. Vantaca creates an API user and
+    whitelists the vendor's IP address(es). Credentials vary per customer.
+    Request access via vendorsupport@vantaca.com.
+  entries:
+  - label: Vendor API Credentials
+    name: vendor_api_credentials
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact Vantaca (customer-authorized; no published fee)
+    userMultiplied: false
+  elements:
+  - name: Per-Customer Scoped Credentials
+  - name: IP Whitelisting
+  - name: Basic Authentication (company/login/pwd)
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

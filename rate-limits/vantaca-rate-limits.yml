@@ -1,0 +1,58 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Vantaca
+providerId: vantaca
+created: '2026-07-04'
+modified: '2026-07-04'
+reconciled: false
+tags:
+- HOA
+- Community Association Management
+- Rate Limiting
+- Quotas
+description: >-
+  Vantaca does not publish fixed numeric rate limits for its Standard APIs. The
+  published OpenAPI and API FAQ describe access controls (per-customer
+  credentials, IP whitelisting, SSL-only) but no documented per-minute or
+  per-day request cap. For bulk reads, Vantaca recommends the optional zip=true
+  parameter on /read/ methods, which returns a compressed data.json to reduce
+  bandwidth when pulling company-wide data - the guidance is to batch large
+  pulls rather than issue many small requests.
+notes: >-
+  No numeric per-account or per-endpoint request-rate limit is documented as of
+  the review date. Limits are effectively governed by the scope of credentials a
+  customer grants and by Vantaca's server capacity. Confirm any operational
+  throttling directly with Vantaca (vendorsupport@vantaca.com) during
+  reconciliation.
+sources:
+- https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
+- https://www.vantaca.com/vantaca-faq/why-do-api-capabilities-matter
+responseCodes:
+  throttled: 429
+limits:
+- name: Standard API Requests
+  scope: credential
+  metric: requests
+  limit: not published
+  notes: No fixed numeric request-rate limit is documented for Vantaca's Standard APIs.
+- name: Bulk Read Payload
+  scope: request
+  metric: bytes
+  limit: use zip=true for bulk
+  notes: /read/ methods accept an optional zip=true param returning a compressed data.json to reduce bandwidth on company-wide pulls.
+- name: Access Scope
+  scope: credential
+  metric: dataset
+  limit: per customer grant
+  notes: A credential can only reach the dataset(s) the granting Vantaca customer authorized, from whitelisted IP addresses.
+policies:
+- name: IP Whitelisting
+  description: Each credential set must have one or more IP addresses associated with it; requests from other addresses are rejected.
+- name: SSL Required
+  description: All connections must be made over SSL/HTTPS.
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter and honor Retry-After on any 429 responses.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
