@@ -155,6 +155,10 @@ apis:
     /read/providerSingle, /read/providerTypeList, /AP/providerList and the
     /write/provider* endpoints.
 common:
+- type: TrustCenter
+  url: security/vantaca-trust-center.yml
+- type: DomainSecurity
+  url: security/vantaca-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/vantaca
 - type: Website
