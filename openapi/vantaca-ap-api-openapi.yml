@@ -1,0 +1,1741 @@
+openapi: 3.0.0
+info:
+  description: "The Vantaca API is a JSON based web service. Access to the API is granted by individual Vantaca customers who will grant vendors individual access to their dataset. Credentials can and will vary from one customer to another.  </br></br>Credentials will need to have an accompanying IP Address whitelisted in order to successfully access Vantaca's Standard APIs. All connections must be made using SSL. </br>  </br> **Production URL - api.vantaca.net** </br></br> \nMost /read/ methods can use the parameter **zip** as a boolean. If **true**, the JSON response will be compressed and returned as a zip file. Unless otherwise specified in each endpoint, the zip archive will contain a single file called, **data.json**. *This can reduce the bandwidth needed to process company-wide information*. The parameter is always optional but is recommended when making calls for bulk data. If **false**, the response body will be a JSON object. </br></br> Vantaca's API passes each set of credentials via Basic Authorization with the following required parameters for ***all*** endpoints: </br> - **company**  </br> - **login**  </br> - **pwd**</br></br></br>\n## Changelog:\n  **Version 3.8.0 (5/28/2026)**: \n  </br> - Added new endpoint for write/createActionItemNote. This new endpoint allows for adding of new notes, as well as adding attachments, without the need to step the actionItem.\n  Added new endpoint for read/collectionList\n  </br>\n  </br>To access the most up-to-date version,  [Click Here](https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/)**\n  </br>\n  </br>\n\n## **Vantaca API TERMS OF USE**\n</br>\n\nLast Updated: May 2, 2025 \n\n**1. ACCEPTANCE OF TERMS**\nBy accessing or using the API services provided by Vantaca (\"Provider,\" \"we,\" \"us,\" or \"our\"), you (\"User,\" \"you,\" or \"your\") agree to be bound by these Terms of Use (\"Terms\"). If you are using the API on behalf of an entity, you represent that you have authority to bind that entity to these Terms, and \"you\" refers to that entity. \n\n**2. DEFINITIONS**\n- \"API\": The application programming interface made available by Provider, including swagger based documentation. \n- \"API Key\": The unique authentication credential issued to you that permits access to the API. \n- \"Application\": Any software, website, or service you develop that interfaces with the API. \n- \"Content\": Any data or information accessed or retrieved through the API. \n\n**3. LICENSE GRANT AND RESTRICTIONS**\n\n3.1 License \n\nSubject to these Terms, Provider grants you a limited, non-exclusive, non-transferable, revocable license to access and use the API to develop, test, and support your Application and to integrate your Application with the features and functionality of the API. \n\n3.2 Restrictions \n\nYou shall not: \n\n- Sell, rent, lease, sublicense, redistribute, or syndicate access to the API or API Key\n- Modify, create derivative works, decompile, reverse engineer, or disassemble the API\n- Use the API for any illegal purpose or in violation of any local, state, national, or international law\n- Use the API to develop an Application that replicates or provides similar functionality or features as Vantaca\n- Interfere with or disrupt the integrity or performance of the API or its related systems\n- Attempt to gain unauthorized access to the API or related systems\n- Use the API in a manner that exceeds reasonable request volume or constitutes excessive or abusive usage \n- Remove or alter any proprietary notices or marks on the API or its documentation \n\n**4. API USAGE AND RATE LIMITS**\n\n4.1 Rate Limits\n\nProvider may set and enforce limits on your use of the API in our sole discretion. These limits may include, but are not limited to, the number of API requests that may be made, the number of users you may serve, or other limitations. \n\n4.2 API Keys \n\nYou are responsible for maintaining the security of your API Key and any passwords or credentials. You may not share your API Key with any third party, except for authorized agents acting on your behalf. \n\n4.3 Monitoring and Analytics \n\nProvider may monitor and collect data relating to your usage of the API to ensure compliance with these Terms and for the purposes of improving and enhancing the API. \n\n**5. USER OBLIGATIONS** \n\n5.1 Compliance \n\nYou agree to: \n\n- Comply with all applicable laws and regulations \n- Comply with all provisions of these Terms and any associated documentation \n- Respect the intellectual property, privacy, and other rights of third parties \n- Promptly update your Application to install the most current version of the API when notified \n\n5.2 User Applications \n\nYour Application must: \n\n- Include your own terms of service and privacy policy \n- Accurately disclose the functions and features provided by the API \n- Not imply any partnership with or endorsement by Provider \n\n**6. DATA RIGHTS AND PRIVACY** \n\n6.1 Data Rights \n\nYou retain all rights to your data submitted through the API. You grant Provider a non-exclusive license to access, use, and process your data solely to provide and maintain the API services. \n\n6.2 Privacy \n\nProvider will process any personal data in accordance with our Privacy Policy, which is incorporated by reference into these Terms. You agree to comply with all applicable privacy laws and to provide a legally adequate privacy notice to your users. \n\n**7. MODIFICATIONS**\n\n7.1 API Modifications \n\nProvider reserves the right to modify, suspend, or discontinue the API or any part thereof at any time, with or without notice. We will use commercially reasonable efforts to notify you of material changes. \n\n7.2 Terms Modifications \n\nProvider may modify these Terms at any time by posting the modified Terms. Your continued use of the API following any modification constitutes your acceptance of the modified Terms. \n\n**8. TERMINATION**\n\n8.1 Termination by User \n\nYou may terminate these Terms by discontinuing use of the API. \n\n8.2 Termination by Provider \n\nProvider may terminate these Terms or suspend your access to the API at any time for any reason, including but not limited to, your breach of these Terms. \n\n8.3 Effect of Termination \n\nUpon termination, all licenses granted under these Terms will terminate, and you must cease all use of the API. \n\n**9. DISCLAIMER OF WARRANTIES** \n\nTHE API IS PROVIDED \"AS IS\" AND \"AS AVAILABLE.\" PROVIDER DISCLAIMS ALL WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. PROVIDER DOES NOT WARRANT THAT THE API WILL BE ERROR-FREE, UNINTERRUPTED, OR FREE FROM VIRUSES OR OTHER HARMFUL COMPONENTS. \n\n**10. LIMITATION OF LIABILITY**\n\nIN NO EVENT SHALL PROVIDER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE API. PROVIDER'S TOTAL LIABILITY ARISING OUT OF OR RELATED TO THESE TERMS SHALL NOT EXCEED THE GREATER OF $100 OR THE AMOUNT PAID BY YOU TO PROVIDER IN THE SIX MONTHS PRECEDING THE EVENT GIVING RISE TO THE LIABILITY. \n\n**11. INDEMNIFICATION** \n\nYou agree to indemnify, defend, and hold harmless Provider and its officers, directors, employees, agents, and affiliates from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses arising from: (a) your use of the API; (b) your violation of these Terms; (c) your violation of any third-party right; or (d) any claim that your Application caused damage to a third party. \n\n**12. GENERAL PROVISIONS** \n\n12.1 Governing Law \n\nThese Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law principles. \n\n12.2 Dispute Resolution \n\nAny dispute arising from these Terms shall be resolved [specify dispute resolution mechanism, e.g., arbitration, specific courts, etc.]. \n\n12.3 Severability \n\nIf any provision of these Terms is found to be unenforceable, the remaining provisions shall remain in full force and effect. \n\n12.4 No Waiver \n\nNo failure or delay by Provider in exercising any right under these Terms shall operate as a waiver of that or any other right. \n\n12.5 Assignment \n\nYou may not assign these Terms or any rights or obligations hereunder without Provider's prior written consent. Provider may assign these Terms without restriction. \n\n12.6 Entire Agreement \n\nThese Terms constitute the entire agreement between you and Provider regarding the API and supersede all prior agreements and understandings, whether written or oral. \n\n**13. CONTACT INFORMATION** \n\nIf you have any questions about these Terms, please contact us at VendorSupport@vantaca.com \n\n "
+  version: 3.8.0
+  title: Vantaca's Standard APIs /AP/ /AP/ /AP/ API
+  contact:
+    email: vendorsupport@vantaca.com
+servers:
+- description: SwaggerHub API Auto Mocking
+  url: https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0
+tags:
+- name: /AP/
+  description: 'These methods are specific to AP or Invoice related functions and can only be accessed by designated AP credentials. Note: Entering invalid dates may result in them appearing as null or blank in Vantaca </br> All AP calls will use the same URL path: /AP/{***method***}'
+paths:
+  /AP/associationList:
+    get:
+      tags:
+      - /AP/
+      summary: retrieves a list of live associations
+      operationId: getAssociationList
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/getAssociationList'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/providerList:
+    get:
+      tags:
+      - /AP/
+      summary: retrieves a list of all service providers for the company
+      operationId: getProviderList
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: providerID
+        description: unique identifier for provider
+        schema:
+          type: integer
+      - in: query
+        name: includeInsurance
+        description: if **true**, resopnse will include providerInsurance array, else **false**, and providerInsurance field will display as null
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/getProviderList'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/glList:
+    get:
+      tags:
+      - /AP/
+      summary: retrieves a list of all GL Codes for the company or association
+      operationId: getGLList
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: assocCode
+        description: unique identifer for an association
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/getGLList'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/fundList:
+    get:
+      tags:
+      - /AP/
+      summary: retrieves a list of all funds for the company or association
+      operationId: getFundList
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: assocCode
+        description: unique identifer for an association
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/getFundList'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/bankAccountList:
+    get:
+      tags:
+      - /AP/
+      summary: retrieves a list of all bank accounts for the company or association
+      operationId: getBankAccountList
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: assocCode
+        description: unique identifer for an association
+        schema:
+          type: string
+      - in: query
+        name: allAccountTypes
+        description: if **true** response will include CD and Eskrow bank account types, else **false** or null and response will exclude CD and Eskrow accounts by default </br> *both accounts are excluded by default unless allAccountTypes is passed as true*
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/getBankAccountList'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/bankAccountBalance:
+    get:
+      tags:
+      - /AP/
+      summary: retrieves a balance list for one or more bank accounts
+      operationId: getBankAccountBalance
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: assocCode
+        description: unique identifer for an association
+        schema:
+          type: string
+      - in: query
+        name: bankAccountID
+        description: unique identifier for the bank account
+        schema:
+          type: integer
+      - in: query
+        name: allAccountTypes
+        description: if **true** response will include CD and Eskrow bank account types, else **false** or null and response will exclude CD and Eskrow accounts by default </br> *both accounts are excluded by default unless allAccountTypes is passed as true*
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/getBankAccountBalance'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/createInvoice:
+    post:
+      tags:
+      - /AP/
+      summary: creates a new invoice
+      operationId: createInvoice
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: assocCode
+        description: unique identifer for an association
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: providerID
+        required: true
+        description: unique identifier for the service provider
+        schema:
+          type: integer
+      - in: query
+        name: invoiceID
+        description: unique identifier for the invoice created by /AP/createInvoice
+        schema:
+          type: integer
+      - in: query
+        name: isExpensed
+        description: if **true**, invoice has been approved and should be expensed in GL
+        schema:
+          type: boolean
+      - in: query
+        name: accountNo
+        description: account number from invoice
+        schema:
+          type: string
+      - in: query
+        name: invoiceNo
+        description: invoice number
+        schema:
+          type: string
+      - in: query
+        name: invoiceDate
+        description: invoice date
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: dueDate
+        description: date the invoice is due
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: total
+        description: invoice total amount
+        required: true
+        schema:
+          type: integer
+          format: decimal
+      - in: query
+        name: file
+        description: base 64 encoded string of invoice image
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: fileName
+        description: name of file attachment
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: referenceNumber
+        description: invoice reference number
+        schema:
+          type: string
+      - in: query
+        name: payType
+        description: pay type for the invoice
+        schema:
+          type: string
+          format: date-time
+      requestBody:
+        description: invoiceDetails
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                invoiceDetailID:
+                  type: string
+                  description: unique identifier for the invoice detail
+                  example: 1
+                glAccountID:
+                  type: string
+                  description: unique identifier for the GL account
+                  example: 5
+                fundID:
+                  type: string
+                  description: unique identifier for the fund
+                  example: 10
+                description:
+                  type: string
+                  description: invoice detail description
+                  example: expired
+                debitCredit:
+                  type: string
+                  description: d = debit, c = credit
+                  example: c
+                amount:
+                  type: integer
+                  format: decimal
+                  description: invoice amount
+                  example: 55.55
+              required:
+              - glAccountID
+              - fundID
+              - amount
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/payInvoices'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/payInvoices:
+    post:
+      tags:
+      - /AP/
+      summary: marks one or more existing invoices in Vantaca as paid
+      description: InvoiceID must be expensed to pay
+      operationId: postPayInvoices
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: checkNo
+        description: check number
+        schema:
+          type: string
+      - in: query
+        name: payType
+        description: invoice payment type
+        schema:
+          type: string
+          enum:
+          - ACH
+          - Check
+          - VCC
+          - Draft
+      - in: query
+        name: payDate
+        description: date the invoice was paid
+        required: true
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: bankAccountID
+        description: unique identifier for the bank account
+        required: true
+        schema:
+          type: integer
+      - in: query
+        name: reference number
+        description: invoice reference number
+        schema:
+          type: string
+      requestBody:
+        description: array of invoiceIDs
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/invoiceIDs'
+              example:
+              - '654324'
+              - '123345'
+              - '453345'
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/payInvoices'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/updateInvoice:
+    post:
+      tags:
+      - /AP/
+      summary: updates an existing invoice.
+      description: All fields must be passed in update, excluding file and fileName, which can be used optionally to upload a new file attachment. All other fields will be used to update the invoice data for every call. Any fields not sent will updated to their default empty values.
+      operationId: updateInvoice
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: assocCode
+        description: unique identifer for an association
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: providerID
+        description: unique identifier for the service provider
+        schema:
+          type: integer
+      - in: query
+        name: invoiceID
+        required: true
+        description: invoice action item number
+        schema:
+          type: integer
+      - in: query
+        name: isExpensed
+        description: if **true**, invoice has been approved and should be expensed in GL
+        schema:
+          type: boolean
+      - in: query
+        name: accountNo
+        description: account number from invoice
+        schema:
+          type: string
+      - in: query
+        name: invoiceNo
+        description: invoice number
+        schema:
+          type: integer
+      - in: query
+        name: invoiceDate
+        description: invoice date
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: dueDate
+        description: date the invoice is due
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: total
+        description: invoice total amount
+        required: true
+        schema:
+          type: integer
+          format: date-time
+      - in: query
+        name: file
+        description: name of file attachment
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: fileName
+        description: base 64 encoded string of invoice image
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: array of invoice details
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                invoiceDetailID:
+                  type: string
+                  description: unique identifier for the invoice detail
+                  example: 1
+                glAccountID:
+                  type: string
+                  description: unique identifier for the GL account
+                  example: 5
+                fundID:
+                  type: string
+                  description: unique identifier for the fund
+                  example: 10
+                description:
+                  type: string
+                  description: invoice detail description
+                  example: expired
+                debitCredit:
+                  type: string
+                  description: d = debit, c = credit
+                  example: c
+                amount:
+                  type: integer
+                  format: decimal
+                  description: invoice amount
+                  example: 55.55
+              required:
+              - glAccountID
+              - fundID
+              - amount
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responseSuccess'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/voidInvoices:
+    post:
+      tags:
+      - /AP/
+      summary: voids the payment and optionally the whole invoice
+      operationId: voidInvoice
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: voidDate
+        description: The date the invoice should be voided as
+        required: true
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: comment
+        required: true
+        description: Description of why the payment/invoice is being voided
+        schema:
+          type: string
+      - in: query
+        name: paymentOnly
+        description: if **true**, only payment will be voided, else **false**, entire invoice will be voided
+        required: true
+        schema:
+          type: boolean
+      requestBody:
+        description: array of invoiceIDs
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/invoiceIDs'
+              example:
+              - '654324'
+              - '123345'
+              - '453345'
+            examples:
+              Example 1:
+                value:
+                  invoiceIDs:
+                  - '654324'
+                  - '123345'
+                  - '453345'
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responseSuccess'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/approveInvoice:
+    post:
+      tags:
+      - /AP/
+      summary: approves or declines the invoice
+      operationId: approveInvoice
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: invoiceID
+        description: invoice action item number
+        required: true
+        schema:
+          type: integer
+      - in: query
+        name: userID
+        required: true
+        description: user ID of the user approving
+        schema:
+          type: integer
+      - in: query
+        name: note
+        description: any comments related to the invoice being approved/declined
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: status
+        required: true
+        description: 1 = approved, 2 = declined
+        schema:
+          type: string
+      - in: query
+        name: assocCode
+        description: unqiue identifier for the association
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responseSuccess'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/deleteInvoice:
+    post:
+      tags:
+      - /AP/
+      summary: deletes the invoice and all associated payments
+      operationId: deleteInvoice
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: invoiceID
+        description: invoice action item number
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responseSuccess'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/listBoardInvoices:
+    get:
+      tags:
+      - /AP/
+      summary: returns a list of invoices that the current user can approve/decline based on board permissions
+      description: Only invoices waiting to be approved by the user will be returned. User needs to have the required board approval rights.
+      operationId: listBoardInvoice
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: ownerAccount
+        description: unique identifier for the owner account for the list of returned invoices
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: assocCode
+        description: unique identifer for an association
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/getBoardInvoiceList'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/getBoardInvoice:
+    get:
+      tags:
+      - /AP/
+      summary: returns a single invoice that the user can approve/decline based on board permissions
+      description: Only invoices waiting to be approved by the user will be returned. User needs to have the required board approval rights.
+      operationId: getBoardInvoice
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: ownerAccount
+        description: unique identifier for the owner account for the list of returned invoices
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: assocCode
+        description: unique identifer for an association
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: invoiceID
+        description: invoice action item number
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/getBoardInvoice'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/listInvoices:
+    get:
+      tags:
+      - /AP/
+      summary: returns a list of invoices created by createInvoice
+      operationId: listInvoices
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/listInvoices'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/getInvoice:
+    get:
+      tags:
+      - /AP/
+      summary: returns a single invoice created by createInvoice
+      operationId: getInvoices
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: invoiceID
+        required: true
+        description: unique identifier for the invoice
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/listInvoices'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/updateInvoiceAttachment:
+    post:
+      tags:
+      - /AP/
+      summary: updates the file attachment for an existing invoice.
+      description: '***Note:*** *Will replace existing attachments on the invoice*.'
+      operationId: updateInvoiceAttachment
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      requestBody:
+        description: invoice attachment Details
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                invoiceID:
+                  type: string
+                  description: unique identifier for the invoice
+                  example: 76891
+                file:
+                  type: string
+                  description: base 64 encoded string of invoice image
+                  example: Mclaren's Podiums
+                fileName:
+                  type: string
+                  description: name of file attachment (with extension)
+                  example: newinvoiceattachment.png
+              required:
+              - invoiceID
+              - file
+              - fileName
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/responseSuccess'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/listPayments:
+    get:
+      tags:
+      - /AP/
+      summary: returns a list of payments made from /AP/payInvoices
+      operationId: listPayments
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/getPayments'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/getPayment:
+    get:
+      tags:
+      - /AP/
+      summary: returns information from a single payment made from /AP/payInvoices
+      operationId: getPayment
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: paymentID
+        required: true
+        description: unique identifier for the payment returned by payInvoice
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getPayments'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/annualBankAccountBalance:
+    get:
+      tags:
+      - /AP/
+      summary: retrieves a balance list for one or more bank accounts
+      operationId: getAnnualBankAccountBalance
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: assocCode
+        description: unique identifer for an association
+        schema:
+          type: string
+      - in: query
+        name: bankAccountID
+        description: unique identifier for the bank account
+        schema:
+          type: integer
+      - in: query
+        name: allAccountTypes
+        description: if **true** response will include CD and Eskrow bank account types, else **false** or null and response will exclude CD and Eskrow accounts by default </br> *both accounts are excluded by default unless allAccountTypes is passed as true*
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/getAnnualBankAccountBalance'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/listAssocInvoices:
+    get:
+      tags:
+      - /AP/
+      summary: returns a list of an association's invoices for a specific period
+      operationId: listAssocInvoices
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - name: assocCode
+        in: query
+        description: unique identifer for an association
+        schema:
+          type: string
+      - name: invoiceDateStart
+        in: query
+        description: if no start date is specified, field will default to 30 days ago. if start date is provided without an end date, response will return data for the date range between the specified start date and the today's date.</br> ***format must be MM-DD-YYY***
+        schema:
+          type: string
+          format: date
+      - name: invoiceDateEnd
+        in: query
+        description: if no end date is specified, field will default to today's date. if end date is provided without a start date, response will return data from 30 days prior to the specifie end date.</br> ***format must be MM-DD-YYY***
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/listInvoices'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /AP/glTransactionHistory:
+    get:
+      tags:
+      - /AP/
+      summary: retrieves an association's accounts receivable/income aggregate data by GL Code for a specified period
+      operationId: getTransactionHistory
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: assocCode
+        required: true
+        description: unique identifer for an association
+        schema:
+          type: string
+      - in: query
+        name: startDate
+        description: beginning date range. *if no startDate is specified, parameter will default to first day of the previous month.*
+        schema:
+          type: string
+      - in: query
+        name: endDate
+        description: ending date range. *if no endDate is specified, parameter will default to last day of the previous month.
+        schema:
+          type: string
+      - in: query
+        name: glType
+        description: general ledger account type. </br> *field will default to **Income***
+        schema:
+          type: string
+          enum:
+          - Income
+          - Expense
+          - Asset
+          - Equity
+          - Liability
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/glTransactionHistory'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+components:
+  schemas:
+    getBankAccountBalance:
+      type: object
+      properties:
+        bankAccountID:
+          type: integer
+          description: unique identifier for the bank account
+          example: 86753098
+        balance:
+          type: integer
+          format: decimal
+          description: current balance
+          example: 123,456,789.25
+    getBankAccountList:
+      type: object
+      properties:
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 123
+        bankAccountID:
+          type: integer
+          description: unique identifier for the bank account
+          example: 123654
+        description:
+          type: string
+          description: bank account description
+          example: Gorgc's Savings
+        glAccountID:
+          type: string
+          description: unique identifier for the GL account
+          example: 12
+        aba:
+          type: string
+          description: bank account routing number
+          example: 12332
+        accountNumber:
+          type: string
+          description: bank account number
+          example: 867530990909
+        balance:
+          type: integer
+          format: decimal
+          description: bank account description
+          example: 77,777.77
+        accountType:
+          type: string
+          description: bank account type
+          example: Savings
+        contactName:
+          type: string
+          description: contact name for bank account
+          example: Brad Pitt
+    invoiceDetail:
+      type: object
+      properties:
+        invoiceDetailID:
+          type: string
+          description: unique identifier for the invoice detail
+          example: 1
+        glAccountID:
+          type: string
+          description: unique identifier for the GL account
+          example: 5
+        fundID:
+          type: string
+          description: unique identifier for the fund
+          example: 10
+        description:
+          type: string
+          description: invoice detail description
+          example: expired
+        amount:
+          type: integer
+          format: date-time
+          description: invoice amount
+          example: 55.55
+    responseSuccess:
+      type: object
+      properties:
+        status:
+          type: string
+          description: unique identifier for payment
+          example: success
+    transactionBalances:
+      type: object
+      properties:
+        glBalance:
+          type: integer
+          format: decimal
+          description: GL balance at the specified date and time
+          example: 1445.86
+        date:
+          type: string
+          format: date-time
+          description: date that the balance was pulled from
+    getAnnualBankAccountBalance:
+      type: object
+      properties:
+        assocCode:
+          type: string
+          description: unique identifier for an association
+          example: 123
+        bankAccountID:
+          type: integer
+          description: unique identifier for the bank account
+          example: 117
+        balances:
+          type: array
+          items:
+            $ref: '#/components/schemas/transactionBalances'
+          example:
+          - balance: 37390
+            date: '2022-03-31'
+          - Balance: 37390.75
+            date: '2022-04-30'
+          - balance: 37390.75
+            date: '2022-05-31'
+          - balance: 37390.75
+            date: '2022-06-30'
+          - balance: 37390.75
+            date: '2022-07-31'
+          - balance: 486657.75
+            date: '2022-08-31'
+          - balance: 486657.75
+            date: '2022-09-30'
+          - balance: 486657.75
+            date: '2022-10-31'
+          - balance: 486657.75
+            date: '2022-11-30'
+          - balance: 486657.75
+            date: '2022-12-31'
+          - balance: 486657.75
+            date: '2023-01-31'
+          - balance: 486657.75
+            date: '2023-02-28'
+    getBoardInvoice:
+      type: object
+      properties:
+        userID:
+          type: integer
+          description: unique identifier for the owner account
+          example: 137652
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 999
+        invoiceID:
+          type: integer
+          description: unique identifier for the invoice
+          example: 76891
+        providerName:
+          type: string
+          description: service provider name
+          example: Mclaren's Podiums
+        accountNo:
+          type: string
+          description: account number from invoice
+          example: 2255880012
+        invoiceNo:
+          type: string
+          description: invoice number from invoice
+        invoiceDate:
+          type: string
+          format: date-time
+          description: date invoice was created
+          example: '{2022-02-11T00:00:00}'
+        dueDate:
+          type: string
+          format: date-time
+          description: invoice due date
+          example: '{2022-02-11T00:00:00}'
+        total:
+          type: integer
+          format: decimal
+          description: invoice total amount
+          example: 777.77
+        description:
+          type: string
+          description: invoice name
+          example: February invoice
+        ownerAccount:
+          type: string
+          description: unique identifier for the owner account
+          example: 89912
+        fileName:
+          type: string
+          description: invoice attachment file name
+          example: invoice.pdf
+        file:
+          type: string
+          description: base 64 encoded string of invoice image
+          example: ADFASBNADFGASDDRDFASDFER1232ASF2
+        details:
+          type: array
+          description: list of GL items for invoice
+          items:
+            $ref: '#/components/schemas/invoiceDetail'
+    getBoardInvoiceList:
+      type: object
+      properties:
+        userID:
+          type: integer
+          description: unique identifier for the owner account
+          example: 137652
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 999
+        invoiceID:
+          type: integer
+          description: unique identifier for the invoice
+          example: 76891
+        providerName:
+          type: string
+          description: service provider name
+          example: Mclaren's Podiums
+        accountNo:
+          type: string
+          description: account number from invoice
+          example: 2255880012
+        invoiceNo:
+          type: string
+          description: invoice number from invoice
+        invoiceDate:
+          type: string
+          format: date-time
+          description: date invoice was created
+          example: '{2022-02-11T00:00:00}'
+        dueDate:
+          type: string
+          format: date-time
+          description: invoice due date
+          example: '{2022-02-11T00:00:00}'
+        total:
+          type: integer
+          format: decimal
+          description: invoice total amount
+          example: 7777.77
+        description:
+          type: string
+          description: invoice name
+          example: February invoice
+        ownerAccount:
+          type: string
+          description: unique identifier for the owner account
+          example: 89912
+        fileName:
+          type: string
+          description: invoice attachment file name
+          example: null
+        file:
+          type: string
+          description: base 64 encoded string of invoice image
+          example: null
+        details:
+          type: array
+          description: list of GL items for invoice
+          items:
+            $ref: '#/components/schemas/invoiceDetail'
+    getGLList:
+      type: object
+      properties:
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 123
+        glAccountID:
+          type: string
+          description: unique identifier for the GL account
+          example: 12365412311
+        code:
+          type: string
+          description: GL code
+          example: '89'
+        description:
+          type: string
+          description: GL account description
+          example: Default GL
+        glType:
+          type: string
+          description: the gl type (Asset, Expense, Income, Liability) for each gl code
+          example: Asset
+        lastModified:
+          type: string
+          format: date-time
+          description: date the GL was last modified
+          example: '2019-08-16T13:16:41.847'
+        inactive:
+          type: string
+          format: date-time
+          description: timestamp of when the GL was deleted or configured as not usable
+          example: '2021-04-12T13:42:31.247'
+    listInvoices:
+      type: object
+      properties:
+        invoiceID:
+          type: integer
+          description: unique identifier for the invoice
+          example: 76891
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 999
+        providerID:
+          type: integer
+          description: unique identifer for the service provider
+          example: 678
+        isExpensed:
+          type: boolean
+          description: if **true** invoice has been approved and expensed in GL, else, **false**
+        accountNo:
+          type: string
+          description: account number from invoice
+          example: 2255880012
+        invoiceNo:
+          type: string
+          description: invoice number from invoice
+        invoiceDate:
+          type: string
+          format: date-time
+          description: date invoice was created
+          example: '{2022-02-11T00:00:00}'
+        dueDate:
+          type: string
+          format: date-time
+          description: invoice due date
+          example: '{2022-02-11T00:00:00}'
+        total:
+          type: integer
+          format: decimal
+          description: invoice total amount
+          example: 777.77
+        fileName:
+          type: string
+          description: invoice attachment file name
+          example: invoice.pdf
+        file:
+          type: string
+          description: base 64 encoded string of invoice image
+          example: ADFASBNADFGASDDRDFASDFER1232ASF2
+        inActive:
+          type: string
+          format: date-time
+          description: timestamp when invoice was deleted
+        referenceNumber:
+          type: string
+          description: invoice reference number
+          example: 4141414
+        payType:
+          type: string
+          description: type of payment
+        details:
+          type: array
+          description: list of GL items for invoice
+          items:
+            $ref: '#/components/schemas/invoiceDetail'
+    payInvoices:
+      type: object
+      properties:
+        paymentID:
+          type: integer
+          description: unique identifier for payment
+          example: 86753098
+    getProviderList:
+      type: object
+      properties:
+        providerID:
+          type: integer
+          description: unique identifier for the service provider
+          example: 5
+        name:
+          type: string
+          description: service provider name
+          example: Jacky Stewart's Mailbox Repair
+        address:
+          type: string
+          description: service provider street number and street name
+          example: 812 Lime Rock Ave.
+        unit:
+          type: string
+          description: service provider unit number
+        city:
+          type: string
+          description: service provider city
+          example: Lakeville
+        state:
+          type: string
+          description: service provider state
+          example: CT
+        zip:
+          type: string
+          description: service provider zip
+          example: 12345
+        email:
+          type: string
+          description: primary email
+          example: jlewin@mailboxes.com
+        phone:
+          type: string
+          description: primary phone
+          example: (000) 000-5555
+        fax:
+          type: string
+          description: primary fax
+        payMethod:
+          type: string
+          description: 'payment method, possible values: Check, ACH, Credit Card, Auto Draft'
+        lastModified:
+          type: string
+          format: date-time
+          description: date provider was last modified
+          example: '2019-08-16T13:16:41.847'
+        dba:
+          type: string
+          description: service provider DBA
+          example: Jacky Stewart
+        taxID:
+          type: string
+          description: provider tax id
+          example: 98-7654321
+        send1099:
+          type: boolean
+          description: if **true**, service provider sends 1099s, else **false**
+          example: true
+        contactName:
+          type: string
+          description: contact name for the service provider
+          example: Jane Stewart
+        bankAccountNumber:
+          type: string
+          description: service provider bank account number
+          example: 102034040506
+        aba:
+          type: string
+          description: service provider ABA number
+          example: 511364
+        holdPayment:
+          type: boolean
+          description: if true, provider is on hold, else, false
+          example: true
+        holdReason:
+          type: string
+          description: reason provider is on hold. *255 character limit*
+          example: Payment Due
+        apiProviderInsurance:
+          type: array
+          description: list of insurance policies for provider
+          items:
+            $ref: '#/components/schemas/apiProviderInsurance'
+    getPayments:
+      type: object
+      properties:
+        paymentID:
+          type: integer
+          description: unique identifier returned from payInvoice
+          example: 1191
+        invoiceIDs:
+          type: array
+          description: list of invoice IDs
+          items:
+            type: integer
+            example: 76891, 98712, 21314
+        checkNo:
+          type: string
+          description: check number
+          example: 999123213645345
+        payType:
+          type: string
+          description: type of payment
+          example: Check
+        payDate:
+          type: string
+          format: date-time
+          description: payment date
+        status:
+          type: string
+          description: payment status
+          example: Voided
+        bankAccountID:
+          type: integer
+          description: bank account ID
+          example: 105
+        referenceNumber:
+          type: string
+          description: payment reference number
+          example: 44223358764
+    apiProviderInsurance:
+      type: object
+      properties:
+        type:
+          type: string
+          description: type of insurance
+          example: general liability
+        accountNo:
+          type: string
+          description: insurance policy account number
+          example: 12365412311
+        expiration:
+          type: string
+          format: date-time
+          description: expiration date of the insurance policy
+          example: '2019-08-16T13:16:41.847'
+        isRequired:
+          type: boolean
+          description: if **true** insurance policy is required, else **false**
+          example: false
+    invoiceIDs:
+      type: object
+      properties:
+        invoiceID:
+          type: array
+          items:
+            type: integer
+            example:
+            - '543123'
+            - '876987'
+            - '134561'
+    getAssociationList:
+      type: object
+      properties:
+        companyID:
+          type: string
+          description: unique identifier for company
+          example: 12378961
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 1
+        assocName:
+          type: string
+          description: association name
+          example: Pestilian Management Co.
+        lastModified:
+          type: string
+          format: date-time
+          description: date association was last modified
+          example: '2019-08-16T13:16:41.847'
+    getFundList:
+      type: object
+      properties:
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 123
+        fundID:
+          type: string
+          description: unique identifier for the fund. *FundID 1 is the default Operating fund for all associations*
+          example: 12365412311
+        description:
+          type: string
+          description: fund description
+          example: Building 10
+    glTransactionHistory:
+      type: object
+      properties:
+        assocCode:
+          type: string
+          description: unique identifier for an association
+          example: ASQ
+        glCode:
+          type: string
+          description: unique general ledger code
+          example: 15
+        glDescription:
+          type: string
+          description: text description for the gl code
+          example: Assessment
+        glType:
+          type: string
+          description: general ledger account type.
+          enum:
+          - Income
+          - Expense
+          - Asset
+          - Equity
+          - Liability
+        fundDescription:
+          type: string
+          description: fund name
+          example: Operating
+        balances:
+          type: array
+          items:
+            $ref: '#/components/schemas/transactionBalances'
+          example:
+          - glBalance: 37390
+            date: '2022-03-31T00:00:00'
+          - glBalance: 37390.75
+            date: '2022-04-30T00:00:00'
+          - glBalance: 37390.75
+            date: '2022-05-31T00:00:00'
+          - glBalance: 37390.75
+            date: '2022-06-30T00:00:00'
+          - glBalance: 37390.75
+            date: '2022-07-31T00:00:00'
+          - glBalance: 486657.75
+            date: '2022-08-31T00:00:00'
+          - glBalance: 486657.75
+            date: '2022-09-30T00:00:00'
+          - glBalance: 486657.75
+            date: '2022-10-31T00:00:00'
+          - glBalance: 486657.75
+            date: '2022-11-30T00:00:00'
+          - glBalance: 486657.75
+            date: '2022-12-31T00:00:00'
+          - glBalance: 486657.75
+            date: '2023-01-31T00:00:00'
+          - glBalance: 486657.75
+            date: '2023-02-28T00:00:00'
+x-internal: false

@@ -1,0 +1,1547 @@
+openapi: 3.0.0
+info:
+  description: "The Vantaca API is a JSON based web service. Access to the API is granted by individual Vantaca customers who will grant vendors individual access to their dataset. Credentials can and will vary from one customer to another.  </br></br>Credentials will need to have an accompanying IP Address whitelisted in order to successfully access Vantaca's Standard APIs. All connections must be made using SSL. </br>  </br> **Production URL - api.vantaca.net** </br></br> \nMost /read/ methods can use the parameter **zip** as a boolean. If **true**, the JSON response will be compressed and returned as a zip file. Unless otherwise specified in each endpoint, the zip archive will contain a single file called, **data.json**. *This can reduce the bandwidth needed to process company-wide information*. The parameter is always optional but is recommended when making calls for bulk data. If **false**, the response body will be a JSON object. </br></br> Vantaca's API passes each set of credentials via Basic Authorization with the following required parameters for ***all*** endpoints: </br> - **company**  </br> - **login**  </br> - **pwd**</br></br></br>\n## Changelog:\n  **Version 3.8.0 (5/28/2026)**: \n  </br> - Added new endpoint for write/createActionItemNote. This new endpoint allows for adding of new notes, as well as adding attachments, without the need to step the actionItem.\n  Added new endpoint for read/collectionList\n  </br>\n  </br>To access the most up-to-date version,  [Click Here](https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/)**\n  </br>\n  </br>\n\n## **Vantaca API TERMS OF USE**\n</br>\n\nLast Updated: May 2, 2025 \n\n**1. ACCEPTANCE OF TERMS**\nBy accessing or using the API services provided by Vantaca (\"Provider,\" \"we,\" \"us,\" or \"our\"), you (\"User,\" \"you,\" or \"your\") agree to be bound by these Terms of Use (\"Terms\"). If you are using the API on behalf of an entity, you represent that you have authority to bind that entity to these Terms, and \"you\" refers to that entity. \n\n**2. DEFINITIONS**\n- \"API\": The application programming interface made available by Provider, including swagger based documentation. \n- \"API Key\": The unique authentication credential issued to you that permits access to the API. \n- \"Application\": Any software, website, or service you develop that interfaces with the API. \n- \"Content\": Any data or information accessed or retrieved through the API. \n\n**3. LICENSE GRANT AND RESTRICTIONS**\n\n3.1 License \n\nSubject to these Terms, Provider grants you a limited, non-exclusive, non-transferable, revocable license to access and use the API to develop, test, and support your Application and to integrate your Application with the features and functionality of the API. \n\n3.2 Restrictions \n\nYou shall not: \n\n- Sell, rent, lease, sublicense, redistribute, or syndicate access to the API or API Key\n- Modify, create derivative works, decompile, reverse engineer, or disassemble the API\n- Use the API for any illegal purpose or in violation of any local, state, national, or international law\n- Use the API to develop an Application that replicates or provides similar functionality or features as Vantaca\n- Interfere with or disrupt the integrity or performance of the API or its related systems\n- Attempt to gain unauthorized access to the API or related systems\n- Use the API in a manner that exceeds reasonable request volume or constitutes excessive or abusive usage \n- Remove or alter any proprietary notices or marks on the API or its documentation \n\n**4. API USAGE AND RATE LIMITS**\n\n4.1 Rate Limits\n\nProvider may set and enforce limits on your use of the API in our sole discretion. These limits may include, but are not limited to, the number of API requests that may be made, the number of users you may serve, or other limitations. \n\n4.2 API Keys \n\nYou are responsible for maintaining the security of your API Key and any passwords or credentials. You may not share your API Key with any third party, except for authorized agents acting on your behalf. \n\n4.3 Monitoring and Analytics \n\nProvider may monitor and collect data relating to your usage of the API to ensure compliance with these Terms and for the purposes of improving and enhancing the API. \n\n**5. USER OBLIGATIONS** \n\n5.1 Compliance \n\nYou agree to: \n\n- Comply with all applicable laws and regulations \n- Comply with all provisions of these Terms and any associated documentation \n- Respect the intellectual property, privacy, and other rights of third parties \n- Promptly update your Application to install the most current version of the API when notified \n\n5.2 User Applications \n\nYour Application must: \n\n- Include your own terms of service and privacy policy \n- Accurately disclose the functions and features provided by the API \n- Not imply any partnership with or endorsement by Provider \n\n**6. DATA RIGHTS AND PRIVACY** \n\n6.1 Data Rights \n\nYou retain all rights to your data submitted through the API. You grant Provider a non-exclusive license to access, use, and process your data solely to provide and maintain the API services. \n\n6.2 Privacy \n\nProvider will process any personal data in accordance with our Privacy Policy, which is incorporated by reference into these Terms. You agree to comply with all applicable privacy laws and to provide a legally adequate privacy notice to your users. \n\n**7. MODIFICATIONS**\n\n7.1 API Modifications \n\nProvider reserves the right to modify, suspend, or discontinue the API or any part thereof at any time, with or without notice. We will use commercially reasonable efforts to notify you of material changes. \n\n7.2 Terms Modifications \n\nProvider may modify these Terms at any time by posting the modified Terms. Your continued use of the API following any modification constitutes your acceptance of the modified Terms. \n\n**8. TERMINATION**\n\n8.1 Termination by User \n\nYou may terminate these Terms by discontinuing use of the API. \n\n8.2 Termination by Provider \n\nProvider may terminate these Terms or suspend your access to the API at any time for any reason, including but not limited to, your breach of these Terms. \n\n8.3 Effect of Termination \n\nUpon termination, all licenses granted under these Terms will terminate, and you must cease all use of the API. \n\n**9. DISCLAIMER OF WARRANTIES** \n\nTHE API IS PROVIDED \"AS IS\" AND \"AS AVAILABLE.\" PROVIDER DISCLAIMS ALL WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. PROVIDER DOES NOT WARRANT THAT THE API WILL BE ERROR-FREE, UNINTERRUPTED, OR FREE FROM VIRUSES OR OTHER HARMFUL COMPONENTS. \n\n**10. LIMITATION OF LIABILITY**\n\nIN NO EVENT SHALL PROVIDER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE API. PROVIDER'S TOTAL LIABILITY ARISING OUT OF OR RELATED TO THESE TERMS SHALL NOT EXCEED THE GREATER OF $100 OR THE AMOUNT PAID BY YOU TO PROVIDER IN THE SIX MONTHS PRECEDING THE EVENT GIVING RISE TO THE LIABILITY. \n\n**11. INDEMNIFICATION** \n\nYou agree to indemnify, defend, and hold harmless Provider and its officers, directors, employees, agents, and affiliates from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses arising from: (a) your use of the API; (b) your violation of these Terms; (c) your violation of any third-party right; or (d) any claim that your Application caused damage to a third party. \n\n**12. GENERAL PROVISIONS** \n\n12.1 Governing Law \n\nThese Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law principles. \n\n12.2 Dispute Resolution \n\nAny dispute arising from these Terms shall be resolved [specify dispute resolution mechanism, e.g., arbitration, specific courts, etc.]. \n\n12.3 Severability \n\nIf any provision of these Terms is found to be unenforceable, the remaining provisions shall remain in full force and effect. \n\n12.4 No Waiver \n\nNo failure or delay by Provider in exercising any right under these Terms shall operate as a waiver of that or any other right. \n\n12.5 Assignment \n\nYou may not assign these Terms or any rights or obligations hereunder without Provider's prior written consent. Provider may assign these Terms without restriction. \n\n12.6 Entire Agreement \n\nThese Terms constitute the entire agreement between you and Provider regarding the API and supersede all prior agreements and understandings, whether written or oral. \n\n**13. CONTACT INFORMATION** \n\nIf you have any questions about these Terms, please contact us at VendorSupport@vantaca.com \n\n "
+  version: 3.8.0
+  title: Vantaca's Standard APIs /AP/ /AP/ /write/ API
+  contact:
+    email: vendorsupport@vantaca.com
+servers:
+- description: SwaggerHub API Auto Mocking
+  url: https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0
+tags:
+- name: /write/
+  description: 'These methods write data. Unless otherwise specified, all object types available are paired with individual /read/ to allow full CRUD (Create, Read, Update, and Destory) operations against any item. Note: Entering invalid dates may result in them appearing as null or blank in Vantaca </br> All calls will use the same URL path: /write/{***method***}'
+paths:
+  /write/emailCreate:
+    post:
+      tags:
+      - /write/
+      summary: creates a homeowner email
+      operationId: createEmail
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: hoID
+        description: unique identifier for a homeowner
+        schema:
+          type: integer
+        required: true
+      - in: query
+        name: email
+        description: homeowner email. *multiple emails can be stored in a single record separated by "," or ";". Multiple emails are used when more than one primary email is requested*
+        schema:
+          type: string
+          format: email
+        required: true
+      - in: query
+        name: isPrimary
+        description: if **true**, email is used as primary communication preference for homeowner, else **false**
+        schema:
+          type: boolean
+      - in: query
+        name: label
+        description: label for the email address
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or parameter values are invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/emailUpdate:
+    post:
+      tags:
+      - /write/
+      summary: updates an existing homeowner email
+      operationId: updateEmail
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: emailID
+        description: unique identifier for an email address
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: email
+        description: homeowner email. *multiple emails can be stored in a single record separated by "," or ";". Multiple emails are used when more than one primary email is requested*
+        schema:
+          type: string
+          format: email
+        required: true
+      - in: query
+        name: isPrimary
+        description: if **true**, email is used as primary communication preference for homeowner, else **false**
+        schema:
+          type: boolean
+      - in: query
+        name: label
+        description: label for the email address
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/emailDestroy:
+    post:
+      tags:
+      - /write/
+      summary: deletes an existing homeowner email
+      operationId: deleteEmail
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: emailID
+        description: unique identifier for an email address
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/phoneCreate:
+    post:
+      tags:
+      - /write/
+      summary: creates a homeowner phone number
+      operationId: createPhone
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: hoID
+        description: unique identifier for a homeowner
+        schema:
+          type: integer
+        required: true
+      - in: query
+        name: phone
+        description: ten-digit numeric phone number
+        schema:
+          type: string
+          format: phone
+        required: true
+      - in: query
+        name: isPrimary
+        description: if **true**, phone is used as primary communication preference for homeowner, else **false**
+        schema:
+          type: boolean
+      - in: query
+        name: label
+        description: label for the phone number
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or parameter values are invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/phoneUpdate:
+    post:
+      tags:
+      - /write/
+      summary: updates an existing homeowner phone number
+      operationId: updatePhone
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: phoneID
+        description: unique identifier for a phone number
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: phone
+        description: ten-digit numeric phone number
+        schema:
+          type: string
+          format: phone
+        required: true
+      - in: query
+        name: isPrimary
+        description: if **true**, phone is used as primary communication preference for homeowner, else **false**
+        schema:
+          type: boolean
+      - in: query
+        name: label
+        description: label for the phone number
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/phoneDestroy:
+    post:
+      tags:
+      - /write/
+      summary: deletes an existing homeowner phone number
+      operationId: destroyPhone
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: phoneID
+        description: unique identifier for a phone number
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/addressCreate:
+    post:
+      tags:
+      - /write/
+      summary: creates a homeowner address
+      operationId: createAddress
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: hoID
+        description: unique identifier for a homeowner
+        schema:
+          type: integer
+        required: true
+      - in: query
+        name: label
+        description: optional label for the address
+        schema:
+          type: string
+      - in: query
+        name: address1
+        description: mailing street number and street name
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: address2
+        description: mailing unit
+        schema:
+          type: string
+      - in: query
+        name: city
+        description: mailing city
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: state
+        description: mailing state (2 character abbreviation)
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: zip
+        description: mailing zip
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: isPrimary
+        description: if **true**, mailing address will be used as primary communication preference for homeowner, else **false**
+        schema:
+          type: boolean
+      - in: query
+        name: isInternational
+        description: if **true**, address is international, else **false** and address is domestic
+        schema:
+          type: boolean
+      - in: query
+        name: country
+        description: country
+        schema:
+          type: string
+      - in: query
+        name: isMailing
+        description: if **true**, address will be used as mailing address, else **false**
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or parameter values are invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/addressUpdate:
+    post:
+      tags:
+      - /write/
+      summary: updates an existing homeowner address
+      description: '***Note**: Primary Mailing Address cannot be updated to not be primary without first providing a new Primary Mailing Address. Updating will automatically update the orginal record to non-primary.*'
+      operationId: updateAddress
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: addrID
+        description: unique identifier for a homeowner address
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: label
+        description: optional label for the address
+        schema:
+          type: string
+      - in: query
+        name: address1
+        description: mailing street number and street name
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: address2
+        description: mailing unit
+        schema:
+          type: string
+      - in: query
+        name: city
+        description: mailing city
+        schema:
+          type: string
+      - in: query
+        name: state
+        description: mailing state (2 character abbreviation)
+        schema:
+          type: string
+      - in: query
+        name: zip
+        description: mailing zip
+        schema:
+          type: string
+      - in: query
+        name: isPrimary
+        description: if **true**, mailing address will be used as primary communication preference for homeowner, else **false**
+        schema:
+          type: boolean
+      - in: query
+        name: isInternational
+        description: if **true**, address is international, else **false** and address is domestic
+        schema:
+          type: boolean
+      - in: query
+        name: country
+        description: country
+        schema:
+          type: string
+      - in: query
+        name: isMailing
+        description: if **true**, address will be used as mailing address, else **false**
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/addressDestroy:
+    post:
+      tags:
+      - /write/
+      summary: deletes an existing homeowner phone number
+      operationId: destroyAddress
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: addrID
+        description: unique identifier for a homeowner address
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/commPrefUpdate:
+    post:
+      tags:
+      - /write/
+      summary: updates a homeowner communication preference and billing communication preference
+      operationId: updateCommPreference
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: hoID
+        description: unique identifier for a homeowner
+        schema:
+          type: integer
+        required: true
+      - in: query
+        name: commPref
+        description: communication preference. *can be excluded only if billingPref is included*
+        schema:
+          type: string
+          enum:
+          - Paper
+          - Text
+          - Email
+          - App
+      - in: query
+        name: billingPref
+        description: billing communication preference. *can be excluded only if commPref is included*
+        schema:
+          type: string
+          enum:
+          - Paper
+          - Text
+          - Email
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/createProvider:
+    post:
+      tags:
+      - /write/
+      summary: creates a new service provider
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - name: name
+        in: query
+        description: service provider name
+        required: true
+        schema:
+          type: string
+      - name: dbaName
+        in: query
+        description: service provider business name. *this will be the name that appears on checks, otherwise, Vantaca will use the regular provider name*
+        schema:
+          type: string
+      - name: streetNo
+        in: query
+        description: service provider street number
+        schema:
+          type: integer
+      - name: address1
+        in: query
+        description: service provider first address line
+        schema:
+          type: string
+      - name: address2
+        in: query
+        description: service provider second address line
+        schema:
+          type: string
+      - name: city
+        in: query
+        description: service provider city
+        schema:
+          type: string
+      - name: state
+        in: query
+        description: service provider state
+        schema:
+          type: string
+      - name: zip
+        in: query
+        description: service provider zip
+        schema:
+          type: string
+      - name: phone
+        in: query
+        description: service provider phone number (10 digit)
+        schema:
+          type: string
+      - name: fax
+        in: query
+        description: service provider fax number
+        schema:
+          type: string
+      - name: contactName
+        in: query
+        description: primary service provider contact name
+        schema:
+          type: string
+      - name: email
+        in: query
+        description: service provider email address
+        schema:
+          type: string
+      - name: taxID
+        in: query
+        description: federal tax identification number </br> **field is only required if *is1099* = true**
+        schema:
+          type: integer
+      - name: preferredProvider
+        in: query
+        description: if **true**, preferred provider for the association, else **false**. *Preferred providers will appear in searches first*
+        schema:
+          type: boolean
+      - name: report1099box
+        in: query
+        description: service provider 1099 box option. *provide numeric box value. for example, 'NEC - Box 1 - Non- Employee Compensation', enter "1"*
+        schema:
+          type: integer
+      - name: onHold
+        in: query
+        description: if **true**, provider is on hold, else, **false**
+        schema:
+          type: boolean
+      - name: onHoldReason
+        in: query
+        description: reason the provider is on hold
+        schema:
+          type: string
+      - name: compliant
+        in: query
+        description: if **true**, provider is compliant, else **false**
+        schema:
+          type: boolean
+      - name: complianceStatus
+        in: query
+        description: provider's compliance status
+        schema:
+          type: string
+      - name: complianceGroup
+        in: query
+        description: service provider's compliance grouping
+        schema:
+          type: string
+      - name: complianceExempt
+        in: query
+        description: if **true** provider is exempt from standard insurance compliance standards, else **false**
+        schema:
+          type: boolean
+      - name: providerTypeID
+        in: query
+        description: unique identifier for the service provider type. *only allows types available on **Service Providers > Service Types in Vantaca***
+        schema:
+          type: integer
+      - name: is1099
+        in: query
+        description: if **true** service provider will be sent a 1099 at year end, else **false**
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createProvider'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/providerUpdate:
+    post:
+      tags:
+      - /write/
+      summary: Updates an existing provider
+      description: '***Note**: String parameters that are sent with an empty field/no data will update the existing field to an empty value*'
+      operationId: updateProvider
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - name: providerID
+        in: query
+        description: unique identifier for the service provider
+        schema:
+          type: integer
+        required: true
+      - name: onHold
+        in: query
+        description: if **true**, provider is on hold, else, **false**
+        schema:
+          type: boolean
+      - name: onHoldReason
+        in: query
+        description: reason the provider is on hold
+        schema:
+          type: string
+      - name: compliant
+        in: query
+        description: if **true**, provider is compliant, else **false**
+        schema:
+          type: boolean
+      - name: complianceStatus
+        in: query
+        description: provider's compliance status
+        schema:
+          type: string
+      - name: complianceGroup
+        in: query
+        description: service provider's compliance grouping
+        schema:
+          type: string
+      - name: name
+        in: query
+        description: service provider name
+        schema:
+          type: string
+      - name: dbaName
+        in: query
+        description: service provider business name. *this will be the name that appears on checks, otherwise, Vantaca will use the regular provider name*
+        schema:
+          type: string
+      - name: streetNo
+        in: query
+        description: service provider street number
+        schema:
+          type: integer
+      - name: address1
+        in: query
+        description: service provider first address line
+        schema:
+          type: string
+      - name: address2
+        in: query
+        description: service provider second address line
+        schema:
+          type: string
+      - name: city
+        in: query
+        description: service provider city
+        schema:
+          type: string
+      - name: state
+        in: query
+        description: service provider state
+        schema:
+          type: string
+      - name: zip
+        in: query
+        description: service provider zip
+        schema:
+          type: string
+      - name: phone
+        in: query
+        description: service provider phone number (10 digit)
+        schema:
+          type: string
+      - name: fax
+        in: query
+        description: service provider fax number
+        schema:
+          type: string
+      - name: contactName
+        in: query
+        description: primary service provider contact name
+        schema:
+          type: string
+      - name: email
+        in: query
+        description: service provider email address
+        schema:
+          type: string
+      - name: taxID
+        in: query
+        description: federal tax identification number </br> *field is only required if *is1099* = **true***
+        schema:
+          type: integer
+      - name: preferredProvider
+        in: query
+        description: if **true**, preferred provider for the association, else **false**. *Preferred providers will appear in searches first*
+        schema:
+          type: boolean
+      - name: report1099box
+        in: query
+        description: service provider 1099 box option. *provide numeric box value. for example, 'NEC - Box 1 - Non- Employee Compensation', enter "1"*
+        schema:
+          type: integer
+      - name: complianceExempt
+        in: query
+        description: if **true** provider is exempt from standard insurance compliance standards, else **false**
+        schema:
+          type: boolean
+      - name: providerTypeID
+        in: query
+        description: unique identifier for the service provider type. *only allows types available on **Service Providers > Service Types in Vantaca*** </br> </br> ***note:*** *An invalid providerTypeID may be validated if the value matches existing provider data.*
+        schema:
+          type: integer
+      - name: is1099
+        in: query
+        description: if **true** service provider will be sent a 1099 at year end, else **false** </br> *requires taxID information if is1099 = **true***
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/providerInsuranceCreate:
+    post:
+      tags:
+      - /write/
+      summary: creates a provider insurance
+      operationId: createProviderInsurance
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: providerID
+        description: unique identifier for the service provider
+        schema:
+          type: integer
+        required: true
+      - in: query
+        name: insuranceType
+        description: 'the type of insurance policy. possible values: General Liability, Auto Liability, Auto Liability, Worker''s Comp, Umbrella Liability, Professional Liability/Errors & Omissions, Misc/Other.'
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: accountNo
+        description: account number for the insurance policy
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: expirationDate
+        description: insurance policy expiration date
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: isRequired
+        description: if **true**, insurance is required for provider, else **false**
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/providerInsuranceUpdate:
+    post:
+      tags:
+      - /write/
+      summary: updates an existing provider's insurance
+      operationId: updateProviderInsurance
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: providerInsuranceID
+        description: unique identifier for the service provider insurance
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: insuranceType
+        description: 'the type of insurance policy. possible values: General Liability, Auto Liability, Auto Liability, Worker''s Comp, Umbrella Liability, Professional Liability/Errors & Omissions, Misc/Other.'
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: accountNo
+        description: account number for the insurance policy
+        schema:
+          type: string
+      - in: query
+        name: expirationDate
+        description: insurance policy expiration date
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: isRequired
+        description: if **true**, insurance is required for provider, else **false**
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/providerInsuranceDestroy:
+    post:
+      tags:
+      - /write/
+      summary: deletes an existing provider's insurance
+      operationId: destroyProviderInsurance
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: providerInsuranceID
+        description: unique identifier for the service provider insurance
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/createLedger:
+    post:
+      tags:
+      - /write/
+      summary: create, update, or write off a ledger entry
+      operationId: createLedger
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: account
+        description: unique identifier for the owner account
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: type
+        description: type of transaction
+        schema:
+          type: string
+          enum:
+          - Charge
+          - Adjustment
+          - Writeoff
+        required: true
+      - in: query
+        name: assocChgID
+        description: the association Charge ID associated with this owners account
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: ledgerDate
+        description: transaction's ledger date
+        schema:
+          type: string
+          format: date-time
+        required: true
+      - in: query
+        name: amount
+        description: transaction amount. *must be greater than 0*
+        schema:
+          type: integer
+          format: decimal
+        required: true
+      - in: query
+        name: descr
+        description: description of the transaction
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/ledgerDelete:
+    post:
+      tags:
+      - /write/
+      summary: delete an owner's ledger entry
+      operationId: deleteLedger
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: ownerLedgerID
+        description: owner ledger ID of the entry to be deleted
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/nameUpdate:
+    post:
+      tags:
+      - /write/
+      summary: update an existing homeowner name
+      operationId: updateHomeowner
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: hoID
+        description: unique identifier for a homeowner
+        schema:
+          type: integer
+        required: true
+      - in: query
+        name: firstName
+        description: first name of primary owner. *if blank or excluded, name will be updated to blank value*
+        schema:
+          type: string
+      - in: query
+        name: lastName
+        description: last name of primary owner. *if blank or excluded, name will be updated to blank value*
+        schema:
+          type: string
+      - in: query
+        name: spouseFirstName
+        description: first name of second owner. *if blank or excluded, name will be updated to blank value*
+        schema:
+          type: string
+      - in: query
+        name: spouseLastName
+        description: last name of second owner. *if blank or excluded, name will be updated to blank value*
+        schema:
+          type: string
+      - in: query
+        name: businessName
+        description: business name. *if blank or excluded, name will be updated to blank value*
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/createARC:
+    post:
+      tags:
+      - /write/
+      summary: creates an ARC action item
+      operationId: createARC
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: assocCode
+        description: unique identifer for an association
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: accountNo
+        description: unique identifier for a single homeowner account
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: description
+        description: action item description
+        schema:
+          type: string
+      - in: query
+        name: subject
+        description: action item subject
+        schema:
+          type: string
+      - in: query
+        name: followupDate
+        description: action item followup date, can be null
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: dueDate
+        description: action item due date, can be null
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: arcType
+        description: ARC type
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/createWorkOrder:
+    post:
+      tags:
+      - /write/
+      summary: creates a work order action item
+      operationId: createWorkOrder
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: assocCode
+        description: unique identifer for an association
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: accountNo
+        description: unique identifier for a single homeowner account
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: trackingID
+        description: unique identifier for tracking purposes
+        schema:
+          type: string
+      - in: query
+        name: description
+        description: action item description
+        schema:
+          type: string
+      - in: query
+        name: subject
+        description: action item subject
+        schema:
+          type: string
+      - in: query
+        name: followupDate
+        description: action item followup date, can be null
+        schema:
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /Write/stepActionItem:
+    post:
+      tags:
+      - /write/
+      summary: updates and/or steps an action item
+      operationId: stepActionItem
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - in: query
+        name: ID
+        description: action item number
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: nextActionStepID
+        description: action step ID the action item is being stepped to
+        schema:
+          type: integer
+        required: true
+      - in: query
+        name: typeID
+        description: approve or deny the action item, *if needed*. </br> null = updates/steps action item without approving or denying </br> 1 = approve </br> 2 = deny
+        schema:
+          type: string
+      - name: cureDate
+        in: query
+        description: date the violation action item must be resolved by
+        schema:
+          type: string
+          format: date
+      - name: hearingDate
+        in: query
+        description: hearing date of violation action item
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: note
+        description: creates a new note on the action item
+        schema:
+          type: string
+      requestBody:
+        description: file attachment details </br> *3MB file size limit*
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  description: file in base64 format
+                  example: bGlnaHQgd29yay4=
+                fileName:
+                  type: string
+                  description: file name
+                  example: topsecretstuff.png
+                isPrimary:
+                  type: boolean
+                  description: if **true**, image will be used in the generated letter, else **false** and most recent attachment image will be used.
+                  example: true
+      responses:
+        '200':
+          description: OK Success
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '400':
+          description: bad request - required parameters are missing or invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/createViolation:
+    post:
+      tags:
+      - /write/
+      summary: creates a new violation action item
+      operationId: violationCreate
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - name: assocCode
+        in: query
+        required: true
+        description: unique identifier for an association
+        schema:
+          type: string
+      - name: accountNo
+        in: query
+        required: true
+        description: unique identifier for a single homeowner account
+        schema:
+          type: string
+      - name: propertyID
+        in: query
+        required: true
+        description: unique identifier for a single property
+        schema:
+          type: string
+      - name: ccrItemID
+        in: query
+        required: true
+        description: unique identifier for the ccr item
+        schema:
+          type: integer
+      - name: stepID
+        in: query
+        description: unique identifier for an action item step
+        schema:
+          type: integer
+      - name: description
+        in: query
+        description: description of the violation
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: violation subject
+        schema:
+          type: string
+      - name: followupDate
+        in: query
+        description: violation action item follow-up date
+        schema:
+          type: string
+          format: date-time
+      - name: dueDate
+        in: query
+        description: violation action item due date
+        schema:
+          type: string
+          format: date-time
+      - name: cureDate
+        in: query
+        description: date the violation action item must be resolved by
+        schema:
+          type: string
+          format: date
+      - name: hearingDate
+        in: query
+        description: hearing date of violation action item
+        schema:
+          type: string
+          format: date-time
+      requestBody:
+        description: file attachment details </br> *3MB file size limit*
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  description: file in base64 format
+                  example: bGlnaHQgd29yay4=
+                fileName:
+                  type: string
+                  description: file name
+                  example: topsecretstuff.png
+                isPrimary:
+                  type: boolean
+                  description: if **true**, image will be used in the generated letter, else **false** and most recent attachment image will be used.
+                  example: true
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createViolation'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/createStandardActionItem:
+    parameters: []
+    post:
+      tags:
+      - /write/
+      summary: creates a new violation action item
+      operationId: createStandardActionItem
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      - name: assocCode
+        in: query
+        required: true
+        description: required if it's required by action type setup (Action Type Requirement = Require Association and/or Owner); if invalid assocCode - error; no XNs for deleted or not live assocs
+        schema:
+          type: string
+      - name: accountNo
+        in: query
+        required: true
+        schema:
+          type: string
+        description: required if it's required by action type setup (Action Type Requirement = Require Account; Action Type Requirement = Require Owner; Action Type Requirement = Require Association and/or Owner). if invalid accountNo - error. no XNs for deleted homeowners but creates XNs for the previous
+      - schema:
+          type: integer
+        in: query
+        name: actionTypeID
+        description: accepts only STANDARD action type category (can be found by read/actionCategoryList and then read/actionTypeList)
+        required: true
+      - name: stepID
+        in: query
+        description: unique identifier for an action item step. optional (can be found by read/actionTypeSteps); if invalid step id for the action type - error
+        schema:
+          type: integer
+      - schema:
+          type: integer
+        in: query
+        name: propertyID
+        description: propertyID that the action item is for (optional)
+      - name: description
+        in: query
+        description: description of the action item (optional)
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: action item subject (optional)
+        schema:
+          type: string
+      - name: followupDate
+        in: query
+        description: action item follow-up date (optional)
+        schema:
+          type: string
+          format: date-time
+      - name: dueDate
+        in: query
+        description: action item due date (optional)
+        schema:
+          type: string
+          format: date-time
+      requestBody:
+        description: file attachment details </br> *3MB file size limit*
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  description: file in base64 format
+                  example: bGlnaHQgd29yay4=
+                fileName:
+                  type: string
+                  description: file name
+                  example: topsecretstuff.png
+                isPrimary:
+                  type: boolean
+                  description: if **true**, image will be used in the generated letter, else **false** and most recent attachment image will be used.
+                  example: true
+            examples:
+              Example 1: {}
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createViolation'
+        '204':
+          description: no content - call was successful, but no data for given parameters
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+  /write/CreateActionItemNote:
+    post:
+      tags:
+      - /write/
+      summary: creates a note on an existing action item
+      operationId: createActionItemNote
+      parameters:
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/loginParam
+      - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/pwdParam
+      requestBody:
+        description: action item note details. *3MB file size limit per attachment*
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                XN:
+                  type: integer
+                  description: unique identifier for the action item to be updated
+                  example: 231252
+                note:
+                  type: string
+                  description: note text to be added to the action item. *required if no attachments are provided*
+                  example: Homeowner called to confirm receipt of letter.
+                assocCode:
+                  type: string
+                  description: unique identifier for an association
+                  example: '100'
+                accountNo:
+                  type: string
+                  description: unique identifier for a single homeowner account
+                  example: '100253647'
+                attachments:
+                  type: array
+                  description: list of file attachments. *required if no note is provided*
+                  items:
+                    type: object
+                    properties:
+                      fileName:
+                        type: string
+                        description: name of the file with extension. *required if attachments array is provided*
+                        example: inspection_photo.png
+                      file:
+                        type: string
+                        description: base64 encoded file. *required if attachments array is provided*
+                        example: bGlnaHQgd29yay4=
+              required:
+              - XN
+      responses:
+        '200':
+          description: OK Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responseSuccess'
+        '400':
+          description: bad request - required parameters are missing, request body is malformed, or assocCode is invalid
+        '403':
+          description: forbidden - authentication failed
+        '404':
+          description: not found
+        '500':
+          description: internal error - internal processing error, please contact support if issue persists
+components:
+  schemas:
+    createProvider:
+      type: object
+      properties:
+        providerID:
+          type: integer
+          description: unique identifier for service provider
+          example: 1337
+    responseSuccess:
+      type: object
+      properties:
+        status:
+          type: string
+          description: unique identifier for payment
+          example: success
+    createViolation:
+      type: object
+      properties:
+        actionItemID:
+          type: integer
+          description: action item number (XN Number)
+          example: 231252
+x-internal: false
