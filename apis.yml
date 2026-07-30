@@ -12,7 +12,19 @@ description: Vantaca is a cloud-based community association and HOA management s
   customer grants a vendor scoped credentials (company, login, pwd) to their own
   dataset over Basic authentication, with the vendor's IP address(es) whitelisted.
   Vendors request credentials via vendorsupport@vantaca.com.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: approval
+  trial: false
+  try_now: false
+  public: false
+  label: Requires approval
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/vantaca.png
 tags:
 - HOA
 - Community Association Management
@@ -26,134 +38,51 @@ created: '2026-07-04'
 modified: '2026-07-04'
 specificationVersion: '0.19'
 apis:
-- aid: vantaca:vantaca-associations-api
-  name: Vantaca Associations API
-  tags:
-  - Associations
-  - HOA
-  - Community Association Management
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+- aid: vantaca:vantaca-ap-api
+  name: Vantaca /AP/ API
+  description: >-
+    These methods are specific to AP or Invoice related functions and can only be accessed by designated
+    AP credentials. Note: Entering invalid dates may result in them appearing as null or blank in Vantaca
+    </br> All AP calls will use the same URL path: /AP/{***method***}
   humanURL: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
   baseURL: https://api.vantaca.net
-  properties:
-  - url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
-    type: APIReference
-  - url: openapi/vantaca-openapi.json
-    type: OpenAPI
-  description: Retrieve the associations (communities) a vendor has been granted access
-    to, along with association details, additional info, and address records. Backed
-    by the /read/Association, /read/associationDetails, /read/associationAdditionalInfo,
-    /read/AssociationAddress and /AP/associationList endpoints.
-- aid: vantaca:vantaca-homeowner-accounts-api
-  name: Vantaca Homeowner Accounts API
   tags:
-  - Homeowners
-  - Accounts
-  - Ledger
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  - /AP/
+  properties:
+  - type: OpenAPI
+    url: openapi/vantaca-ap-api-openapi.yml
+  - type: APIReference
+    url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
+- aid: vantaca:vantaca-read-api
+  name: Vantaca /read/ API
+  description: >-
+    These methods read data and can be called in bulk or for single entities for more efficient processing.
+    </br>  All calls will use the same URL path: /read/{***method***}
   humanURL: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
   baseURL: https://api.vantaca.net
-  properties:
-  - url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
-    type: APIReference
-  - url: openapi/vantaca-openapi.json
-    type: OpenAPI
-  description: Look up homeowner accounts and their financial and contact records -
-    account info, homeowner search, transactions, assessments, tenants, and CRUD on
-    a homeowner's address, email, phone, name, and communication/billing preferences.
-    Backed by /read/homeownerAccountInfo, /read/homeownerSearch, /read/homeownerTransactions,
-    /read/homeownerAssessment, /read/getTenantData and the /write/ contact endpoints.
-- aid: vantaca:vantaca-accounts-payable-ledger-api
-  name: Vantaca Accounts Payable & Ledger API
   tags:
-  - Accounts Payable
-  - Ledger
-  - Accounting
-  - Payments
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  - /read/
+  properties:
+  - type: OpenAPI
+    url: openapi/vantaca-read-api-openapi.yml
+  - type: APIReference
+    url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
+- aid: vantaca:vantaca-write-api
+  name: Vantaca /write/ API
+  description: >-
+    These methods write data. Unless otherwise specified, all object types available are paired with individual
+    /read/ to allow full CRUD (Create, Read, Update, and Destory) operations against any item. Note: Entering
+    invalid dates may result in them appearing as null or blank in Vantaca </br> All calls will use the
+    same URL path: /write/{***method***}
   humanURL: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
   baseURL: https://api.vantaca.net
-  properties:
-  - url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
-    type: APIReference
-  - url: openapi/vantaca-openapi.json
-    type: OpenAPI
-  description: Manage association accounting - create, read, update, pay, void, and
-    delete invoices; list payments; retrieve GL codes, funds, bank accounts and
-    balances, GL transaction history; and create, update, write off, or delete
-    homeowner ledger entries. Backed by the /AP/ invoice, payment, bank, fund and GL
-    endpoints plus /write/createLedger and /write/ledgerDelete.
-- aid: vantaca:vantaca-work-orders-api
-  name: Vantaca Work Orders API
   tags:
-  - Work Orders
-  - Maintenance
-  - Workflow Automation
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
-  baseURL: https://api.vantaca.net
+  - /write/
   properties:
-  - url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
-    type: APIReference
-  - url: openapi/vantaca-openapi.json
-    type: OpenAPI
-  description: List and create work-order action items against an association. Backed
-    by /read/workOrderList and /write/createWorkOrder, part of Vantaca's action-item
-    workflow engine.
-- aid: vantaca:vantaca-violations-compliance-api
-  name: Vantaca Violations & Compliance API
-  tags:
-  - Violations
-  - Compliance
-  - CCR
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
-  baseURL: https://api.vantaca.net
-  properties:
-  - url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
-    type: APIReference
-  - url: openapi/vantaca-openapi.json
-    type: OpenAPI
-  description: Retrieve violations and the CC&R rule items and violation types they
-    reference, and create new violation action items. Backed by /read/violationList,
-    /read/violationTypeList, /read/ccrItemList, /write/createViolation and
-    /write/createStandardActionItem.
-- aid: vantaca:vantaca-architectural-requests-api
-  name: Vantaca Architectural Requests (ARC) API
-  tags:
-  - Architectural Requests
-  - ARC
-  - Compliance
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
-  baseURL: https://api.vantaca.net
-  properties:
-  - url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
-    type: APIReference
-  - url: openapi/vantaca-openapi.json
-    type: OpenAPI
-  description: List and create Architectural Review Committee (ARC) request action
-    items for homeowner modification requests. Backed by /read/ARCList and
-    /write/createARC.
-- aid: vantaca:vantaca-vendors-providers-api
-  name: Vantaca Vendors & Service Providers API
-  tags:
-  - Vendors
-  - Service Providers
-  - Insurance
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
-  baseURL: https://api.vantaca.net
-  properties:
-  - url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
-    type: APIReference
-  - url: openapi/vantaca-openapi.json
-    type: OpenAPI
-  description: Manage service providers (vendors) and their insurance records - list
-    providers and provider types, read a single provider, create and update
-    providers, and CRUD provider insurance. Backed by /read/provider,
-    /read/providerSingle, /read/providerTypeList, /AP/providerList and the
-    /write/provider* endpoints.
+  - type: OpenAPI
+    url: openapi/vantaca-write-api-openapi.yml
+  - type: APIReference
+    url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
 common:
 - type: AgenticAccess
   url: agentic-access/vantaca-agentic-access.yml
