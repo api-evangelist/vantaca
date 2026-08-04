@@ -1,0 +1,18 @@
+{
+  "provider": "vantaca",
+  "sources": [
+    "vantaca-ap-api-openapi.yml",
+    "vantaca-read-api-openapi.yml",
+    "vantaca-write-api-openapi.yml"
+  ],
+  "outputs": [
+    "vantaca-ap-api-openapi.yml",
+    "vantaca-read-api-openapi.yml",
+    "vantaca-write-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
