@@ -1,0 +1,1268 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vantaca's Standard APIs /AP/ /AP/ /write/ API",
+    "version": "3.8.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "/write/",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "creates a homeowner email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/emailCreate",
+            "params": [
+              {
+                "name": "hoID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "homeowner email. *multiple emails can be stored in a single record separated by \",\" or \";\". Multiple emails are used when more than one primary email is requested*"
+              },
+              {
+                "name": "isPrimary",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, email is used as primary communication preference for homeowner, else **false**"
+              },
+              {
+                "name": "label",
+                "value": "",
+                "type": "query",
+                "description": "label for the email address"
+              }
+            ]
+          },
+          "docs": "creates a homeowner email"
+        },
+        {
+          "info": {
+            "name": "updates an existing homeowner email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/emailUpdate",
+            "params": [
+              {
+                "name": "emailID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an email address"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "homeowner email. *multiple emails can be stored in a single record separated by \",\" or \";\". Multiple emails are used when more than one primary email is requested*"
+              },
+              {
+                "name": "isPrimary",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, email is used as primary communication preference for homeowner, else **false**"
+              },
+              {
+                "name": "label",
+                "value": "",
+                "type": "query",
+                "description": "label for the email address"
+              }
+            ]
+          },
+          "docs": "updates an existing homeowner email"
+        },
+        {
+          "info": {
+            "name": "deletes an existing homeowner email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/emailDestroy",
+            "params": [
+              {
+                "name": "emailID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an email address"
+              }
+            ]
+          },
+          "docs": "deletes an existing homeowner email"
+        },
+        {
+          "info": {
+            "name": "creates a homeowner phone number",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/phoneCreate",
+            "params": [
+              {
+                "name": "hoID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner"
+              },
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "ten-digit numeric phone number"
+              },
+              {
+                "name": "isPrimary",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, phone is used as primary communication preference for homeowner, else **false**"
+              },
+              {
+                "name": "label",
+                "value": "",
+                "type": "query",
+                "description": "label for the phone number"
+              }
+            ]
+          },
+          "docs": "creates a homeowner phone number"
+        },
+        {
+          "info": {
+            "name": "updates an existing homeowner phone number",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/phoneUpdate",
+            "params": [
+              {
+                "name": "phoneID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a phone number"
+              },
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "ten-digit numeric phone number"
+              },
+              {
+                "name": "isPrimary",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, phone is used as primary communication preference for homeowner, else **false**"
+              },
+              {
+                "name": "label",
+                "value": "",
+                "type": "query",
+                "description": "label for the phone number"
+              }
+            ]
+          },
+          "docs": "updates an existing homeowner phone number"
+        },
+        {
+          "info": {
+            "name": "deletes an existing homeowner phone number",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/phoneDestroy",
+            "params": [
+              {
+                "name": "phoneID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a phone number"
+              }
+            ]
+          },
+          "docs": "deletes an existing homeowner phone number"
+        },
+        {
+          "info": {
+            "name": "creates a homeowner address",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/addressCreate",
+            "params": [
+              {
+                "name": "hoID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner"
+              },
+              {
+                "name": "label",
+                "value": "",
+                "type": "query",
+                "description": "optional label for the address"
+              },
+              {
+                "name": "address1",
+                "value": "",
+                "type": "query",
+                "description": "mailing street number and street name"
+              },
+              {
+                "name": "address2",
+                "value": "",
+                "type": "query",
+                "description": "mailing unit"
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query",
+                "description": "mailing city"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "mailing state (2 character abbreviation)"
+              },
+              {
+                "name": "zip",
+                "value": "",
+                "type": "query",
+                "description": "mailing zip"
+              },
+              {
+                "name": "isPrimary",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, mailing address will be used as primary communication preference for homeowner, else **false**"
+              },
+              {
+                "name": "isInternational",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, address is international, else **false** and address is domestic"
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query",
+                "description": "country"
+              },
+              {
+                "name": "isMailing",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, address will be used as mailing address, else **false**"
+              }
+            ]
+          },
+          "docs": "creates a homeowner address"
+        },
+        {
+          "info": {
+            "name": "updates an existing homeowner address",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/addressUpdate",
+            "params": [
+              {
+                "name": "addrID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner address"
+              },
+              {
+                "name": "label",
+                "value": "",
+                "type": "query",
+                "description": "optional label for the address"
+              },
+              {
+                "name": "address1",
+                "value": "",
+                "type": "query",
+                "description": "mailing street number and street name"
+              },
+              {
+                "name": "address2",
+                "value": "",
+                "type": "query",
+                "description": "mailing unit"
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query",
+                "description": "mailing city"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "mailing state (2 character abbreviation)"
+              },
+              {
+                "name": "zip",
+                "value": "",
+                "type": "query",
+                "description": "mailing zip"
+              },
+              {
+                "name": "isPrimary",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, mailing address will be used as primary communication preference for homeowner, else **false**"
+              },
+              {
+                "name": "isInternational",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, address is international, else **false** and address is domestic"
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query",
+                "description": "country"
+              },
+              {
+                "name": "isMailing",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, address will be used as mailing address, else **false**"
+              }
+            ]
+          },
+          "docs": "***Note**: Primary Mailing Address cannot be updated to not be primary without first providing a new Primary Mailing Address. Updating will automatically update the orginal record to non-primary.*"
+        },
+        {
+          "info": {
+            "name": "deletes an existing homeowner phone number",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/addressDestroy",
+            "params": [
+              {
+                "name": "addrID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner address"
+              }
+            ]
+          },
+          "docs": "deletes an existing homeowner phone number"
+        },
+        {
+          "info": {
+            "name": "updates a homeowner communication preference and billing communication preference",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/commPrefUpdate",
+            "params": [
+              {
+                "name": "hoID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner"
+              },
+              {
+                "name": "commPref",
+                "value": "",
+                "type": "query",
+                "description": "communication preference. *can be excluded only if billingPref is included*"
+              },
+              {
+                "name": "billingPref",
+                "value": "",
+                "type": "query",
+                "description": "billing communication preference. *can be excluded only if commPref is included*"
+              }
+            ]
+          },
+          "docs": "updates a homeowner communication preference and billing communication preference"
+        },
+        {
+          "info": {
+            "name": "creates a new service provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/createProvider",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "service provider name"
+              },
+              {
+                "name": "dbaName",
+                "value": "",
+                "type": "query",
+                "description": "service provider business name. *this will be the name that appears on checks, otherwise, Vantaca will use the regular provider name*"
+              },
+              {
+                "name": "streetNo",
+                "value": "",
+                "type": "query",
+                "description": "service provider street number"
+              },
+              {
+                "name": "address1",
+                "value": "",
+                "type": "query",
+                "description": "service provider first address line"
+              },
+              {
+                "name": "address2",
+                "value": "",
+                "type": "query",
+                "description": "service provider second address line"
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query",
+                "description": "service provider city"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "service provider state"
+              },
+              {
+                "name": "zip",
+                "value": "",
+                "type": "query",
+                "description": "service provider zip"
+              },
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "service provider phone number (10 digit)"
+              },
+              {
+                "name": "fax",
+                "value": "",
+                "type": "query",
+                "description": "service provider fax number"
+              },
+              {
+                "name": "contactName",
+                "value": "",
+                "type": "query",
+                "description": "primary service provider contact name"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "service provider email address"
+              },
+              {
+                "name": "taxID",
+                "value": "",
+                "type": "query",
+                "description": "federal tax identification number </br> **field is only required if *is1099* = true**"
+              },
+              {
+                "name": "preferredProvider",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, preferred provider for the association, else **false**. *Preferred providers will appear in searches first*"
+              },
+              {
+                "name": "report1099box",
+                "value": "",
+                "type": "query",
+                "description": "service provider 1099 box option. *provide numeric box value. for example, 'NEC - Box 1 - Non- Employee Compensation', enter \"1\"*"
+              },
+              {
+                "name": "onHold",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, provider is on hold, else, **false**"
+              },
+              {
+                "name": "onHoldReason",
+                "value": "",
+                "type": "query",
+                "description": "reason the provider is on hold"
+              },
+              {
+                "name": "compliant",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, provider is compliant, else **false**"
+              },
+              {
+                "name": "complianceStatus",
+                "value": "",
+                "type": "query",
+                "description": "provider's compliance status"
+              },
+              {
+                "name": "complianceGroup",
+                "value": "",
+                "type": "query",
+                "description": "service provider's compliance grouping"
+              },
+              {
+                "name": "complianceExempt",
+                "value": "",
+                "type": "query",
+                "description": "if **true** provider is exempt from standard insurance compliance standards, else **false**"
+              },
+              {
+                "name": "providerTypeID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the service provider type. *only allows types available on **Service Providers > Service Types in Vantaca***"
+              },
+              {
+                "name": "is1099",
+                "value": "",
+                "type": "query",
+                "description": "if **true** service provider will be sent a 1099 at year end, else **false**"
+              }
+            ]
+          },
+          "docs": "creates a new service provider"
+        },
+        {
+          "info": {
+            "name": "Updates an existing provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/providerUpdate",
+            "params": [
+              {
+                "name": "providerID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the service provider"
+              },
+              {
+                "name": "onHold",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, provider is on hold, else, **false**"
+              },
+              {
+                "name": "onHoldReason",
+                "value": "",
+                "type": "query",
+                "description": "reason the provider is on hold"
+              },
+              {
+                "name": "compliant",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, provider is compliant, else **false**"
+              },
+              {
+                "name": "complianceStatus",
+                "value": "",
+                "type": "query",
+                "description": "provider's compliance status"
+              },
+              {
+                "name": "complianceGroup",
+                "value": "",
+                "type": "query",
+                "description": "service provider's compliance grouping"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "service provider name"
+              },
+              {
+                "name": "dbaName",
+                "value": "",
+                "type": "query",
+                "description": "service provider business name. *this will be the name that appears on checks, otherwise, Vantaca will use the regular provider name*"
+              },
+              {
+                "name": "streetNo",
+                "value": "",
+                "type": "query",
+                "description": "service provider street number"
+              },
+              {
+                "name": "address1",
+                "value": "",
+                "type": "query",
+                "description": "service provider first address line"
+              },
+              {
+                "name": "address2",
+                "value": "",
+                "type": "query",
+                "description": "service provider second address line"
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query",
+                "description": "service provider city"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "service provider state"
+              },
+              {
+                "name": "zip",
+                "value": "",
+                "type": "query",
+                "description": "service provider zip"
+              },
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "service provider phone number (10 digit)"
+              },
+              {
+                "name": "fax",
+                "value": "",
+                "type": "query",
+                "description": "service provider fax number"
+              },
+              {
+                "name": "contactName",
+                "value": "",
+                "type": "query",
+                "description": "primary service provider contact name"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "service provider email address"
+              },
+              {
+                "name": "taxID",
+                "value": "",
+                "type": "query",
+                "description": "federal tax identification number </br> *field is only required if *is1099* = **true***"
+              },
+              {
+                "name": "preferredProvider",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, preferred provider for the association, else **false**. *Preferred providers will appear in searches first*"
+              },
+              {
+                "name": "report1099box",
+                "value": "",
+                "type": "query",
+                "description": "service provider 1099 box option. *provide numeric box value. for example, 'NEC - Box 1 - Non- Employee Compensation', enter \"1\"*"
+              },
+              {
+                "name": "complianceExempt",
+                "value": "",
+                "type": "query",
+                "description": "if **true** provider is exempt from standard insurance compliance standards, else **false**"
+              },
+              {
+                "name": "providerTypeID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the service provider type. *only allows types available on **Service Providers > Service Types in Vantaca*** </br> </br> ***note:*** *An invalid providerTypeID may be validated if the value matches existing provider data.*"
+              },
+              {
+                "name": "is1099",
+                "value": "",
+                "type": "query",
+                "description": "if **true** service provider will be sent a 1099 at year end, else **false** </br> *requires taxID information if is1099 = **true***"
+              }
+            ]
+          },
+          "docs": "***Note**: String parameters that are sent with an empty field/no data will update the existing field to an empty value*"
+        },
+        {
+          "info": {
+            "name": "creates a provider insurance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/providerInsuranceCreate",
+            "params": [
+              {
+                "name": "providerID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the service provider"
+              },
+              {
+                "name": "insuranceType",
+                "value": "",
+                "type": "query",
+                "description": "the type of insurance policy. possible values: General Liability, Auto Liability, Auto Liability, Worker's Comp, Umbrella Liability, Professional Liability/Errors & Omissions, Misc/Other."
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "account number for the insurance policy"
+              },
+              {
+                "name": "expirationDate",
+                "value": "",
+                "type": "query",
+                "description": "insurance policy expiration date"
+              },
+              {
+                "name": "isRequired",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, insurance is required for provider, else **false**"
+              }
+            ]
+          },
+          "docs": "creates a provider insurance"
+        },
+        {
+          "info": {
+            "name": "updates an existing provider's insurance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/providerInsuranceUpdate",
+            "params": [
+              {
+                "name": "providerInsuranceID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the service provider insurance"
+              },
+              {
+                "name": "insuranceType",
+                "value": "",
+                "type": "query",
+                "description": "the type of insurance policy. possible values: General Liability, Auto Liability, Auto Liability, Worker's Comp, Umbrella Liability, Professional Liability/Errors & Omissions, Misc/Other."
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "account number for the insurance policy"
+              },
+              {
+                "name": "expirationDate",
+                "value": "",
+                "type": "query",
+                "description": "insurance policy expiration date"
+              },
+              {
+                "name": "isRequired",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, insurance is required for provider, else **false**"
+              }
+            ]
+          },
+          "docs": "updates an existing provider's insurance"
+        },
+        {
+          "info": {
+            "name": "deletes an existing provider's insurance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/providerInsuranceDestroy",
+            "params": [
+              {
+                "name": "providerInsuranceID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the service provider insurance"
+              }
+            ]
+          },
+          "docs": "deletes an existing provider's insurance"
+        },
+        {
+          "info": {
+            "name": "create, update, or write off a ledger entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/createLedger",
+            "params": [
+              {
+                "name": "account",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the owner account"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "type of transaction"
+              },
+              {
+                "name": "assocChgID",
+                "value": "",
+                "type": "query",
+                "description": "the association Charge ID associated with this owners account"
+              },
+              {
+                "name": "ledgerDate",
+                "value": "",
+                "type": "query",
+                "description": "transaction's ledger date"
+              },
+              {
+                "name": "amount",
+                "value": "",
+                "type": "query",
+                "description": "transaction amount. *must be greater than 0*"
+              },
+              {
+                "name": "descr",
+                "value": "",
+                "type": "query",
+                "description": "description of the transaction"
+              }
+            ]
+          },
+          "docs": "create, update, or write off a ledger entry"
+        },
+        {
+          "info": {
+            "name": "delete an owner's ledger entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/ledgerDelete",
+            "params": [
+              {
+                "name": "ownerLedgerID",
+                "value": "",
+                "type": "query",
+                "description": "owner ledger ID of the entry to be deleted"
+              }
+            ]
+          },
+          "docs": "delete an owner's ledger entry"
+        },
+        {
+          "info": {
+            "name": "update an existing homeowner name",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/nameUpdate",
+            "params": [
+              {
+                "name": "hoID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner"
+              },
+              {
+                "name": "firstName",
+                "value": "",
+                "type": "query",
+                "description": "first name of primary owner. *if blank or excluded, name will be updated to blank value*"
+              },
+              {
+                "name": "lastName",
+                "value": "",
+                "type": "query",
+                "description": "last name of primary owner. *if blank or excluded, name will be updated to blank value*"
+              },
+              {
+                "name": "spouseFirstName",
+                "value": "",
+                "type": "query",
+                "description": "first name of second owner. *if blank or excluded, name will be updated to blank value*"
+              },
+              {
+                "name": "spouseLastName",
+                "value": "",
+                "type": "query",
+                "description": "last name of second owner. *if blank or excluded, name will be updated to blank value*"
+              },
+              {
+                "name": "businessName",
+                "value": "",
+                "type": "query",
+                "description": "business name. *if blank or excluded, name will be updated to blank value*"
+              }
+            ]
+          },
+          "docs": "update an existing homeowner name"
+        },
+        {
+          "info": {
+            "name": "creates an ARC action item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/createARC",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a single homeowner account"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "action item description"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "action item subject"
+              },
+              {
+                "name": "followupDate",
+                "value": "",
+                "type": "query",
+                "description": "action item followup date, can be null"
+              },
+              {
+                "name": "dueDate",
+                "value": "",
+                "type": "query",
+                "description": "action item due date, can be null"
+              },
+              {
+                "name": "arcType",
+                "value": "",
+                "type": "query",
+                "description": "ARC type"
+              }
+            ]
+          },
+          "docs": "creates an ARC action item"
+        },
+        {
+          "info": {
+            "name": "creates a work order action item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/createWorkOrder",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a single homeowner account"
+              },
+              {
+                "name": "trackingID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for tracking purposes"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "action item description"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "action item subject"
+              },
+              {
+                "name": "followupDate",
+                "value": "",
+                "type": "query",
+                "description": "action item followup date, can be null"
+              }
+            ]
+          },
+          "docs": "creates a work order action item"
+        },
+        {
+          "info": {
+            "name": "updates and/or steps an action item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/Write/stepActionItem",
+            "params": [
+              {
+                "name": "ID",
+                "value": "",
+                "type": "query",
+                "description": "action item number"
+              },
+              {
+                "name": "nextActionStepID",
+                "value": "",
+                "type": "query",
+                "description": "action step ID the action item is being stepped to"
+              },
+              {
+                "name": "typeID",
+                "value": "",
+                "type": "query",
+                "description": "approve or deny the action item, *if needed*. </br> null = updates/steps action item without approving or denying </br> 1 = approve </br> 2 = deny"
+              },
+              {
+                "name": "cureDate",
+                "value": "",
+                "type": "query",
+                "description": "date the violation action item must be resolved by"
+              },
+              {
+                "name": "hearingDate",
+                "value": "",
+                "type": "query",
+                "description": "hearing date of violation action item"
+              },
+              {
+                "name": "note",
+                "value": "",
+                "type": "query",
+                "description": "creates a new note on the action item"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "updates and/or steps an action item"
+        },
+        {
+          "info": {
+            "name": "creates a new violation action item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/createViolation",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an association"
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a single homeowner account"
+              },
+              {
+                "name": "propertyID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a single property"
+              },
+              {
+                "name": "ccrItemID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the ccr item"
+              },
+              {
+                "name": "stepID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an action item step"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "description of the violation"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "violation subject"
+              },
+              {
+                "name": "followupDate",
+                "value": "",
+                "type": "query",
+                "description": "violation action item follow-up date"
+              },
+              {
+                "name": "dueDate",
+                "value": "",
+                "type": "query",
+                "description": "violation action item due date"
+              },
+              {
+                "name": "cureDate",
+                "value": "",
+                "type": "query",
+                "description": "date the violation action item must be resolved by"
+              },
+              {
+                "name": "hearingDate",
+                "value": "",
+                "type": "query",
+                "description": "hearing date of violation action item"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "creates a new violation action item"
+        },
+        {
+          "info": {
+            "name": "creates a new violation action item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/createStandardActionItem",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "required if it's required by action type setup (Action Type Requirement = Require Association and/or Owner); if invalid assocCode - error; no XNs for deleted or not live assocs"
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "required if it's required by action type setup (Action Type Requirement = Require Account; Action Type Requirement = Require Owner; Action Type Requirement = Require Association and/or Owner). if invalid accountNo - error. no XNs for deleted homeowners but creates XNs for the previous"
+              },
+              {
+                "name": "actionTypeID",
+                "value": "",
+                "type": "query",
+                "description": "accepts only STANDARD action type category (can be found by read/actionCategoryList and then read/actionTypeList)"
+              },
+              {
+                "name": "stepID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an action item step. optional (can be found by read/actionTypeSteps); if invalid step id for the action type - error"
+              },
+              {
+                "name": "propertyID",
+                "value": "",
+                "type": "query",
+                "description": "propertyID that the action item is for (optional)"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "description of the action item (optional)"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "action item subject (optional)"
+              },
+              {
+                "name": "followupDate",
+                "value": "",
+                "type": "query",
+                "description": "action item follow-up date (optional)"
+              },
+              {
+                "name": "dueDate",
+                "value": "",
+                "type": "query",
+                "description": "action item due date (optional)"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "creates a new violation action item"
+        },
+        {
+          "info": {
+            "name": "creates a note on an existing action item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/write/CreateActionItemNote",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "creates a note on an existing action item"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

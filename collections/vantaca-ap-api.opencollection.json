@@ -1,0 +1,700 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vantaca's Standard APIs /AP/ /AP/ /AP/ API",
+    "version": "3.8.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "/AP/",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "retrieves a list of live associations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/associationList"
+          },
+          "docs": "retrieves a list of live associations"
+        },
+        {
+          "info": {
+            "name": "retrieves a list of all service providers for the company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/providerList",
+            "params": [
+              {
+                "name": "providerID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for provider"
+              },
+              {
+                "name": "includeInsurance",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, resopnse will include providerInsurance array, else **false**, and providerInsurance field will display as null"
+              }
+            ]
+          },
+          "docs": "retrieves a list of all service providers for the company"
+        },
+        {
+          "info": {
+            "name": "retrieves a list of all GL Codes for the company or association",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/glList",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              }
+            ]
+          },
+          "docs": "retrieves a list of all GL Codes for the company or association"
+        },
+        {
+          "info": {
+            "name": "retrieves a list of all funds for the company or association",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/fundList",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              }
+            ]
+          },
+          "docs": "retrieves a list of all funds for the company or association"
+        },
+        {
+          "info": {
+            "name": "retrieves a list of all bank accounts for the company or association",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/bankAccountList",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "allAccountTypes",
+                "value": "",
+                "type": "query",
+                "description": "if **true** response will include CD and Eskrow bank account types, else **false** or null and response will exclude CD and Eskrow accounts by default </br> *both accounts are excluded by default unless allAccountTypes is passed as true*"
+              }
+            ]
+          },
+          "docs": "retrieves a list of all bank accounts for the company or association"
+        },
+        {
+          "info": {
+            "name": "retrieves a balance list for one or more bank accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/bankAccountBalance",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "bankAccountID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the bank account"
+              },
+              {
+                "name": "allAccountTypes",
+                "value": "",
+                "type": "query",
+                "description": "if **true** response will include CD and Eskrow bank account types, else **false** or null and response will exclude CD and Eskrow accounts by default </br> *both accounts are excluded by default unless allAccountTypes is passed as true*"
+              }
+            ]
+          },
+          "docs": "retrieves a balance list for one or more bank accounts"
+        },
+        {
+          "info": {
+            "name": "creates a new invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/createInvoice",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "providerID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the service provider"
+              },
+              {
+                "name": "invoiceID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the invoice created by /AP/createInvoice"
+              },
+              {
+                "name": "isExpensed",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, invoice has been approved and should be expensed in GL"
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "account number from invoice"
+              },
+              {
+                "name": "invoiceNo",
+                "value": "",
+                "type": "query",
+                "description": "invoice number"
+              },
+              {
+                "name": "invoiceDate",
+                "value": "",
+                "type": "query",
+                "description": "invoice date"
+              },
+              {
+                "name": "dueDate",
+                "value": "",
+                "type": "query",
+                "description": "date the invoice is due"
+              },
+              {
+                "name": "total",
+                "value": "",
+                "type": "query",
+                "description": "invoice total amount"
+              },
+              {
+                "name": "file",
+                "value": "",
+                "type": "query",
+                "description": "base 64 encoded string of invoice image"
+              },
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query",
+                "description": "name of file attachment"
+              },
+              {
+                "name": "referenceNumber",
+                "value": "",
+                "type": "query",
+                "description": "invoice reference number"
+              },
+              {
+                "name": "payType",
+                "value": "",
+                "type": "query",
+                "description": "pay type for the invoice"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "creates a new invoice"
+        },
+        {
+          "info": {
+            "name": "marks one or more existing invoices in Vantaca as paid",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/payInvoices",
+            "params": [
+              {
+                "name": "checkNo",
+                "value": "",
+                "type": "query",
+                "description": "check number"
+              },
+              {
+                "name": "payType",
+                "value": "",
+                "type": "query",
+                "description": "invoice payment type"
+              },
+              {
+                "name": "payDate",
+                "value": "",
+                "type": "query",
+                "description": "date the invoice was paid"
+              },
+              {
+                "name": "bankAccountID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the bank account"
+              },
+              {
+                "name": "reference number",
+                "value": "",
+                "type": "query",
+                "description": "invoice reference number"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "InvoiceID must be expensed to pay"
+        },
+        {
+          "info": {
+            "name": "updates an existing invoice.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/updateInvoice",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "providerID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the service provider"
+              },
+              {
+                "name": "invoiceID",
+                "value": "",
+                "type": "query",
+                "description": "invoice action item number"
+              },
+              {
+                "name": "isExpensed",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, invoice has been approved and should be expensed in GL"
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "account number from invoice"
+              },
+              {
+                "name": "invoiceNo",
+                "value": "",
+                "type": "query",
+                "description": "invoice number"
+              },
+              {
+                "name": "invoiceDate",
+                "value": "",
+                "type": "query",
+                "description": "invoice date"
+              },
+              {
+                "name": "dueDate",
+                "value": "",
+                "type": "query",
+                "description": "date the invoice is due"
+              },
+              {
+                "name": "total",
+                "value": "",
+                "type": "query",
+                "description": "invoice total amount"
+              },
+              {
+                "name": "file",
+                "value": "",
+                "type": "query",
+                "description": "name of file attachment"
+              },
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query",
+                "description": "base 64 encoded string of invoice image"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "All fields must be passed in update, excluding file and fileName, which can be used optionally to upload a new file attachment. All other fields will be used to update the invoice data for every call. Any fields not sent will updated to their default empty values."
+        },
+        {
+          "info": {
+            "name": "voids the payment and optionally the whole invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/voidInvoices",
+            "params": [
+              {
+                "name": "voidDate",
+                "value": "",
+                "type": "query",
+                "description": "The date the invoice should be voided as"
+              },
+              {
+                "name": "comment",
+                "value": "",
+                "type": "query",
+                "description": "Description of why the payment/invoice is being voided"
+              },
+              {
+                "name": "paymentOnly",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, only payment will be voided, else **false**, entire invoice will be voided"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "voids the payment and optionally the whole invoice"
+        },
+        {
+          "info": {
+            "name": "approves or declines the invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/approveInvoice",
+            "params": [
+              {
+                "name": "invoiceID",
+                "value": "",
+                "type": "query",
+                "description": "invoice action item number"
+              },
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query",
+                "description": "user ID of the user approving"
+              },
+              {
+                "name": "note",
+                "value": "",
+                "type": "query",
+                "description": "any comments related to the invoice being approved/declined"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "1 = approved, 2 = declined"
+              },
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unqiue identifier for the association"
+              }
+            ]
+          },
+          "docs": "approves or declines the invoice"
+        },
+        {
+          "info": {
+            "name": "deletes the invoice and all associated payments",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/deleteInvoice",
+            "params": [
+              {
+                "name": "invoiceID",
+                "value": "",
+                "type": "query",
+                "description": "invoice action item number"
+              }
+            ]
+          },
+          "docs": "deletes the invoice and all associated payments"
+        },
+        {
+          "info": {
+            "name": "returns a list of invoices that the current user can approve/decline based on board permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/listBoardInvoices",
+            "params": [
+              {
+                "name": "ownerAccount",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the owner account for the list of returned invoices"
+              },
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              }
+            ]
+          },
+          "docs": "Only invoices waiting to be approved by the user will be returned. User needs to have the required board approval rights."
+        },
+        {
+          "info": {
+            "name": "returns a single invoice that the user can approve/decline based on board permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/getBoardInvoice",
+            "params": [
+              {
+                "name": "ownerAccount",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the owner account for the list of returned invoices"
+              },
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "invoiceID",
+                "value": "",
+                "type": "query",
+                "description": "invoice action item number"
+              }
+            ]
+          },
+          "docs": "Only invoices waiting to be approved by the user will be returned. User needs to have the required board approval rights."
+        },
+        {
+          "info": {
+            "name": "returns a list of invoices created by createInvoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/listInvoices"
+          },
+          "docs": "returns a list of invoices created by createInvoice"
+        },
+        {
+          "info": {
+            "name": "returns a single invoice created by createInvoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/getInvoice",
+            "params": [
+              {
+                "name": "invoiceID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the invoice"
+              }
+            ]
+          },
+          "docs": "returns a single invoice created by createInvoice"
+        },
+        {
+          "info": {
+            "name": "updates the file attachment for an existing invoice.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/updateInvoiceAttachment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "***Note:*** *Will replace existing attachments on the invoice*."
+        },
+        {
+          "info": {
+            "name": "returns a list of payments made from /AP/payInvoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/listPayments"
+          },
+          "docs": "returns a list of payments made from /AP/payInvoices"
+        },
+        {
+          "info": {
+            "name": "returns information from a single payment made from /AP/payInvoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/getPayment",
+            "params": [
+              {
+                "name": "paymentID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the payment returned by payInvoice"
+              }
+            ]
+          },
+          "docs": "returns information from a single payment made from /AP/payInvoices"
+        },
+        {
+          "info": {
+            "name": "retrieves a balance list for one or more bank accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/annualBankAccountBalance",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "bankAccountID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for the bank account"
+              },
+              {
+                "name": "allAccountTypes",
+                "value": "",
+                "type": "query",
+                "description": "if **true** response will include CD and Eskrow bank account types, else **false** or null and response will exclude CD and Eskrow accounts by default </br> *both accounts are excluded by default unless allAccountTypes is passed as true*"
+              }
+            ]
+          },
+          "docs": "retrieves a balance list for one or more bank accounts"
+        },
+        {
+          "info": {
+            "name": "returns a list of an association's invoices for a specific period",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/listAssocInvoices",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "invoiceDateStart",
+                "value": "",
+                "type": "query",
+                "description": "if no start date is specified, field will default to 30 days ago. if start date is provided without an end date, response will return data for the date range between the specified start date and the today's date.</br> ***format must be MM-DD-YYY***"
+              },
+              {
+                "name": "invoiceDateEnd",
+                "value": "",
+                "type": "query",
+                "description": "if no end date is specified, field will default to today's date. if end date is provided without a start date, response will return data from 30 days prior to the specifie end date.</br> ***format must be MM-DD-YYY***"
+              }
+            ]
+          },
+          "docs": "returns a list of an association's invoices for a specific period"
+        },
+        {
+          "info": {
+            "name": "retrieves an association's accounts receivable/income aggregate data by GL Code for a specified period",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/AP/glTransactionHistory",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "beginning date range. *if no startDate is specified, parameter will default to first day of the previous month.*"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "ending date range. *if no endDate is specified, parameter will default to last day of the previous month."
+              },
+              {
+                "name": "glType",
+                "value": "",
+                "type": "query",
+                "description": "general ledger account type. </br> *field will default to **Income***"
+              }
+            ]
+          },
+          "docs": "retrieves an association's accounts receivable/income aggregate data by GL Code for a specified period"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

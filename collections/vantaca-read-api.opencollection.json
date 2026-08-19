@@ -1,0 +1,833 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vantaca's Standard APIs /AP/ /AP/ /read/ API",
+    "version": "3.8.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "/read/",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "retrieves a list of all ARC Request action items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/ARCList",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association. *Will filter results to a single association.*"
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a single homeowner account"
+              },
+              {
+                "name": "xnNumber",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an  arc request"
+              },
+              {
+                "name": "includeMessage",
+                "value": "",
+                "type": "query",
+                "description": "if true, messages will be included in response, else, false"
+              }
+            ]
+          },
+          "docs": "retrieves a list of all ARC Request action items"
+        },
+        {
+          "info": {
+            "name": "retrieves a list of live associations with related data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/Association",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association. *Will filter results to a single association.*"
+              },
+              {
+                "name": "account",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier to return an individual homeowner account"
+              },
+              {
+                "name": "propertyID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier to return all accounts for a single property record"
+              },
+              {
+                "name": "hoid",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier to return all accounts for a single homeowner record"
+              },
+              {
+                "name": "includeCharges",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, response will include Charges array, else, **false**, and charges field will display null"
+              },
+              {
+                "name": "includeLateFees",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, response will include Late Fees array, else, **false**, and late fees field will display as null"
+              },
+              {
+                "name": "includeOwners",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, response will include Owner array, else, **false**, and owners field will display as null"
+              },
+              {
+                "name": "includeDocuments",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, response will include Document array, else, **false**, and documents field will display as null."
+              },
+              {
+                "name": "includeOwnerTransactions",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, Owner array will populate the Transactions array, else, **false** and includeOwnerTransactions field will display as null"
+              },
+              {
+                "name": "includeOwnerChargeTransactions",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, Owner array will populate the chargeTransactions array, else, **false** and chargeTransactions field will display as null"
+              },
+              {
+                "name": "includeNextAssessment",
+                "value": "",
+                "type": "query",
+                "description": "if **true** Owner array will populate the nextAssessment array, else, **false** and nextAssessment array will display as null"
+              },
+              {
+                "name": "includeOwnerBKList",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, Owner array will populate the bkList array, else, **false** and bkList field will display as null"
+              },
+              {
+                "name": "includeBalanceByChargeType",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, Owner array will populate the balanceByChargeType, else, **false** and balanceByChargeType will display as null."
+              },
+              {
+                "name": "includePropertyCount",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, response will include propertyCount field, else, **false** and propertyCount field will display as null"
+              },
+              {
+                "name": "includeStartingMonthOfFiscalYear",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, response will include startingMonthOfFiscalYear field, else, **false** and startingMonthOfFiscalYear field will display as null."
+              },
+              {
+                "name": "includeAssessmentFrequency",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, response will include assessmentFrequencies array, else, **false** and assessmentFrequencies array will display as null"
+              }
+            ]
+          },
+          "docs": "retrieves a list of live associations with related data"
+        },
+        {
+          "info": {
+            "name": "retrieves a list of all association address and their types. If a given address type is not found, it will default to the management companies address.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/AssociationAddress",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association. *Will filter results to a single association.* *If not provided, will return all address for all associations.*"
+              }
+            ]
+          },
+          "docs": "retrieves a list of all association address and their types. If a given address type is not found, it will default to the management companies address."
+        },
+        {
+          "info": {
+            "name": "retrieves a list of all messages and attachments of a single violation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/AttachmentList",
+            "params": [
+              {
+                "name": "xnNumber",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an  action item"
+              },
+              {
+                "name": "messageID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a single message"
+              },
+              {
+                "name": "attachmentID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a single attachment"
+              },
+              {
+                "name": "includeFile",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, attachment will be included in response, else **false**, field will be null."
+              }
+            ]
+          },
+          "docs": "retrieves a list of all messages and attachments of a single violation"
+        },
+        {
+          "info": {
+            "name": "retrieves a homeowner email.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/getEmail",
+            "params": [
+              {
+                "name": "emailID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an email address"
+              }
+            ]
+          },
+          "docs": "This read is intended for use with update calls to quickly confirm single field values before and/or after updates. *The 'zip' parameter is not available on this call.*"
+        },
+        {
+          "info": {
+            "name": "retrieves a homeowner phone number.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/getPhone",
+            "params": [
+              {
+                "name": "phoneID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a phone number"
+              }
+            ]
+          },
+          "docs": "This read is intended for use with update calls to quickly confirm single field values before and/or after updates. *The 'zip' parameter is not available on this call.*"
+        },
+        {
+          "info": {
+            "name": "retrieves details about an action item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/getActionItem",
+            "params": [
+              {
+                "name": "actionItemID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an action item"
+              }
+            ]
+          },
+          "docs": "This read is intended for use with update calls to quickly confirm single field values before and/or after updates. *The 'zip' parameter is not available on this call.*"
+        },
+        {
+          "info": {
+            "name": "retrieves a homeowner address.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/getAddress",
+            "params": [
+              {
+                "name": "addrID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner address"
+              }
+            ]
+          },
+          "docs": "This read is intended for use with update calls to quickly confirm single field values before and/or after updates. *The 'zip' parameter is not available on this call.*"
+        },
+        {
+          "info": {
+            "name": "retrieves a homeowner communication and billing preference.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/getCommPreference",
+            "params": [
+              {
+                "name": "hoID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner"
+              }
+            ]
+          },
+          "docs": "This read is intended for use with update calls to quickly confirm single field values before and/or after updates. *The 'zip' parameter is not available on this call.*"
+        },
+        {
+          "info": {
+            "name": "retrieves a list of all service providers for the association",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/provider",
+            "params": [
+              {
+                "name": "providerID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a service provider"
+              },
+              {
+                "name": "includeInsurance",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, resopnse will include providerInsurance array, else **false**, and providerInsurance field will display as null"
+              }
+            ]
+          },
+          "docs": "This read is intended for use with update calls to quickly confirm single field values before and/or after updates."
+        },
+        {
+          "info": {
+            "name": "retrieves a single service providers for the association",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/providerSingle",
+            "params": [
+              {
+                "name": "providerID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner"
+              },
+              {
+                "name": "includeInsurance",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner"
+              }
+            ]
+          },
+          "docs": "This read is intended for use with update calls to quickly confirm single field values before and/or after updates."
+        },
+        {
+          "info": {
+            "name": "returns a list of valid provider types for an association",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/providerTypeList"
+          },
+          "docs": "returns a list of valid provider types for an association"
+        },
+        {
+          "info": {
+            "name": "retrieves a list of all tenants for a given association",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/getTenantData",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique string identifier to be used to call for a specific association"
+              },
+              {
+                "name": "propertyID",
+                "value": "",
+                "type": "query",
+                "description": "unique propertyID to be used to call for a single address"
+              }
+            ]
+          },
+          "docs": "This read is intended for use to return tenant information on a given property"
+        },
+        {
+          "info": {
+            "name": "retrieves a single document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/getDocument",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "imgID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a document"
+              }
+            ]
+          },
+          "docs": "This read is intended for use with update calls to quickly confirm single field values before and/or after updates."
+        },
+        {
+          "info": {
+            "name": "retrieves a list of all violations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/violationList",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a single homeowner account"
+              },
+              {
+                "name": "xnNumber",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a violation"
+              },
+              {
+                "name": "includeMessages",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, response will include message array, else **false**, messages field will display as null."
+              }
+            ]
+          },
+          "docs": "retrieves a list of all violations"
+        },
+        {
+          "info": {
+            "name": "retrieves a list of an association's CCR items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/violationTypeList",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              }
+            ]
+          },
+          "docs": "retrieves a list of an association's CCR items"
+        },
+        {
+          "info": {
+            "name": "retrieves a list of all work order action items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/workOrderList",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association"
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a single homeowner account"
+              },
+              {
+                "name": "xnNumber",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a  violation"
+              },
+              {
+                "name": "includeMessages",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, response will include message array, else **false**, messages field will display as null."
+              },
+              {
+                "name": "providerID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a service provider"
+              },
+              {
+                "name": "providerContact",
+                "value": "",
+                "type": "query",
+                "description": "provider contact name. ***Note***: will only return data for the **Primary** provider contact. if this value is not the primary contact, repsonse will return no content."
+              },
+              {
+                "name": "actionItemStatus",
+                "value": "",
+                "type": "query",
+                "description": "filters by work order action item status. if '-1', response will include closed action items. if '1', response will include open action items"
+              }
+            ]
+          },
+          "docs": "retrieves a list of all work order action items"
+        },
+        {
+          "info": {
+            "name": "retrieves a list of all collection action items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/CollectionList",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an association. *Will filter results to a single association.*"
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a single homeowner account"
+              },
+              {
+                "name": "xnNumber",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a collection action item"
+              },
+              {
+                "name": "includeMessages",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, response will include message array, else **false**, messages field will display as null."
+              },
+              {
+                "name": "includeAttachments",
+                "value": "",
+                "type": "query",
+                "description": "if **true**, response will include attachments array, else **false**, attachments field will display as null."
+              }
+            ]
+          },
+          "docs": "retrieves a list of all collection action items"
+        },
+        {
+          "info": {
+            "name": "retrieves the details for the specified Action Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/actionTypeSteps",
+            "params": [
+              {
+                "name": "actionTypeID",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an Action Type"
+              }
+            ]
+          },
+          "docs": "fields in the response body will vary based on the Action Item's Category"
+        },
+        {
+          "info": {
+            "name": "returns homeowner specific information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/homeownerTransactions",
+            "params": [
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner account"
+              },
+              {
+                "name": "fromDate",
+                "value": "",
+                "type": "query",
+                "description": "returns transactions from date entered through today's date. If null, response will default to transactions where transactionDate is less than or equal to 30 days ago.</br></br> *date cannot exceed one year prior to today's date*"
+              }
+            ]
+          },
+          "docs": "returns homeowner specific information"
+        },
+        {
+          "info": {
+            "name": "returns association specific information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/associationDetails",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an association"
+              }
+            ]
+          },
+          "docs": "returns association specific information"
+        },
+        {
+          "info": {
+            "name": "returns association additional information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/associationAdditionalInfo",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an association"
+              }
+            ]
+          },
+          "docs": "returns association additional information"
+        },
+        {
+          "info": {
+            "name": "returns homeowner specific information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/homeownerAccountInfo",
+            "params": [
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner account.</br> **field is only required if no assocCode is provided.**"
+              },
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an association. </br> **field is only required if no accountNo is provided.**"
+              },
+              {
+                "name": "includeAssessments",
+                "value": "",
+                "type": "query",
+                "description": "if **true** response will include assessments, else **false** and assessments will be excluded"
+              }
+            ]
+          },
+          "docs": "returns homeowner specific information"
+        },
+        {
+          "info": {
+            "name": "retrieves a list of all assessments for a given Assocition or specific account. Either an Association Code or AccountNo is required. Can be filtered to only Primary assessments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/homeownerAssessment",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for an association. *Will filter results to a single association.* *If not provided, must include accountNo*"
+              },
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "unique identifer for a specific accountNo. If not included, must include assocCode"
+              },
+              {
+                "name": "primaryAssessments",
+                "value": "",
+                "type": "query",
+                "description": "boolean filter to only include primary assessments"
+              }
+            ]
+          },
+          "docs": "retrieves a list of all assessments for a given Assocition or specific account. Either an Association Code or AccountNo is required. Can be filtered to only Primary assessments"
+        },
+        {
+          "info": {
+            "name": "returns specific homeowner information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/homeownerSearch",
+            "params": [
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a homeowner account.</br> **field is only required if *phone* or *email* are not provided.**"
+              },
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "homeowner's phone number. </br> **field is only required if *accountNo* or *email* are not provided.**"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "homeowner's email address. </br> **field is only required if *accountNo* or *phone* are not provided.**"
+              }
+            ]
+          },
+          "docs": "returns specific homeowner information"
+        },
+        {
+          "info": {
+            "name": "returns CCR Items and details for the given association",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/ccrItemList",
+            "params": [
+              {
+                "name": "assocCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an association"
+              }
+            ]
+          },
+          "docs": "returns CCR Items and details for the given association"
+        },
+        {
+          "info": {
+            "name": "returns individual transactions that contribute to the GL Balance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/glHistoryDetail",
+            "params": [
+              {
+                "name": "accountNo",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for an association"
+              },
+              {
+                "name": "glCode",
+                "value": "",
+                "type": "query",
+                "description": "unique identifier for a gl account"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "beginning date range. *if no startDate is specified, parameter will default to first day of the endDate month.*"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "ending date range. *if no endDate is specified, parameter will default to last day of the startDate month.* **If both startDate and endDate are excluded, default date range will be the previous month.**"
+              }
+            ]
+          },
+          "docs": "returns individual transactions that contribute to the GL Balance"
+        },
+        {
+          "info": {
+            "name": "returns information for all active action categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/actionCategoryList"
+          },
+          "docs": "returns information for all active action categories"
+        },
+        {
+          "info": {
+            "name": "returns all available steps for active action items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0/read/actionTypeList"
+          },
+          "docs": "returns all available steps for active action items"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
