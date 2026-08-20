@@ -30,6 +30,15 @@ tags:
 - Community Association Management
 - CAM
 - Property Management
+- Real-Estate
+- Accounting
+- Workflow-Automation
+- Vendor Management
+tags_raw:
+- HOA
+- Community Association Management
+- CAM
+- Property Management
 - Real Estate
 - Accounting
 - Workflow Automation
@@ -47,6 +56,8 @@ apis:
   humanURL: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
   baseURL: https://api.vantaca.net
   tags:
+  - AP
+  tags_raw:
   - /AP/
   properties:
   - type: OpenAPI
@@ -60,7 +71,8 @@ apis:
     </br>  All calls will use the same URL path: /read/{***method***}
   humanURL: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
   baseURL: https://api.vantaca.net
-  tags:
+  tags: []
+  tags_raw:
   - /read/
   properties:
   - type: OpenAPI
@@ -76,7 +88,8 @@ apis:
     same URL path: /write/{***method***}
   humanURL: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
   baseURL: https://api.vantaca.net
-  tags:
+  tags: []
+  tags_raw:
   - /write/
   properties:
   - type: OpenAPI
