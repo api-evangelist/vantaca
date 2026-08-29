@@ -1,0 +1,27 @@
+slug: vantaca
+provider: Vantaca
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Real Estate
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: /AP/
+  spec_file: vantaca-ap-api-openapi.yml
+  capability_id: BC-200.20
+  capability_id_l1: BC-200
+  capability_name: Accounts Payable Management
+  confidence: 0.85
+  evidence: POST /AP/createInvoice 'creates a new invoice'; POST /AP/payInvoices 'marks one or more existing
+    invoices in Vantaca as paid'; POST /AP/approveInvoice; GET /AP/providerList 'retrieves a list of all
+    service providers'
+  reason: Operations are invoice creation, approval, payment, voiding, plus GL codes, funds and bank accounts
+    against service providers — textbook accounts payable processing (here for HOA associations). Alternative
+    reading is property-level accounting, hence not maximal confidence.

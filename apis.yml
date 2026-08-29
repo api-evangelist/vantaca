@@ -109,6 +109,9 @@ apis:
   - type: APIReference
     url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
 common:
+- type: CapabilityMap
+  url: capabilities/vantaca-capability-edges.yml
+  name: Vantaca Business Capability Map
 - type: AgenticAccess
   url: agentic-access/vantaca-agentic-access.yml
 - type: TrustCenter
