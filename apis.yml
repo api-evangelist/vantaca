@@ -12,6 +12,18 @@ description: Vantaca is a cloud-based community association and HOA management s
   customer grants a vendor scoped credentials (company, login, pwd) to their own
   dataset over Basic authentication, with the vendor's IP address(es) whitelisted.
   Vendors request credentials via vendorsupport@vantaca.com.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: approval
