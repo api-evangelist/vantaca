@@ -67,7 +67,8 @@ apis:
     </br> All AP calls will use the same URL path: /AP/{***method***}
   humanURL: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
   baseURL: https://api.vantaca.net
-  tags: []
+  tags:
+  - AP
   tags_raw:
   - /AP/
   properties:
