@@ -1,21 +1,23 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  description: "The Vantaca API is a JSON based web service. Access to the API is granted by individual Vantaca customers who will grant vendors individual access to their dataset. Credentials can and will vary from one customer to another.  </br></br>Credentials will need to have an accompanying IP Address whitelisted in order to successfully access Vantaca's Standard APIs. All connections must be made using SSL. </br>  </br> **Production URL - api.vantaca.net** </br></br> \nMost /read/ methods can use the parameter **zip** as a boolean. If **true**, the JSON response will be compressed and returned as a zip file. Unless otherwise specified in each endpoint, the zip archive will contain a single file called, **data.json**. *This can reduce the bandwidth needed to process company-wide information*. The parameter is always optional but is recommended when making calls for bulk data. If **false**, the response body will be a JSON object. </br></br> Vantaca's API passes each set of credentials via Basic Authorization with the following required parameters for ***all*** endpoints: </br> - **company**  </br> - **login**  </br> - **pwd**</br></br></br>\n## Changelog:\n  **Version 3.8.0 (5/28/2026)**: \n  </br> - Added new endpoint for write/createActionItemNote. This new endpoint allows for adding of new notes, as well as adding attachments, without the need to step the actionItem.\n  Added new endpoint for read/collectionList\n  </br>\n  </br>To access the most up-to-date version,  [Click Here](https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/)**\n  </br>\n  </br>\n\n## **Vantaca API TERMS OF USE**\n</br>\n\nLast Updated: May 2, 2025 \n\n**1. ACCEPTANCE OF TERMS**\nBy accessing or using the API services provided by Vantaca (\"Provider,\" \"we,\" \"us,\" or \"our\"), you (\"User,\" \"you,\" or \"your\") agree to be bound by these Terms of Use (\"Terms\"). If you are using the API on behalf of an entity, you represent that you have authority to bind that entity to these Terms, and \"you\" refers to that entity. \n\n**2. DEFINITIONS**\n- \"API\": The application programming interface made available by Provider, including swagger based documentation. \n- \"API Key\": The unique authentication credential issued to you that permits access to the API. \n- \"Application\": Any software, website, or service you develop that interfaces with the API. \n- \"Content\": Any data or information accessed or retrieved through the API. \n\n**3. LICENSE GRANT AND RESTRICTIONS**\n\n3.1 License \n\nSubject to these Terms, Provider grants you a limited, non-exclusive, non-transferable, revocable license to access and use the API to develop, test, and support your Application and to integrate your Application with the features and functionality of the API. \n\n3.2 Restrictions \n\nYou shall not: \n\n- Sell, rent, lease, sublicense, redistribute, or syndicate access to the API or API Key\n- Modify, create derivative works, decompile, reverse engineer, or disassemble the API\n- Use the API for any illegal purpose or in violation of any local, state, national, or international law\n- Use the API to develop an Application that replicates or provides similar functionality or features as Vantaca\n- Interfere with or disrupt the integrity or performance of the API or its related systems\n- Attempt to gain unauthorized access to the API or related systems\n- Use the API in a manner that exceeds reasonable request volume or constitutes excessive or abusive usage \n- Remove or alter any proprietary notices or marks on the API or its documentation \n\n**4. API USAGE AND RATE LIMITS**\n\n4.1 Rate Limits\n\nProvider may set and enforce limits on your use of the API in our sole discretion. These limits may include, but are not limited to, the number of API requests that may be made, the number of users you may serve, or other limitations. \n\n4.2 API Keys \n\nYou are responsible for maintaining the security of your API Key and any passwords or credentials. You may not share your API Key with any third party, except for authorized agents acting on your behalf. \n\n4.3 Monitoring and Analytics \n\nProvider may monitor and collect data relating to your usage of the API to ensure compliance with these Terms and for the purposes of improving and enhancing the API. \n\n**5. USER OBLIGATIONS** \n\n5.1 Compliance \n\nYou agree to: \n\n- Comply with all applicable laws and regulations \n- Comply with all provisions of these Terms and any associated documentation \n- Respect the intellectual property, privacy, and other rights of third parties \n- Promptly update your Application to install the most current version of the API when notified \n\n5.2 User Applications \n\nYour Application must: \n\n- Include your own terms of service and privacy policy \n- Accurately disclose the functions and features provided by the API \n- Not imply any partnership with or endorsement by Provider \n\n**6. DATA RIGHTS AND PRIVACY** \n\n6.1 Data Rights \n\nYou retain all rights to your data submitted through the API. You grant Provider a non-exclusive license to access, use, and process your data solely to provide and maintain the API services. \n\n6.2 Privacy \n\nProvider will process any personal data in accordance with our Privacy Policy, which is incorporated by reference into these Terms. You agree to comply with all applicable privacy laws and to provide a legally adequate privacy notice to your users. \n\n**7. MODIFICATIONS**\n\n7.1 API Modifications \n\nProvider reserves the right to modify, suspend, or discontinue the API or any part thereof at any time, with or without notice. We will use commercially reasonable efforts to notify you of material changes. \n\n7.2 Terms Modifications \n\nProvider may modify these Terms at any time by posting the modified Terms. Your continued use of the API following any modification constitutes your acceptance of the modified Terms. \n\n**8. TERMINATION**\n\n8.1 Termination by User \n\nYou may terminate these Terms by discontinuing use of the API. \n\n8.2 Termination by Provider \n\nProvider may terminate these Terms or suspend your access to the API at any time for any reason, including but not limited to, your breach of these Terms. \n\n8.3 Effect of Termination \n\nUpon termination, all licenses granted under these Terms will terminate, and you must cease all use of the API. \n\n**9. DISCLAIMER OF WARRANTIES** \n\nTHE API IS PROVIDED \"AS IS\" AND \"AS AVAILABLE.\" PROVIDER DISCLAIMS ALL WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. PROVIDER DOES NOT WARRANT THAT THE API WILL BE ERROR-FREE, UNINTERRUPTED, OR FREE FROM VIRUSES OR OTHER HARMFUL COMPONENTS. \n\n**10. LIMITATION OF LIABILITY**\n\nIN NO EVENT SHALL PROVIDER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE API. PROVIDER'S TOTAL LIABILITY ARISING OUT OF OR RELATED TO THESE TERMS SHALL NOT EXCEED THE GREATER OF $100 OR THE AMOUNT PAID BY YOU TO PROVIDER IN THE SIX MONTHS PRECEDING THE EVENT GIVING RISE TO THE LIABILITY. \n\n**11. INDEMNIFICATION** \n\nYou agree to indemnify, defend, and hold harmless Provider and its officers, directors, employees, agents, and affiliates from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses arising from: (a) your use of the API; (b) your violation of these Terms; (c) your violation of any third-party right; or (d) any claim that your Application caused damage to a third party. \n\n**12. GENERAL PROVISIONS** \n\n12.1 Governing Law \n\nThese Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law principles. \n\n12.2 Dispute Resolution \n\nAny dispute arising from these Terms shall be resolved [specify dispute resolution mechanism, e.g., arbitration, specific courts, etc.]. \n\n12.3 Severability \n\nIf any provision of these Terms is found to be unenforceable, the remaining provisions shall remain in full force and effect. \n\n12.4 No Waiver \n\nNo failure or delay by Provider in exercising any right under these Terms shall operate as a waiver of that or any other right. \n\n12.5 Assignment \n\nYou may not assign these Terms or any rights or obligations hereunder without Provider's prior written consent. Provider may assign these Terms without restriction. \n\n12.6 Entire Agreement \n\nThese Terms constitute the entire agreement between you and Provider regarding the API and supersede all prior agreements and understandings, whether written or oral. \n\n**13. CONTACT INFORMATION** \n\nIf you have any questions about these Terms, please contact us at VendorSupport@vantaca.com \n\n "
+  description: The Vantaca API is a JSON based web service.
   version: 3.8.0
-  title: Vantaca's Standard APIs /AP/ /AP/ /read/ API
+  title: Vantaca's Standard /read/ API
   contact:
     email: vendorsupport@vantaca.com
 servers:
 - description: SwaggerHub API Auto Mocking
   url: https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0
 tags:
-- name: /read/
-  description: 'These methods read data and can be called in bulk or for single entities for more efficient processing. </br>  All calls will use the same URL path: /read/{***method***}'
+- name: Read
+  description: 'These methods read data and can be called in bulk or for single entities for more efficient processing.
+
+    All calls will use the same URL path: /read/{***method***}'
 paths:
   /read/ARCList:
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves a list of all ARC Request action items
       operationId: ARCList
       parameters:
@@ -64,7 +66,7 @@ paths:
   /read/Association:
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves a list of live associations with related data
       operationId: associationList
       parameters:
@@ -169,8 +171,8 @@ paths:
   /read/AssociationAddress:
     get:
       tags:
-      - /read/
-      summary: retrieves a list of all association address and their types. If a given address type is not found, it will default to the management companies address.
+      - Read
+      summary: retrieves a list of all association address and their types.
       operationId: AssociationAddress
       parameters:
       - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
@@ -204,7 +206,7 @@ paths:
   /read/AttachmentList:
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves a list of all messages and attachments of a single violation
       operationId: attachmentList
       parameters:
@@ -254,8 +256,8 @@ paths:
   /read/getEmail:
     get:
       tags:
-      - /read/
-      summary: retrieves a homeowner email.
+      - Read
+      summary: retrieves a homeowner email
       description: This read is intended for use with update calls to quickly confirm single field values before and/or after updates. *The 'zip' parameter is not available on this call.*
       operationId: getEmail
       parameters:
@@ -288,8 +290,8 @@ paths:
   /read/getPhone:
     get:
       tags:
-      - /read/
-      summary: retrieves a homeowner phone number.
+      - Read
+      summary: retrieves a homeowner phone number
       description: This read is intended for use with update calls to quickly confirm single field values before and/or after updates. *The 'zip' parameter is not available on this call.*
       operationId: getPhone
       parameters:
@@ -323,7 +325,7 @@ paths:
     parameters: []
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves details about an action item
       description: This read is intended for use with update calls to quickly confirm single field values before and/or after updates. *The 'zip' parameter is not available on this call.*
       operationId: getActionItem
@@ -357,8 +359,8 @@ paths:
   /read/getAddress:
     get:
       tags:
-      - /read/
-      summary: retrieves a homeowner address.
+      - Read
+      summary: retrieves a homeowner address
       description: This read is intended for use with update calls to quickly confirm single field values before and/or after updates. *The 'zip' parameter is not available on this call.*
       operationId: getAddress
       parameters:
@@ -391,8 +393,8 @@ paths:
   /read/getCommPreference:
     get:
       tags:
-      - /read/
-      summary: retrieves a homeowner communication and billing preference.
+      - Read
+      summary: retrieves a homeowner communication and billing preference
       description: This read is intended for use with update calls to quickly confirm single field values before and/or after updates. *The 'zip' parameter is not available on this call.*
       operationId: getCommPreference
       parameters:
@@ -427,7 +429,7 @@ paths:
   /read/provider:
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves a list of all service providers for the association
       description: This read is intended for use with update calls to quickly confirm single field values before and/or after updates.
       operationId: getProvider
@@ -465,7 +467,7 @@ paths:
   /read/providerSingle:
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves a single service providers for the association
       description: This read is intended for use with update calls to quickly confirm single field values before and/or after updates.
       operationId: getProviderSingle
@@ -504,7 +506,7 @@ paths:
   /read/providerTypeList:
     get:
       tags:
-      - /read/
+      - Read
       summary: returns a list of valid provider types for an association
       operationId: returnProviderTypeList
       parameters:
@@ -529,7 +531,7 @@ paths:
   /read/getTenantData:
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves a list of all tenants for a given association
       description: This read is intended for use to return tenant information on a given property
       operationId: getTenant
@@ -565,7 +567,7 @@ paths:
   /read/getDocument:
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves a single document
       description: This read is intended for use with update calls to quickly confirm single field values before and/or after updates.
       operationId: getDocument
@@ -601,7 +603,7 @@ paths:
   /read/violationList:
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves a list of all violations
       operationId: getViolationList
       parameters:
@@ -648,7 +650,7 @@ paths:
   /read/violationTypeList:
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves a list of an association's CCR items
       operationId: getViolationTypeList
       parameters:
@@ -680,7 +682,7 @@ paths:
   /read/workOrderList:
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves a list of all work order action items
       operationId: getWorkOrderList
       parameters:
@@ -742,7 +744,7 @@ paths:
   /read/CollectionList:
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves a list of all collection action items
       operationId: getCollectionList
       parameters:
@@ -797,7 +799,7 @@ paths:
   /read/actionTypeSteps:
     get:
       tags:
-      - /read/
+      - Read
       summary: retrieves the details for the specified Action Type
       description: fields in the response body will vary based on the Action Item's Category
       operationId: actionTypeSteps
@@ -833,7 +835,7 @@ paths:
   /read/homeownerTransactions:
     get:
       tags:
-      - /read/
+      - Read
       summary: returns homeowner specific information
       operationId: getHomeownerTransactions
       parameters:
@@ -872,7 +874,7 @@ paths:
   /read/associationDetails:
     get:
       tags:
-      - /read/
+      - Read
       summary: returns association specific information
       operationId: getAssociationDetails
       parameters:
@@ -905,7 +907,7 @@ paths:
   /read/associationAdditionalInfo:
     get:
       tags:
-      - /read/
+      - Read
       summary: returns association additional information
       operationId: getAssociationAdditionalInfo
       parameters:
@@ -953,7 +955,7 @@ paths:
   /read/homeownerAccountInfo:
     get:
       tags:
-      - /read/
+      - Read
       summary: returns homeowner specific information
       operationId: getHomeownerAccountInfo
       parameters:
@@ -997,8 +999,8 @@ paths:
   /read/homeownerAssessment:
     get:
       tags:
-      - /read/
-      summary: retrieves a list of all assessments for a given Assocition or specific account. Either an Association Code or AccountNo is required. Can be filtered to only Primary assessments
+      - Read
+      summary: retrieves a list of all assessments for a given Assocition or specific account.
       operationId: homeownerAssessment
       parameters:
       - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
@@ -1044,7 +1046,7 @@ paths:
   /read/homeownerSearch:
     get:
       tags:
-      - /read/
+      - Read
       summary: returns specific homeowner information
       operationId: searchHomeowners
       parameters:
@@ -1089,7 +1091,7 @@ paths:
   /read/ccrItemList:
     get:
       tags:
-      - /read/
+      - Read
       summary: returns CCR Items and details for the given association
       operationId: getccrItemList
       parameters:
@@ -1122,7 +1124,7 @@ paths:
   /read/glHistoryDetail:
     get:
       tags:
-      - /read/
+      - Read
       summary: returns individual transactions that contribute to the GL Balance
       operationId: getGLHistoryDetail
       parameters:
@@ -1170,7 +1172,7 @@ paths:
   /read/actionCategoryList:
     get:
       tags:
-      - /read/
+      - Read
       summary: returns information for all active action categories
       operationId: getActionCategoryList
       parameters:
@@ -1197,7 +1199,7 @@ paths:
   /read/actionTypeList:
     get:
       tags:
-      - /read/
+      - Read
       summary: returns all available steps for active action items
       operationId: getActionTypeList
       parameters:
@@ -1223,71 +1225,274 @@ paths:
           description: internal error - internal processing error, please contact support if issue persists
 components:
   schemas:
-    ccrItemList:
+    actionCategoryList:
       type: object
       properties:
-        CCRItemId:
+        ActionCategoryID:
           type: integer
-          description: unique identifier for the CCR item
-          example: 26
-        Group:
-          type: string
-          description: ccr item group
-          example: Rules and Regulations
-        CCRItem:
-          type: string
-          description: CCR item name
-          example: Lot Maintenance
-        LetterDescription:
-          type: string
-          description: letter description
-          example: Please resolve the outlined issue by the specified date.
-        Details:
-          type: array
-          description: array of CCR details for the given CCR Item
-          items:
-            $ref: '#/components/schemas/ccrDetails'
-    remittanceAddress:
-      type: object
-      properties:
-        AddressID:
-          type: integer
-          description: unique identifier for the address record
+          description: unique identifier for the action category
           example: 4
+        Descr:
+          type: string
+          description: action category description
+          example: Collections
+    arcList:
+      type: object
+      properties:
+        arcType:
+          type: string
+          description: ARC type
+          example: Mailbox
+        xnNumber:
+          type: string
+          description: unique identifier for an ARC action item
+          example: '123456'
+        assocCode:
+          type: string
+          description: unqiue identifier for the association
+          example: '100'
+        accountNo:
+          type: string
+          description: unique identifier for a single homeowner account
+          example: '100253647'
+        propertyID:
+          type: string
+          description: unique identifier for a single property
+          example: '10212'
+        hoid:
+          type: integer
+          description: unique identifier for a homeowner - homeowners can have one or more accounts/properties
+          example: '0'
+        closed:
+          type: boolean
+          description: if true, item is currently in step marked 'closed', else false
+          example: true
+        description:
+          type: string
+          description: action item description
+          example: Your mailbox got knocked off its post.
+        subject:
+          type: string
+          description: action item subject
+          example: mailbox inquiry
+        createdDate:
+          type: string
+          format: date-time
+          description: date the action item was created
+          example: '2021-08-05T15:44:14.85'
+        followupDate:
+          type: string
+          format: date-time
+          description: action item followup date, can be null
+        dueDate:
+          type: string
+          format: date-time
+          description: action item due date, can be null
+        step:
+          type: string
+          description: current step of the action item
+          example: Void
+        type:
+          type: string
+          description: action item type
+          example: ARC Request
+        lastModified:
+          type: string
+          format: date-time
+          description: last modified date, can be null
+        message:
+          type: array
+          items:
+            $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/schemas/messages
+          description: action item messages and notes
+    phoneNumbers:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: unique identifier for a phone number
+          example: 32515
         created:
           type: string
           format: date-time
-          description: date-time the address was created
-          example: '2022-11-07T18:13:26.48'
-        lastmodified:
+          description: date the phone number was added to the owner's account
+          example: '2023-04-28T15:13:17.883'
+        lastModified:
           type: string
           format: date-time
-          description: date-time the address was last modified
-          example: '2022-11-07T18:13:26.48'
-        address1:
+          description: date the phone number was last modified. </br> *if phone number was never modified, field will be null*
+          example: null
+        label:
           type: string
-          description: the address field 1
-          example: 1234 Testing Rd
-        address2:
+          description: phone number label
+          example: cell phone
+        isPrimary:
+          type: boolean
+          description: if **true**, number will be used for contacting owner, else **false**
+          example: true
+    ActionItemNote:
+      type: object
+      properties:
+        created:
           type: string
-          description: the address field 2
-          example: 'Unit # 5'
-        city:
+          format: date-time
+          description: time in UTC ActionItem was created
+          example: '2025-04-14T17:58:04.073'
+        note:
           type: string
-          description: the address city
-          example: Wilmington
-        state:
+          description: the message of the note
+          example: 'The following invoice fields were changed: Provider: Post Item, Association:      Condominium Association, Inc., Invoice Date: 2/12/2025, Total: $2,650.00, Pay Type: Misc Check Invoice Detail Added: GL: 203000 - Exchange Account, Fund: Operating, Bank Account: 1026 MAINOPR-7762, Description: Return Deposit Item, Amount: $2,650.00"'
+        actionStepID:
+          type: integer
+          description: uniqueID for the actionStep of the requested actionItem
+          example: 270
+    providerTypeList:
+      type: object
+      properties:
+        providerTypeID:
+          type: integer
+          description: unique identifier for the service provider type
+          example: 22
+        created:
           type: string
-          description: the address state
-          example: NC
-        zip:
+          format: date-time
+          description: date the provider was created
+          example: '2019-05-06T19:40:13.04'
+        lastModified:
           type: string
-          description: the address zip
-          example: '28412'
-        county:
+          format: date-time
+          description: date the provider was last modified
+          example: '2020-02-19T19:35:27.197'
+        providerType:
           type: string
-          description: the address county
-          example: New Hanover
+          description: service provider type description
+          example: Maintenance Repair Services
+        inActive:
+          type: string
+          format: date-time
+          description: date the service provider was deleted. *will be null if currently active*
+          example: '2023-05-25T21:32:56.85'
+    getEmail:
+      type: object
+      properties:
+        emailID:
+          type: string
+          description: unique identifier for an email address
+          example: 56788
+        isPrimary:
+          type: boolean
+          description: if **true**, email is used as primary communication preference for homeowner, else **false**
+          example: true
+        label:
+          type: string
+          description: label for email address
+          example: gorgc work email
+        email:
+          type: string
+          format: email
+          description: homeowner email address
+          example: gorgc@midas.com
+    violationList:
+      type: object
+      properties:
+        ccrItemID:
+          type: integer
+          description: CCR item id number
+          example: 72
+        ccrItemDescription:
+          type: string
+          description: CCR type
+          example: General Violation
+        ccrLetterDescription:
+          type: string
+          description: CCR description
+          example: Cans in the street!
+        InspectionEndDate:
+          type: string
+          format: date-time
+          description: date inspection was concluded *can be null*
+        lastModified:
+          type: string
+          format: date-time
+          description: date-timestamp of last modification
+          example: '2021-12-09T22:07:05.45'
+        CureDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: Cure Date of violation action items
+          example: ''
+        HearingDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: Hearing Date of violation action items
+          example: ''
+        xnNumber:
+          type: string
+          description: unique identifier for a  violation
+          example: 34881
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 123
+        accountNo:
+          type: string
+          description: unique identifier for a single homeowner account
+          example: 12378961
+        propertyID:
+          type: string
+          description: unique identifier for a single property
+          example: 4876
+        hoID:
+          type: integer
+          description: unique identifier for a homeowner
+          example: 14
+        closed:
+          type: boolean
+          description: if false, item is currently in step marked 'closed', else true
+          example: true
+        description:
+          type: string
+          description: action item description
+          example: his cans have been in the road for 39 minutes after the garbage pickup
+        subject:
+          type: string
+          description: action item subject
+          example: bill's cans!
+        createdDate:
+          type: string
+          description: action item creation date
+          format: date-time
+          example: '2020-12-09T22:07:05.45'
+        followupDate:
+          type: string
+          description: action item followup date, if any. *can be null*
+        dueDate:
+          type: string
+          description: action item due date, *can be null*
+        stepID:
+          type: integer
+          description: unique identifier for each action item step
+          example: 24
+        step:
+          type: string
+          description: violation action item current step
+          example: General Letter
+        type:
+          type: string
+          description: action item type
+          example: Standard Violation Letter
+        trackingID:
+          type: string
+          description: unique identifier for tracking purposes
+          example: 3623-GMACK
+        messages:
+          type: array
+          items:
+            $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/schemas/messages
     getAssociationDetails:
       type: object
       properties:
@@ -1442,150 +1647,93 @@ components:
           description: array of primary assessment information
           items:
             $ref: '#/components/schemas/primaryAssessments'
-    homeownerTransactions:
+    associationAddress:
       type: object
       properties:
-        id:
+        Assoc_Code:
+          type: string
+          description: unique identifier for the association
+          example: '999'
+        PhysicalAddress:
+          type: array
+          description: List of physical addresses
+          items:
+            $ref: '#/components/schemas/physicalAddress'
+        CompanyAddress:
+          type: array
+          description: List of company addresses
+          items:
+            $ref: '#/components/schemas/companyAddress'
+        RemittanceAddress:
+          type: array
+          description: List of remittance addresses
+          items:
+            $ref: '#/components/schemas/remittanceAddress'
+        CorrespondenceAddress:
+          type: array
+          description: List of correspondence addresses
+          items:
+            $ref: '#/components/schemas/correspondenceAddress'
+    glHistoryDetail:
+      type: object
+      properties:
+        glCode:
+          type: string
+          description: unique identifier for the gl account
+          example: 10000
+        fundId:
           type: integer
-          description: unique identifier for the ledger item
-          example: 5912
-        created:
+          description: unique identifier for the fund
+          example: 489
+        tranDate:
           type: string
           format: date-time
-          description: date the transaction was entered
-          example: '2018-09-07T05:00:04.937'
-        ledgerDate:
+          description: transaction date
+          example: '2023-10-12'
+        sectionDescr:
           type: string
-          format: date-time
-          description: effective post date of the transaction
-          example: '2018-09-07T00:00:00'
-        type:
+          description: gl section name
+          example: Asset
+        groupDescr:
           type: string
-          description: type of transaction, possible values are "Credit Distribution", "Charge", "Payment", "Adjustment", "Writeoff", "Payment Adjustment", "Refund Check", "Refund ACH", "Void"
-          example: Charge
+          description: gl group name
+          example: Everything
+        fundDescr:
+          type: string
+          description: fund description
+          example: Operating
+        description:
+          type: string
+          description: transaction description
+          example: '200 Park Avenue Unit 10: Credit Distribution'
+        debitCredit:
+          type: string
+          description: 'debit or credit. possible values: ''C'', ''D'''
+          example: C
         amount:
           type: integer
           format: decimal
-          description: charges are positive, payments are negative
-          example: 100
-        chgDescription:
-          type: integer
-          description: charge description
-          example: Late Fees
-        description:
-          type: string
-          description: additional user entered description
-          example: voided cause reasons
-    arcList:
+          description: transaction amount
+          example: 125
+    assessmentChargeTags:
       type: object
       properties:
-        arcType:
+        tagDescr:
           type: string
-          description: ARC type
-          example: Mailbox
-        xnNumber:
+          description: charge tag description
+          example: Main
+        amount:
           type: string
-          description: unique identifier for an ARC action item
-          example: '123456'
-        assocCode:
-          type: string
-          description: unqiue identifier for the association
-          example: '100'
-        accountNo:
-          type: string
-          description: unique identifier for a single homeowner account
-          example: '100253647'
-        propertyID:
-          type: string
-          description: unique identifier for a single property
-          example: '10212'
-        hoid:
+          description: charge tag amount
+          example: $33.00
+        assessmentDay:
           type: integer
-          description: unique identifier for a homeowner - homeowners can have one or more accounts/properties
-          example: '0'
-        closed:
-          type: boolean
-          description: if true, item is currently in step marked 'closed', else false
-          example: true
-        description:
-          type: string
-          description: action item description
-          example: Your mailbox got knocked off its post.
-        subject:
-          type: string
-          description: action item subject
-          example: mailbox inquiry
-        createdDate:
-          type: string
-          format: date-time
-          description: date the action item was created
-          example: '2021-08-05T15:44:14.85'
-        followupDate:
-          type: string
-          format: date-time
-          description: action item followup date, can be null
-        dueDate:
-          type: string
-          format: date-time
-          description: action item due date, can be null
-        step:
-          type: string
-          description: current step of the action item
-          example: Void
-        type:
-          type: string
-          description: action item type
-          example: ARC Request
-        lastModified:
-          type: string
-          format: date-time
-          description: last modified date, can be null
-        message:
-          type: array
-          items:
-            $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/schemas/messages
-          description: action item messages and notes
-    correspondenceAddress:
-      type: object
-      properties:
-        AddressID:
+          description: calendar day of the assessment
+          example: 1
+        assessmentMonth:
           type: integer
-          description: unique identifier for the address record
-          example: 4
-        created:
-          type: string
-          format: date-time
-          description: date-time the address was created
-          example: '2022-11-07T18:13:26.48'
-        lastmodified:
-          type: string
-          format: date-time
-          description: date-time the address was last modified
-          example: '2022-11-07T18:13:26.48'
-        address1:
-          type: string
-          description: the address field 1
-          example: 1234 Testing Rd
-        address2:
-          type: string
-          description: the address field 2
-          example: 'Unit # 5'
-        city:
-          type: string
-          description: the address city
-          example: Wilmington
-        state:
-          type: string
-          description: the address state
-          example: NC
-        zip:
-          type: string
-          description: the address zip
-          example: '28412'
-        county:
-          type: string
-          description: the address county
-          example: New Hanover
+          description: calendar month of the assessment. **For use with annual assessments, monthly assessments will not have an assessmentMonth**
+          example: 12
     workOrderList:
       type: object
       properties:
@@ -1650,146 +1798,84 @@ components:
           type: array
           items:
             $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/schemas/messages
-    ActionItemNote:
+    getCommPreference:
       type: object
       properties:
+        hoid:
+          type: integer
+          description: unique identifier for a homeowner
+          example: 33218
+        commpref:
+          type: string
+          description: homeowner's communication preference. possible values are Paper, Text, Email, App
+          example: Phone
+        billingpref:
+          type: string
+          description: homeowner's billing communication preference. possible values are Paper, Text, Email
+          example: Email
+    companyAddress:
+      type: object
+      properties:
+        AddressID:
+          type: integer
+          description: unique identifier for the address record
+          example: 4
         created:
           type: string
           format: date-time
-          description: time in UTC ActionItem was created
-          example: '2025-04-14T17:58:04.073'
-        note:
+          description: date-time the address was created
+          example: '2022-11-07T18:13:26.48'
+        lastmodified:
           type: string
-          description: the message of the note
-          example: 'The following invoice fields were changed: Provider: Post Item, Association:      Condominium Association, Inc., Invoice Date: 2/12/2025, Total: $2,650.00, Pay Type: Misc Check Invoice Detail Added: GL: 203000 - Exchange Account, Fund: Operating, Bank Account: 1026 MAINOPR-7762, Description: Return Deposit Item, Amount: $2,650.00"'
-        actionStepID:
-          type: integer
-          description: uniqueID for the actionStep of the requested actionItem
-          example: 270
-    homeownerSearch:
-      type: object
-      properties:
-        accountNo:
+          format: date-time
+          description: date-time the address was last modified
+          example: '2022-11-07T18:13:26.48'
+        address1:
           type: string
-          description: unique identifier for a single account
-          example: 100100101
-        assocCode:
+          description: the address field 1
+          example: 1234 Testing Rd
+        address2:
           type: string
-          description: unique identifier for an association
-        owners:
-          type: array
-          items:
-            $ref: '#/components/schemas/owners'
-        propertyID:
-          type: integer
-          description: unique identifier for a single property (A property can have one or more accounts/owners, but only one account is "current" owner)
-          example: 98123
-        address:
-          type: string
-          description: street number and street name
-          example: 537 Paper St.
+          description: the address field 2
+          example: 'Unit # 5'
         city:
           type: string
-          description: owner city
-          example: Bedford
+          description: the address city
+          example: Wilmington
         state:
           type: string
-          description: owner state
+          description: the address state
           example: NC
         zip:
           type: string
-          description: owner zip
-          example: 19808
-        lotNo:
+          description: the address zip
+          example: '28412'
+        county:
           type: string
-          description: lot address
-        block:
-          type: string
-          description: block address
-        phase:
-          type: string
-    assessmentChargeTags:
+          description: the address county
+          example: New Hanover
+    attachmentList:
       type: object
       properties:
-        tagDescr:
+        messageID:
           type: string
-          description: charge tag description
-          example: Main
-        amount:
+          description: unique identifier for a single message
+          example: 98765
+        attachmentID:
           type: string
-          description: charge tag amount
-          example: $33.00
-        assessmentDay:
+          description: unique identifier for a single attachment
+          example: 22446
+        fileName:
+          type: string
+          description: filename of the attachment with extension
+          example: whymymailboxisbroken.pdf
+        fileSize:
           type: integer
-          description: calendar day of the assessment
-          example: 1
-        assessmentMonth:
-          type: integer
-          description: calendar month of the assessment. **For use with annual assessments, monthly assessments will not have an assessmentMonth**
-          example: 12
-    providerTypeList:
-      type: object
-      properties:
-        providerTypeID:
-          type: integer
-          description: unique identifier for the service provider type
-          example: 22
-        created:
+          description: number of bytes
+          example: 647041
+        file:
           type: string
-          format: date-time
-          description: date the provider was created
-          example: '2019-05-06T19:40:13.04'
-        lastModified:
-          type: string
-          format: date-time
-          description: date the provider was last modified
-          example: '2020-02-19T19:35:27.197'
-        providerType:
-          type: string
-          description: service provider type description
-          example: Maintenance Repair Services
-        inActive:
-          type: string
-          format: date-time
-          description: date the service provider was deleted. *will be null if currently active*
-          example: '2023-05-25T21:32:56.85'
-    ActionItem:
-      type: object
-      properties:
-        created:
-          type: string
-          format: date-time
-          description: time in UTC ActionItem was created
-          example: '2025-04-14T17:58:04.073'
-        lastModified:
-          type: string
-          format: date-time
-          description: time in UTC ActionItem was last modified
-          example: '2025-04-14T17:58:04.087'
-        actionTypeID:
-          type: integer
-          description: uniqueID for the actionType of the requested actionItem
-          example: 13
-        actionStepID:
-          type: integer
-          description: uniqueID for the actionStep of the requested actionItem
-          example: 270
-        actionCategoryID:
-          type: integer
-          description: uniqueID for the actionCategory of the requested actionItem
-          example: 4
-        assocCode:
-          type: string
-          description: association code for where the requested actionItem belongs
-          example: '1026'
-        descr:
-          type: string
-          description: description of the action item
-          example: Return Deposit Item
-        actionItemNotes:
-          description: array of items including created, note, stepID
-          items:
-            $ref: '#/components/schemas/ActionItemNote'
+          format: base64
     TenantData:
       type: object
       properties:
@@ -1893,532 +1979,43 @@ components:
           type: string
           description: management company zipcode
           example: 28402
-    actionTypeList:
+    ActionItem:
       type: object
       properties:
-        ActionTypeID:
-          type: integer
-          description: unique identifier for the action item step
-          example: -2
-        Descr:
+        created:
           type: string
-          description: action category description
-          example: Collections
-        ActionCategoryID:
+          format: date-time
+          description: time in UTC ActionItem was created
+          example: '2025-04-14T17:58:04.073'
+        lastModified:
+          type: string
+          format: date-time
+          description: time in UTC ActionItem was last modified
+          example: '2025-04-14T17:58:04.087'
+        actionTypeID:
           type: integer
-          description: unique identifier for the action category
+          description: uniqueID for the actionType of the requested actionItem
+          example: 13
+        actionStepID:
+          type: integer
+          description: uniqueID for the actionStep of the requested actionItem
+          example: 270
+        actionCategoryID:
+          type: integer
+          description: uniqueID for the actionCategory of the requested actionItem
           example: 4
-        Created:
-          type: string
-          format: date-time
-          description: date the action item step was created
-          example: '2016-08-09T20:28:27.493'
-        LastModified:
-          type: string
-          format: date-time
-          description: date the action item step was created
-          example: '2019-03-06T18:26:08.093'
-    homeownerAssessments:
-      type: object
-      properties:
         assocCode:
           type: string
-          description: unique value to identify association
-          example: LF
-        assocName:
+          description: association code for where the requested actionItem belongs
+          example: '1026'
+        descr:
           type: string
-          description: name of the association
-          example: Langley Falls
-        accountNo:
-          type: string
-          description: unique homeowner account number
-          example: LF47447
-        hoID:
-          type: integer
-          description: unique ID that identifies the homeowner record for the account
-          example: 47398
-        propertyID:
-          type: integer
-          description: unique ID that indetifies the property record
-          example: 45482
-        assessments:
-          type: array
-          description: array of assessments
+          description: description of the action item
+          example: Return Deposit Item
+        actionItemNotes:
+          description: array of items including created, note, stepID
           items:
-            $ref: '#/components/schemas/assessments'
-    emails:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: unique identifier for an email
-          example: 286994
-        created:
-          type: string
-          format: date-time
-          description: date the email was added to the owner's account
-          example: '2022-11-07T18:13:26.48'
-        lastModified:
-          type: string
-          format: date-time
-          description: date the email was last modified. </br> *if email was never modified, field will be null*
-          example: '2023-04-19T18:27:10.833'
-        label:
-          type: string
-          description: email description
-          example: email
-        email:
-          type: string
-          description: email address
-          example: email@myemail.com
-        isPrimary:
-          type: boolean
-          description: if **true**, email address will be used as owner contact, else **false**
-          example: true
-    attachmentList:
-      type: object
-      properties:
-        messageID:
-          type: string
-          description: unique identifier for a single message
-          example: 98765
-        attachmentID:
-          type: string
-          description: unique identifier for a single attachment
-          example: 22446
-        fileName:
-          type: string
-          description: filename of the attachment with extension
-          example: whymymailboxisbroken.pdf
-        fileSize:
-          type: integer
-          description: number of bytes
-          example: 647041
-        file:
-          type: string
-          format: base64
-    physicalAddress:
-      type: object
-      properties:
-        AddressID:
-          type: integer
-          description: unique identifier for the address record
-          example: 4
-        created:
-          type: string
-          format: date-time
-          description: date-time the address was created
-          example: '2022-11-07T18:13:26.48'
-        lastmodified:
-          type: string
-          format: date-time
-          description: date-time the address was last modified
-          example: '2022-11-07T18:13:26.48'
-        address1:
-          type: string
-          description: the address field 1
-          example: 1234 Testing Rd
-        address2:
-          type: string
-          description: the address field 2
-          example: 'Unit # 5'
-        city:
-          type: string
-          description: the address city
-          example: Wilmington
-        state:
-          type: string
-          description: the address state
-          example: NC
-        zip:
-          type: string
-          description: the address zip
-          example: '28412'
-        county:
-          type: string
-          description: the address county
-          example: New Hanover
-    associationAddress:
-      type: object
-      properties:
-        Assoc_Code:
-          type: string
-          description: unique identifier for the association
-          example: '999'
-        PhysicalAddress:
-          type: array
-          description: List of physical addresses
-          items:
-            $ref: '#/components/schemas/physicalAddress'
-        CompanyAddress:
-          type: array
-          description: List of company addresses
-          items:
-            $ref: '#/components/schemas/companyAddress'
-        RemittanceAddress:
-          type: array
-          description: List of remittance addresses
-          items:
-            $ref: '#/components/schemas/remittanceAddress'
-        CorrespondenceAddress:
-          type: array
-          description: List of correspondence addresses
-          items:
-            $ref: '#/components/schemas/correspondenceAddress'
-    violationList:
-      type: object
-      properties:
-        ccrItemID:
-          type: integer
-          description: CCR item id number
-          example: 72
-        ccrItemDescription:
-          type: string
-          description: CCR type
-          example: General Violation
-        ccrLetterDescription:
-          type: string
-          description: CCR description
-          example: Cans in the street!
-        InspectionEndDate:
-          type: string
-          format: date-time
-          description: date inspection was concluded *can be null*
-        lastModified:
-          type: string
-          format: date-time
-          description: date-timestamp of last modification
-          example: '2021-12-09T22:07:05.45'
-        CureDate:
-          type: string
-          format: date-time
-          nullable: true
-          description: Cure Date of violation action items
-          example: ''
-        HearingDate:
-          type: string
-          format: date-time
-          description: Hearing Date of violation action items
-          nullable: true
-          example: ''
-        xnNumber:
-          type: string
-          description: unique identifier for a  violation
-          example: 34881
-        assocCode:
-          type: string
-          description: unique identifer for an association
-          example: 123
-        accountNo:
-          type: string
-          description: unique identifier for a single homeowner account
-          example: 12378961
-        propertyID:
-          type: string
-          description: unique identifier for a single property
-          example: 4876
-        hoID:
-          type: integer
-          description: unique identifier for a homeowner
-          example: 14
-        closed:
-          type: boolean
-          description: if false, item is currently in step marked 'closed', else true
-          example: true
-        description:
-          type: string
-          description: action item description
-          example: his cans have been in the road for 39 minutes after the garbage pickup
-        subject:
-          type: string
-          description: action item subject
-          example: bill's cans!
-        createdDate:
-          type: string
-          description: action item creation date
-          format: date-time
-          example: '2020-12-09T22:07:05.45'
-        followupDate:
-          type: string
-          description: action item followup date, if any. *can be null*
-        dueDate:
-          type: string
-          description: action item due date, *can be null*
-        stepID:
-          type: integer
-          description: unique identifier for each action item step
-          example: 24
-        step:
-          type: string
-          description: violation action item current step
-          example: General Letter
-        type:
-          type: string
-          description: action item type
-          example: Standard Violation Letter
-        trackingID:
-          type: string
-          description: unique identifier for tracking purposes
-          example: 3623-GMACK
-        messages:
-          type: array
-          items:
-            $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/schemas/messages
-    addresses:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: unique identifier for the address
-          example: 98989
-        created:
-          type: string
-          format: date-time
-          description: date the address was created in Vantaca
-          example: '2023-05-15T15:35:58.74'
-        lastModified:
-          type: string
-          format: date-time
-          example: '2023-05-15T15:35:58.74'
-        label:
-          type: string
-          description: optional label for the address
-          example: summer home
-        address:
-          type: string
-          description: mailing address
-          example: Paper St.
-        city:
-          type: string
-          description: mailing city
-          example: Bradford
-        state:
-          type: string
-          description: mailing state
-          example: DE
-        zip:
-          type: string
-          description: mailing zip
-          example: 19808
-        country:
-          type: string
-          description: mailing country
-          example: CA
-        isInternational:
-          type: boolean
-          description: if true, address is international; if false, address is domestic
-          example: false
-        isPrimaryMailing:
-          type: boolean
-          description: if true, address is a mailing address; if false, address is not a mailing address
-          example: true
-    getHomeownerTransactions:
-      type: object
-      properties:
-        assocCode:
-          type: string
-          description: unique identifier for an association
-        accountNo:
-          type: string
-          description: unique identifier for a single account
-          example: 100100101
-        propertyID:
-          type: integer
-          description: unique identifier for a single property (A property can have one or more accounts/owners, but only one account is "current" owner)
-          example: 98123
-        hoid:
-          type: integer
-          description: unique identifier for a homeowner (can represent a joint owner or business/ an owner can have one or more accounts/properties)
-          example: 10011
-        owners:
-          type: array
-          items:
-            $ref: '#/components/schemas/owners'
-        businessName:
-          type: string
-          description: homeowner's business name
-          example: Enchante Apparel
-        address:
-          type: string
-          description: street number and street name
-          example: 537 Paper St.
-        city:
-          type: string
-          description: owner city
-          example: Bedford
-        state:
-          type: string
-          description: owner state
-          example: NC
-        zip:
-          type: string
-          description: owner zip
-          example: 19808
-        lotNo:
-          type: string
-          description: lot address
-        block:
-          type: string
-          description: block address
-        phase:
-          type: string
-        settleDate:
-          type: string
-          format: date-time
-          description: date the property was purchased
-          example: '1900-01-01T00:00:00'
-        previousOwner:
-          type: string
-          format: date-time
-          description: date the property was sold. if null, no previous owner
-          example: null
-        collectionStatus:
-          type: string
-          description: current collection status
-          example: Need Address Verification
-        blockLedger:
-          type: boolean
-          description: if true, Block Ledger checkbox is enabled on the step's rules, else, false
-          example: false
-        blockPayments:
-          type: boolean
-          description: if true, Block Payments checkbox is enabled on the step's rules, else, false
-          example: true
-        balance:
-          type: integer
-          format: decimal
-          description: current balance
-          example: 123,456,789.25
-        transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/homeownerTransactions'
-    getPhone:
-      type: object
-      properties:
-        phoneID:
-          type: string
-          description: unique identifier for a phone number
-          example: 6888
-        isPrimary:
-          type: boolean
-          description: if **true**, phone number is used as primary communication preference for homeowner, else **false**
-          example: true
-        label:
-          type: string
-          description: label for phone number
-          example: gorgc work phone
-        phone:
-          type: string
-          description: homeowner phone number
-          example: 1234567890
-    violationTypeList:
-      type: object
-      properties:
-        assocCode:
-          type: string
-          description: unique identifier for an association
-          example: ZZZ
-        ccrTypeId:
-          type: string
-          description: CCR type identification number
-          example: 25
-        ccrType:
-          type: string
-          description: ccr type
-          example: General Violation
-        ccrDescription:
-          type: string
-          description: ccr description
-          example: First Violation Warning
-        ccrDescriptionId:
-          type: string
-          description: unique identifier for the ccr description
-          example: 144
-        ccrLetterDescription:
-          type: string
-          description: ARC type
-          example: Violation letter description
-        ccrCurePeriod:
-          type: string
-          description: number of days the homeowner has to resolve, or "cure" the violation
-          example: 22
-    getEmail:
-      type: object
-      properties:
-        emailID:
-          type: string
-          description: unique identifier for an email address
-          example: 56788
-        isPrimary:
-          type: boolean
-          description: if **true**, email is used as primary communication preference for homeowner, else **false**
-          example: true
-        label:
-          type: string
-          description: label for email address
-          example: gorgc work email
-        email:
-          type: string
-          format: email
-          description: homeowner email address
-          example: gorgc@midas.com
-    getCommPreference:
-      type: object
-      properties:
-        hoid:
-          type: integer
-          description: unique identifier for a homeowner
-          example: 33218
-        commpref:
-          type: string
-          description: homeowner's communication preference. possible values are Paper, Text, Email, App
-          example: Phone
-        billingpref:
-          type: string
-          description: homeowner's billing communication preference. possible values are Paper, Text, Email
-          example: Email
-    glHistoryDetail:
-      type: object
-      properties:
-        glCode:
-          type: string
-          description: unique identifier for the gl account
-          example: 10000
-        fundId:
-          type: integer
-          description: unique identifier for the fund
-          example: 489
-        tranDate:
-          type: string
-          format: date-time
-          description: transaction date
-          example: '2023-10-12'
-        sectionDescr:
-          type: string
-          description: gl section name
-          example: Asset
-        groupDescr:
-          type: string
-          description: gl group name
-          example: Everything
-        fundDescr:
-          type: string
-          description: fund description
-          example: Operating
-        description:
-          type: string
-          description: transaction description
-          example: '200 Park Avenue Unit 10: Credit Distribution'
-        debitCredit:
-          type: string
-          description: 'debit or credit. possible values: ''C'', ''D'''
-          example: C
-        amount:
-          type: integer
-          format: decimal
-          description: transaction amount
-          example: 125
+            $ref: '#/components/schemas/ActionItemNote'
     actionTypeSteps:
       type: object
       properties:
@@ -2477,8 +2074,9 @@ components:
           description: user role(s) associated with the replyToValue(s)
           example: Homeowner
         daysForCriteria:
-          nullable: true
-          type: string
+          type:
+          - string
+          - 'null'
           example: null
         duration:
           type: integer
@@ -2529,13 +2127,15 @@ components:
             - '1414'
             - '1416'
         reminderInterval:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
           description: reminder interval of the action item
           example: 0
         adminDuration:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
           example: 0
         durBalType:
           type: string
@@ -2546,9 +2146,10 @@ components:
           description: Repeat (# of Days) setting
           example: 3
         stepDate:
-          type: string
+          type:
+          - string
+          - 'null'
           description: ''
-          nullable: true
           example: null
         actionID:
           type: string
@@ -2559,13 +2160,15 @@ components:
           description: additional action item description
           example: (No Additional Action)
         balanceSetting:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: ''
           example: 0
         instructions:
-          nullable: true
-          type: string
+          type:
+          - string
+          - 'null'
           description: information entered in the Instruction's section of the action step
           example: null
         listDescr:
@@ -2637,16 +2240,18 @@ components:
           description: if true, Include in Reconciliation checkbox is enabled on the step's rules, else, false
           example: false
         CureDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
           description: Cure Date of violation action items
           example: ''
         HearingDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
           description: Hearing Date of violation action items
-          nullable: true
           example: ''
     ccrDetails:
       type: object
@@ -2663,6 +2268,95 @@ components:
           type: integer
           description: cure period for the CCR item detail
           example: 12
+    physicalAddress:
+      type: object
+      properties:
+        AddressID:
+          type: integer
+          description: unique identifier for the address record
+          example: 4
+        created:
+          type: string
+          format: date-time
+          description: date-time the address was created
+          example: '2022-11-07T18:13:26.48'
+        lastmodified:
+          type: string
+          format: date-time
+          description: date-time the address was last modified
+          example: '2022-11-07T18:13:26.48'
+        address1:
+          type: string
+          description: the address field 1
+          example: 1234 Testing Rd
+        address2:
+          type: string
+          description: the address field 2
+          example: 'Unit # 5'
+        city:
+          type: string
+          description: the address city
+          example: Wilmington
+        state:
+          type: string
+          description: the address state
+          example: NC
+        zip:
+          type: string
+          description: the address zip
+          example: '28412'
+        county:
+          type: string
+          description: the address county
+          example: New Hanover
+    addresses:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: unique identifier for the address
+          example: 98989
+        created:
+          type: string
+          format: date-time
+          description: date the address was created in Vantaca
+          example: '2023-05-15T15:35:58.74'
+        lastModified:
+          type: string
+          format: date-time
+          example: '2023-05-15T15:35:58.74'
+        label:
+          type: string
+          description: optional label for the address
+          example: summer home
+        address:
+          type: string
+          description: mailing address
+          example: Paper St.
+        city:
+          type: string
+          description: mailing city
+          example: Bradford
+        state:
+          type: string
+          description: mailing state
+          example: DE
+        zip:
+          type: string
+          description: mailing zip
+          example: 19808
+        country:
+          type: string
+          description: mailing country
+          example: CA
+        isInternational:
+          type: boolean
+          description: if true, address is international; if false, address is domestic
+          example: false
+        isPrimaryMailing:
+          type: boolean
+          description: if true, address is a mailing address; if false, address is not a mailing address
+          example: true
     collectionList:
       type: object
       properties:
@@ -2737,9 +2431,10 @@ components:
           description: follow-up date for the collection action item, can be null
           example: '2019-11-01T00:00:00'
         dueDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
           description: due date for the collection action item, can be null
           example: null
         lastModified:
@@ -2779,6 +2474,241 @@ components:
           description: array of attachments associated with the action item. *populated when includeAttachments = true, else empty array*
           items:
             $ref: '#/components/schemas/attachmentList'
+    assessments:
+      type: object
+      properties:
+        accountID:
+          type: integer
+          description: primary homeowner account number
+          example: 77700123
+        transactionType:
+          type: string
+          description: transaction type
+          example: Assessment
+        transactionDescription:
+          type: string
+          description: assessment/charge name
+          example: Assessment One
+        openAmount:
+          type: string
+          description: assessment/charge balance
+          example: 876.54
+        amount:
+          type: string
+          description: assessment/charge amount
+          example: 1
+        assessment:
+          type: string
+          description: if YES, regular assessment, else NO
+          example: 'NO'
+        specialAssessment:
+          type: string
+          description: if YES, special assessment else NO
+          example: 'YES'
+        finePenalty:
+          type: string
+          description: if YES, fine or penalty, else NO
+          example: 'NO'
+        frequency:
+          type: string
+          description: assessment frequency (for regular or special assessment only)
+        paidThru:
+          type: string
+          format: date-time
+          description: For regular and special assessments, the date that the fee is paid through. </br> For delinquent accounts, the oldest date of a transaction
+        dueDate:
+          type: string
+          format: date-time
+          description: payment due date
+        lastPaymentDate:
+          type: string
+          format: date-time
+          description: date of last payment
+        lastPaymentAmount:
+          type: string
+          description: amount of last payment
+          example: 2700
+        nextDueDate:
+          type: string
+          format: date-time
+          description: next due date. if the assessment is paid through for the fiscal year, then the first date for the next fiscal year
+        lastmodified:
+          type: string
+          format: date-time
+          description: date the assessment was last modified.</br> **if assessment was never modified, field will be null**
+          example: '2022-07-07T01:44:49.307'
+        created:
+          type: string
+          format: date-time
+          description: date the assessment was created
+          example: '2021-10-12T15:57:26.263'
+    remittanceAddress:
+      type: object
+      properties:
+        AddressID:
+          type: integer
+          description: unique identifier for the address record
+          example: 4
+        created:
+          type: string
+          format: date-time
+          description: date-time the address was created
+          example: '2022-11-07T18:13:26.48'
+        lastmodified:
+          type: string
+          format: date-time
+          description: date-time the address was last modified
+          example: '2022-11-07T18:13:26.48'
+        address1:
+          type: string
+          description: the address field 1
+          example: 1234 Testing Rd
+        address2:
+          type: string
+          description: the address field 2
+          example: 'Unit # 5'
+        city:
+          type: string
+          description: the address city
+          example: Wilmington
+        state:
+          type: string
+          description: the address state
+          example: NC
+        zip:
+          type: string
+          description: the address zip
+          example: '28412'
+        county:
+          type: string
+          description: the address county
+          example: New Hanover
+    ccrItemList:
+      type: object
+      properties:
+        CCRItemId:
+          type: integer
+          description: unique identifier for the CCR item
+          example: 26
+        Group:
+          type: string
+          description: ccr item group
+          example: Rules and Regulations
+        CCRItem:
+          type: string
+          description: CCR item name
+          example: Lot Maintenance
+        LetterDescription:
+          type: string
+          description: letter description
+          example: Please resolve the outlined issue by the specified date.
+        Details:
+          type: array
+          description: array of CCR details for the given CCR Item
+          items:
+            $ref: '#/components/schemas/ccrDetails'
+    violationTypeList:
+      type: object
+      properties:
+        assocCode:
+          type: string
+          description: unique identifier for an association
+          example: ZZZ
+        ccrTypeId:
+          type: string
+          description: CCR type identification number
+          example: 25
+        ccrType:
+          type: string
+          description: ccr type
+          example: General Violation
+        ccrDescription:
+          type: string
+          description: ccr description
+          example: First Violation Warning
+        ccrDescriptionId:
+          type: string
+          description: unique identifier for the ccr description
+          example: 144
+        ccrLetterDescription:
+          type: string
+          description: ARC type
+          example: Violation letter description
+        ccrCurePeriod:
+          type: string
+          description: number of days the homeowner has to resolve, or "cure" the violation
+          example: 22
+    primaryAssessments:
+      type: object
+      properties:
+        descr:
+          type: string
+          description: assessment description
+          example: Assessment
+        amount:
+          type: integer
+          description: assessment amount
+          example: 50
+        frequency:
+          type: string
+          description: 'assessment frequency. possible values: Monthly, Semi-Annual, Quarterly, Annual'
+          example: Monthly
+        assessmentType:
+          type: string
+          description: assessment type
+          example: Fixed
+        assessmentDay:
+          type: integer
+          description: calendar day
+          example: 1
+        assessmentMonth:
+          type: integer
+          description: calendar month
+          example: 12
+        assessmentChargeTags:
+          type: array
+          description: array of assessment charge tags
+          items:
+            $ref: '#/components/schemas/assessmentChargeTags'
+    homeownerAssessments:
+      type: object
+      properties:
+        assocCode:
+          type: string
+          description: unique value to identify association
+          example: LF
+        assocName:
+          type: string
+          description: name of the association
+          example: Langley Falls
+        accountNo:
+          type: string
+          description: unique homeowner account number
+          example: LF47447
+        hoID:
+          type: integer
+          description: unique ID that identifies the homeowner record for the account
+          example: 47398
+        propertyID:
+          type: integer
+          description: unique ID that indetifies the property record
+          example: 45482
+        assessments:
+          type: array
+          description: array of assessments
+          items:
+            $ref: '#/components/schemas/assessments'
+    owners:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: owner first name
+          example: Lando
+        lastName:
+          type: string
+          description: owner last name
+          example: Norris
     getHomeownerAccountInfo:
       type: object
       properties:
@@ -2947,143 +2877,41 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/assessments'
-    owners:
-      type: object
-      properties:
-        firstName:
-          type: string
-          description: owner first name
-          example: Lando
-        lastName:
-          type: string
-          description: owner last name
-          example: Norris
-    assessments:
-      type: object
-      properties:
-        accountID:
-          type: integer
-          description: primary homeowner account number
-          example: 77700123
-        transactionType:
-          type: string
-          description: transaction type
-          example: Assessment
-        transactionDescription:
-          type: string
-          description: assessment/charge name
-          example: Assessment One
-        openAmount:
-          type: string
-          description: assessment/charge balance
-          example: 876.54
-        amount:
-          type: string
-          description: assessment/charge amount
-          example: 1
-        assessment:
-          type: string
-          description: if YES, regular assessment, else NO
-          example: 'NO'
-        specialAssessment:
-          type: string
-          description: if YES, special assessment else NO
-          example: 'YES'
-        finePenalty:
-          type: string
-          description: if YES, fine or penalty, else NO
-          example: 'NO'
-        frequency:
-          type: string
-          description: assessment frequency (for regular or special assessment only)
-        paidThru:
-          type: string
-          format: date-time
-          description: For regular and special assessments, the date that the fee is paid through. </br> For delinquent accounts, the oldest date of a transaction
-        dueDate:
-          type: string
-          format: date-time
-          description: payment due date
-        lastPaymentDate:
-          type: string
-          format: date-time
-          description: date of last payment
-        lastPaymentAmount:
-          type: string
-          description: amount of last payment
-          example: 2700
-        nextDueDate:
-          type: string
-          format: date-time
-          description: next due date. if the assessment is paid through for the fiscal year, then the first date for the next fiscal year
-        lastmodified:
-          type: string
-          format: date-time
-          description: date the assessment was last modified.</br> **if assessment was never modified, field will be null**
-          example: '2022-07-07T01:44:49.307'
-        created:
-          type: string
-          format: date-time
-          description: date the assessment was created
-          example: '2021-10-12T15:57:26.263'
-    primaryAssessments:
-      type: object
-      properties:
-        descr:
-          type: string
-          description: assessment description
-          example: Assessment
-        amount:
-          type: integer
-          description: assessment amount
-          example: 50
-        frequency:
-          type: string
-          description: 'assessment frequency. possible values: Monthly, Semi-Annual, Quarterly, Annual'
-          example: Monthly
-        assessmentType:
-          type: string
-          description: assessment type
-          example: Fixed
-        assessmentDay:
-          type: integer
-          description: calendar day
-          example: 1
-        assessmentMonth:
-          type: integer
-          description: calendar month
-          example: 12
-        assessmentChargeTags:
-          type: array
-          description: array of assessment charge tags
-          items:
-            $ref: '#/components/schemas/assessmentChargeTags'
-    phoneNumbers:
+    homeownerTransactions:
       type: object
       properties:
         id:
           type: integer
-          description: unique identifier for a phone number
-          example: 32515
+          description: unique identifier for the ledger item
+          example: 5912
         created:
           type: string
           format: date-time
-          description: date the phone number was added to the owner's account
-          example: '2023-04-28T15:13:17.883'
-        lastModified:
+          description: date the transaction was entered
+          example: '2018-09-07T05:00:04.937'
+        ledgerDate:
           type: string
           format: date-time
-          description: date the phone number was last modified. </br> *if phone number was never modified, field will be null*
-          example: null
-        label:
+          description: effective post date of the transaction
+          example: '2018-09-07T00:00:00'
+        type:
           type: string
-          description: phone number label
-          example: cell phone
-        isPrimary:
-          type: boolean
-          description: if **true**, number will be used for contacting owner, else **false**
-          example: true
-    companyAddress:
+          description: type of transaction, possible values are "Credit Distribution", "Charge", "Payment", "Adjustment", "Writeoff", "Payment Adjustment", "Refund Check", "Refund ACH", "Void"
+          example: Charge
+        amount:
+          type: integer
+          format: decimal
+          description: charges are positive, payments are negative
+          example: 100
+        chgDescription:
+          type: integer
+          description: charge description
+          example: Late Fees
+        description:
+          type: string
+          description: additional user entered description
+          example: voided cause reasons
+    correspondenceAddress:
       type: object
       properties:
         AddressID:
@@ -3124,15 +2952,200 @@ components:
           type: string
           description: the address county
           example: New Hanover
-    actionCategoryList:
+    getPhone:
       type: object
       properties:
-        ActionCategoryID:
+        phoneID:
+          type: string
+          description: unique identifier for a phone number
+          example: 6888
+        isPrimary:
+          type: boolean
+          description: if **true**, phone number is used as primary communication preference for homeowner, else **false**
+          example: true
+        label:
+          type: string
+          description: label for phone number
+          example: gorgc work phone
+        phone:
+          type: string
+          description: homeowner phone number
+          example: 1234567890
+    emails:
+      type: object
+      properties:
+        id:
           type: integer
-          description: unique identifier for the action category
-          example: 4
+          description: unique identifier for an email
+          example: 286994
+        created:
+          type: string
+          format: date-time
+          description: date the email was added to the owner's account
+          example: '2022-11-07T18:13:26.48'
+        lastModified:
+          type: string
+          format: date-time
+          description: date the email was last modified. </br> *if email was never modified, field will be null*
+          example: '2023-04-19T18:27:10.833'
+        label:
+          type: string
+          description: email description
+          example: email
+        email:
+          type: string
+          description: email address
+          example: email@myemail.com
+        isPrimary:
+          type: boolean
+          description: if **true**, email address will be used as owner contact, else **false**
+          example: true
+    actionTypeList:
+      type: object
+      properties:
+        ActionTypeID:
+          type: integer
+          description: unique identifier for the action item step
+          example: -2
         Descr:
           type: string
           description: action category description
           example: Collections
+        ActionCategoryID:
+          type: integer
+          description: unique identifier for the action category
+          example: 4
+        Created:
+          type: string
+          format: date-time
+          description: date the action item step was created
+          example: '2016-08-09T20:28:27.493'
+        LastModified:
+          type: string
+          format: date-time
+          description: date the action item step was created
+          example: '2019-03-06T18:26:08.093'
+    getHomeownerTransactions:
+      type: object
+      properties:
+        assocCode:
+          type: string
+          description: unique identifier for an association
+        accountNo:
+          type: string
+          description: unique identifier for a single account
+          example: 100100101
+        propertyID:
+          type: integer
+          description: unique identifier for a single property (A property can have one or more accounts/owners, but only one account is "current" owner)
+          example: 98123
+        hoid:
+          type: integer
+          description: unique identifier for a homeowner (can represent a joint owner or business/ an owner can have one or more accounts/properties)
+          example: 10011
+        owners:
+          type: array
+          items:
+            $ref: '#/components/schemas/owners'
+        businessName:
+          type: string
+          description: homeowner's business name
+          example: Enchante Apparel
+        address:
+          type: string
+          description: street number and street name
+          example: 537 Paper St.
+        city:
+          type: string
+          description: owner city
+          example: Bedford
+        state:
+          type: string
+          description: owner state
+          example: NC
+        zip:
+          type: string
+          description: owner zip
+          example: 19808
+        lotNo:
+          type: string
+          description: lot address
+        block:
+          type: string
+          description: block address
+        phase:
+          type: string
+        settleDate:
+          type: string
+          format: date-time
+          description: date the property was purchased
+          example: '1900-01-01T00:00:00'
+        previousOwner:
+          type: string
+          format: date-time
+          description: date the property was sold. if null, no previous owner
+          example: null
+        collectionStatus:
+          type: string
+          description: current collection status
+          example: Need Address Verification
+        blockLedger:
+          type: boolean
+          description: if true, Block Ledger checkbox is enabled on the step's rules, else, false
+          example: false
+        blockPayments:
+          type: boolean
+          description: if true, Block Payments checkbox is enabled on the step's rules, else, false
+          example: true
+        balance:
+          type: integer
+          format: decimal
+          description: current balance
+          example: 123,456,789.25
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/homeownerTransactions'
+    homeownerSearch:
+      type: object
+      properties:
+        accountNo:
+          type: string
+          description: unique identifier for a single account
+          example: 100100101
+        assocCode:
+          type: string
+          description: unique identifier for an association
+        owners:
+          type: array
+          items:
+            $ref: '#/components/schemas/owners'
+        propertyID:
+          type: integer
+          description: unique identifier for a single property (A property can have one or more accounts/owners, but only one account is "current" owner)
+          example: 98123
+        address:
+          type: string
+          description: street number and street name
+          example: 537 Paper St.
+        city:
+          type: string
+          description: owner city
+          example: Bedford
+        state:
+          type: string
+          description: owner state
+          example: NC
+        zip:
+          type: string
+          description: owner zip
+          example: 19808
+        lotNo:
+          type: string
+          description: lot address
+        block:
+          type: string
+          description: block address
+        phase:
+          type: string
 x-internal: false

@@ -1,21 +1,23 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  description: "The Vantaca API is a JSON based web service. Access to the API is granted by individual Vantaca customers who will grant vendors individual access to their dataset. Credentials can and will vary from one customer to another.  </br></br>Credentials will need to have an accompanying IP Address whitelisted in order to successfully access Vantaca's Standard APIs. All connections must be made using SSL. </br>  </br> **Production URL - api.vantaca.net** </br></br> \nMost /read/ methods can use the parameter **zip** as a boolean. If **true**, the JSON response will be compressed and returned as a zip file. Unless otherwise specified in each endpoint, the zip archive will contain a single file called, **data.json**. *This can reduce the bandwidth needed to process company-wide information*. The parameter is always optional but is recommended when making calls for bulk data. If **false**, the response body will be a JSON object. </br></br> Vantaca's API passes each set of credentials via Basic Authorization with the following required parameters for ***all*** endpoints: </br> - **company**  </br> - **login**  </br> - **pwd**</br></br></br>\n## Changelog:\n  **Version 3.8.0 (5/28/2026)**: \n  </br> - Added new endpoint for write/createActionItemNote. This new endpoint allows for adding of new notes, as well as adding attachments, without the need to step the actionItem.\n  Added new endpoint for read/collectionList\n  </br>\n  </br>To access the most up-to-date version,  [Click Here](https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/)**\n  </br>\n  </br>\n\n## **Vantaca API TERMS OF USE**\n</br>\n\nLast Updated: May 2, 2025 \n\n**1. ACCEPTANCE OF TERMS**\nBy accessing or using the API services provided by Vantaca (\"Provider,\" \"we,\" \"us,\" or \"our\"), you (\"User,\" \"you,\" or \"your\") agree to be bound by these Terms of Use (\"Terms\"). If you are using the API on behalf of an entity, you represent that you have authority to bind that entity to these Terms, and \"you\" refers to that entity. \n\n**2. DEFINITIONS**\n- \"API\": The application programming interface made available by Provider, including swagger based documentation. \n- \"API Key\": The unique authentication credential issued to you that permits access to the API. \n- \"Application\": Any software, website, or service you develop that interfaces with the API. \n- \"Content\": Any data or information accessed or retrieved through the API. \n\n**3. LICENSE GRANT AND RESTRICTIONS**\n\n3.1 License \n\nSubject to these Terms, Provider grants you a limited, non-exclusive, non-transferable, revocable license to access and use the API to develop, test, and support your Application and to integrate your Application with the features and functionality of the API. \n\n3.2 Restrictions \n\nYou shall not: \n\n- Sell, rent, lease, sublicense, redistribute, or syndicate access to the API or API Key\n- Modify, create derivative works, decompile, reverse engineer, or disassemble the API\n- Use the API for any illegal purpose or in violation of any local, state, national, or international law\n- Use the API to develop an Application that replicates or provides similar functionality or features as Vantaca\n- Interfere with or disrupt the integrity or performance of the API or its related systems\n- Attempt to gain unauthorized access to the API or related systems\n- Use the API in a manner that exceeds reasonable request volume or constitutes excessive or abusive usage \n- Remove or alter any proprietary notices or marks on the API or its documentation \n\n**4. API USAGE AND RATE LIMITS**\n\n4.1 Rate Limits\n\nProvider may set and enforce limits on your use of the API in our sole discretion. These limits may include, but are not limited to, the number of API requests that may be made, the number of users you may serve, or other limitations. \n\n4.2 API Keys \n\nYou are responsible for maintaining the security of your API Key and any passwords or credentials. You may not share your API Key with any third party, except for authorized agents acting on your behalf. \n\n4.3 Monitoring and Analytics \n\nProvider may monitor and collect data relating to your usage of the API to ensure compliance with these Terms and for the purposes of improving and enhancing the API. \n\n**5. USER OBLIGATIONS** \n\n5.1 Compliance \n\nYou agree to: \n\n- Comply with all applicable laws and regulations \n- Comply with all provisions of these Terms and any associated documentation \n- Respect the intellectual property, privacy, and other rights of third parties \n- Promptly update your Application to install the most current version of the API when notified \n\n5.2 User Applications \n\nYour Application must: \n\n- Include your own terms of service and privacy policy \n- Accurately disclose the functions and features provided by the API \n- Not imply any partnership with or endorsement by Provider \n\n**6. DATA RIGHTS AND PRIVACY** \n\n6.1 Data Rights \n\nYou retain all rights to your data submitted through the API. You grant Provider a non-exclusive license to access, use, and process your data solely to provide and maintain the API services. \n\n6.2 Privacy \n\nProvider will process any personal data in accordance with our Privacy Policy, which is incorporated by reference into these Terms. You agree to comply with all applicable privacy laws and to provide a legally adequate privacy notice to your users. \n\n**7. MODIFICATIONS**\n\n7.1 API Modifications \n\nProvider reserves the right to modify, suspend, or discontinue the API or any part thereof at any time, with or without notice. We will use commercially reasonable efforts to notify you of material changes. \n\n7.2 Terms Modifications \n\nProvider may modify these Terms at any time by posting the modified Terms. Your continued use of the API following any modification constitutes your acceptance of the modified Terms. \n\n**8. TERMINATION**\n\n8.1 Termination by User \n\nYou may terminate these Terms by discontinuing use of the API. \n\n8.2 Termination by Provider \n\nProvider may terminate these Terms or suspend your access to the API at any time for any reason, including but not limited to, your breach of these Terms. \n\n8.3 Effect of Termination \n\nUpon termination, all licenses granted under these Terms will terminate, and you must cease all use of the API. \n\n**9. DISCLAIMER OF WARRANTIES** \n\nTHE API IS PROVIDED \"AS IS\" AND \"AS AVAILABLE.\" PROVIDER DISCLAIMS ALL WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. PROVIDER DOES NOT WARRANT THAT THE API WILL BE ERROR-FREE, UNINTERRUPTED, OR FREE FROM VIRUSES OR OTHER HARMFUL COMPONENTS. \n\n**10. LIMITATION OF LIABILITY**\n\nIN NO EVENT SHALL PROVIDER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE API. PROVIDER'S TOTAL LIABILITY ARISING OUT OF OR RELATED TO THESE TERMS SHALL NOT EXCEED THE GREATER OF $100 OR THE AMOUNT PAID BY YOU TO PROVIDER IN THE SIX MONTHS PRECEDING THE EVENT GIVING RISE TO THE LIABILITY. \n\n**11. INDEMNIFICATION** \n\nYou agree to indemnify, defend, and hold harmless Provider and its officers, directors, employees, agents, and affiliates from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses arising from: (a) your use of the API; (b) your violation of these Terms; (c) your violation of any third-party right; or (d) any claim that your Application caused damage to a third party. \n\n**12. GENERAL PROVISIONS** \n\n12.1 Governing Law \n\nThese Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law principles. \n\n12.2 Dispute Resolution \n\nAny dispute arising from these Terms shall be resolved [specify dispute resolution mechanism, e.g., arbitration, specific courts, etc.]. \n\n12.3 Severability \n\nIf any provision of these Terms is found to be unenforceable, the remaining provisions shall remain in full force and effect. \n\n12.4 No Waiver \n\nNo failure or delay by Provider in exercising any right under these Terms shall operate as a waiver of that or any other right. \n\n12.5 Assignment \n\nYou may not assign these Terms or any rights or obligations hereunder without Provider's prior written consent. Provider may assign these Terms without restriction. \n\n12.6 Entire Agreement \n\nThese Terms constitute the entire agreement between you and Provider regarding the API and supersede all prior agreements and understandings, whether written or oral. \n\n**13. CONTACT INFORMATION** \n\nIf you have any questions about these Terms, please contact us at VendorSupport@vantaca.com \n\n "
+  description: The Vantaca API is a JSON based web service.
   version: 3.8.0
-  title: Vantaca's Standard APIs /AP/ /AP/ /write/ API
+  title: Vantaca's Standard /write/ API
   contact:
     email: vendorsupport@vantaca.com
 servers:
 - description: SwaggerHub API Auto Mocking
   url: https://virtserver.swaggerhub.com/Vantaca/vantacaStandard/3.8.0
 tags:
-- name: /write/
-  description: 'These methods write data. Unless otherwise specified, all object types available are paired with individual /read/ to allow full CRUD (Create, Read, Update, and Destory) operations against any item. Note: Entering invalid dates may result in them appearing as null or blank in Vantaca </br> All calls will use the same URL path: /write/{***method***}'
+- name: Write
+  description: 'These methods write data. Unless otherwise specified, all object types available are paired with individual /read/ to allow full CRUD (Create, Read, Update, and Destory) operations against any item. Note: Entering invalid dates may result in them appearing as null or blank in Vantaca
+
+    All calls will use the same URL path: /write/{***method***}'
 paths:
   /write/emailCreate:
     post:
       tags:
-      - /write/
+      - Write
       summary: creates a homeowner email
       operationId: createEmail
       parameters:
@@ -61,7 +63,7 @@ paths:
   /write/emailUpdate:
     post:
       tags:
-      - /write/
+      - Write
       summary: updates an existing homeowner email
       operationId: updateEmail
       parameters:
@@ -107,7 +109,7 @@ paths:
   /write/emailDestroy:
     post:
       tags:
-      - /write/
+      - Write
       summary: deletes an existing homeowner email
       operationId: deleteEmail
       parameters:
@@ -136,7 +138,7 @@ paths:
   /write/phoneCreate:
     post:
       tags:
-      - /write/
+      - Write
       summary: creates a homeowner phone number
       operationId: createPhone
       parameters:
@@ -182,7 +184,7 @@ paths:
   /write/phoneUpdate:
     post:
       tags:
-      - /write/
+      - Write
       summary: updates an existing homeowner phone number
       operationId: updatePhone
       parameters:
@@ -228,7 +230,7 @@ paths:
   /write/phoneDestroy:
     post:
       tags:
-      - /write/
+      - Write
       summary: deletes an existing homeowner phone number
       operationId: destroyPhone
       parameters:
@@ -257,7 +259,7 @@ paths:
   /write/addressCreate:
     post:
       tags:
-      - /write/
+      - Write
       summary: creates a homeowner address
       operationId: createAddress
       parameters:
@@ -340,7 +342,7 @@ paths:
   /write/addressUpdate:
     post:
       tags:
-      - /write/
+      - Write
       summary: updates an existing homeowner address
       description: '***Note**: Primary Mailing Address cannot be updated to not be primary without first providing a new Primary Mailing Address. Updating will automatically update the orginal record to non-primary.*'
       operationId: updateAddress
@@ -421,7 +423,7 @@ paths:
   /write/addressDestroy:
     post:
       tags:
-      - /write/
+      - Write
       summary: deletes an existing homeowner phone number
       operationId: destroyAddress
       parameters:
@@ -450,8 +452,8 @@ paths:
   /write/commPrefUpdate:
     post:
       tags:
-      - /write/
-      summary: updates a homeowner communication preference and billing communication preference
+      - Write
+      summary: updates a homeowner communication preference and billing communication…
       operationId: updateCommPreference
       parameters:
       - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
@@ -498,7 +500,7 @@ paths:
   /write/createProvider:
     post:
       tags:
-      - /write/
+      - Write
       summary: creates a new service provider
       parameters:
       - $ref: https://api.swaggerhub.com/domains/Vantaca/standard_domains/1.2.2#/components/parameters/companyParam
@@ -635,10 +637,12 @@ paths:
           description: not found
         '500':
           description: internal error - internal processing error, please contact support if issue persists
+      operationId: postWriteCreateProvider
+      x-operation-id-source: derived
   /write/providerUpdate:
     post:
       tags:
-      - /write/
+      - Write
       summary: Updates an existing provider
       description: '***Note**: String parameters that are sent with an empty field/no data will update the existing field to an empty value*'
       operationId: updateProvider
@@ -783,7 +787,7 @@ paths:
   /write/providerInsuranceCreate:
     post:
       tags:
-      - /write/
+      - Write
       summary: creates a provider insurance
       operationId: createProviderInsurance
       parameters:
@@ -835,7 +839,7 @@ paths:
   /write/providerInsuranceUpdate:
     post:
       tags:
-      - /write/
+      - Write
       summary: updates an existing provider's insurance
       operationId: updateProviderInsurance
       parameters:
@@ -886,7 +890,7 @@ paths:
   /write/providerInsuranceDestroy:
     post:
       tags:
-      - /write/
+      - Write
       summary: deletes an existing provider's insurance
       operationId: destroyProviderInsurance
       parameters:
@@ -915,7 +919,7 @@ paths:
   /write/createLedger:
     post:
       tags:
-      - /write/
+      - Write
       summary: create, update, or write off a ledger entry
       operationId: createLedger
       parameters:
@@ -979,7 +983,7 @@ paths:
   /write/ledgerDelete:
     post:
       tags:
-      - /write/
+      - Write
       summary: delete an owner's ledger entry
       operationId: deleteLedger
       parameters:
@@ -1008,7 +1012,7 @@ paths:
   /write/nameUpdate:
     post:
       tags:
-      - /write/
+      - Write
       summary: update an existing homeowner name
       operationId: updateHomeowner
       parameters:
@@ -1062,7 +1066,7 @@ paths:
   /write/createARC:
     post:
       tags:
-      - /write/
+      - Write
       summary: creates an ARC action item
       operationId: createARC
       parameters:
@@ -1122,7 +1126,7 @@ paths:
   /write/createWorkOrder:
     post:
       tags:
-      - /write/
+      - Write
       summary: creates a work order action item
       operationId: createWorkOrder
       parameters:
@@ -1176,7 +1180,7 @@ paths:
   /Write/stepActionItem:
     post:
       tags:
-      - /write/
+      - Write
       summary: updates and/or steps an action item
       operationId: stepActionItem
       parameters:
@@ -1253,7 +1257,7 @@ paths:
   /write/createViolation:
     post:
       tags:
-      - /write/
+      - Write
       summary: creates a new violation action item
       operationId: violationCreate
       parameters:
@@ -1362,7 +1366,7 @@ paths:
     parameters: []
     post:
       tags:
-      - /write/
+      - Write
       summary: creates a new violation action item
       operationId: createStandardActionItem
       parameters:
@@ -1459,7 +1463,7 @@ paths:
   /write/CreateActionItemNote:
     post:
       tags:
-      - /write/
+      - Write
       summary: creates a note on an existing action item
       operationId: createActionItemNote
       parameters:
@@ -1523,6 +1527,13 @@ paths:
           description: internal error - internal processing error, please contact support if issue persists
 components:
   schemas:
+    createViolation:
+      type: object
+      properties:
+        actionItemID:
+          type: integer
+          description: action item number (XN Number)
+          example: 231252
     createProvider:
       type: object
       properties:
@@ -1537,11 +1548,4 @@ components:
           type: string
           description: unique identifier for payment
           example: success
-    createViolation:
-      type: object
-      properties:
-        actionItemID:
-          type: integer
-          description: action item number (XN Number)
-          example: 231252
 x-internal: false
