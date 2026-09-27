@@ -42,9 +42,9 @@ tags:
 - Community Association Management
 - CAM
 - Property Management
-- Real-Estate
+- Real Estate
 - Accounting
-- Workflow-Automation
+- Workflow Automation
 - Vendor Management
 tags_raw:
 - HOA
@@ -55,6 +55,8 @@ tags_raw:
 - Accounting
 - Workflow Automation
 - Vendor Management
+- Real-Estate
+- Workflow-Automation
 created: '2026-07-04'
 modified: '2026-07-04'
 specificationVersion: '0.23'

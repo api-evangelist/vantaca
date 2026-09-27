@@ -1131,6 +1131,185 @@ paths:
           description: internal error - internal processing error, please contact support if issue persists
 components:
   schemas:
+    invoiceDetail:
+      type: object
+      properties:
+        invoiceDetailID:
+          type: string
+          description: unique identifier for the invoice detail
+          example: 1
+        glAccountID:
+          type: string
+          description: unique identifier for the GL account
+          example: 5
+        fundID:
+          type: string
+          description: unique identifier for the fund
+          example: 10
+        description:
+          type: string
+          description: invoice detail description
+          example: expired
+        amount:
+          type: integer
+          format: date-time
+          description: invoice amount
+          example: 55.55
+    getFundList:
+      type: object
+      properties:
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 123
+        fundID:
+          type: string
+          description: unique identifier for the fund. *FundID 1 is the default Operating fund for all associations*
+          example: 12365412311
+        description:
+          type: string
+          description: fund description
+          example: Building 10
+    getPayments:
+      type: object
+      properties:
+        paymentID:
+          type: integer
+          description: unique identifier returned from payInvoice
+          example: 1191
+        invoiceIDs:
+          type: array
+          description: list of invoice IDs
+          items:
+            type: integer
+            example: 76891, 98712, 21314
+        checkNo:
+          type: string
+          description: check number
+          example: 999123213645345
+        payType:
+          type: string
+          description: type of payment
+          example: Check
+        payDate:
+          type: string
+          format: date-time
+          description: payment date
+        status:
+          type: string
+          description: payment status
+          example: Voided
+        bankAccountID:
+          type: integer
+          description: bank account ID
+          example: 105
+        referenceNumber:
+          type: string
+          description: payment reference number
+          example: 44223358764
+    getBankAccountBalance:
+      type: object
+      properties:
+        bankAccountID:
+          type: integer
+          description: unique identifier for the bank account
+          example: 86753098
+        balance:
+          type: integer
+          format: decimal
+          description: current balance
+          example: 123,456,789.25
+    responseSuccess:
+      type: object
+      properties:
+        status:
+          type: string
+          description: unique identifier for payment
+          example: success
+    getAssociationList:
+      type: object
+      properties:
+        companyID:
+          type: string
+          description: unique identifier for company
+          example: 12378961
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 1
+        assocName:
+          type: string
+          description: association name
+          example: Pestilian Management Co.
+        lastModified:
+          type: string
+          format: date-time
+          description: date association was last modified
+          example: '2019-08-16T13:16:41.847'
+    listInvoices:
+      type: object
+      properties:
+        invoiceID:
+          type: integer
+          description: unique identifier for the invoice
+          example: 76891
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 999
+        providerID:
+          type: integer
+          description: unique identifer for the service provider
+          example: 678
+        isExpensed:
+          type: boolean
+          description: if **true** invoice has been approved and expensed in GL, else, **false**
+        accountNo:
+          type: string
+          description: account number from invoice
+          example: 2255880012
+        invoiceNo:
+          type: string
+          description: invoice number from invoice
+        invoiceDate:
+          type: string
+          format: date-time
+          description: date invoice was created
+          example: '{2022-02-11T00:00:00}'
+        dueDate:
+          type: string
+          format: date-time
+          description: invoice due date
+          example: '{2022-02-11T00:00:00}'
+        total:
+          type: integer
+          format: decimal
+          description: invoice total amount
+          example: 777.77
+        fileName:
+          type: string
+          description: invoice attachment file name
+          example: invoice.pdf
+        file:
+          type: string
+          description: base 64 encoded string of invoice image
+          example: ADFASBNADFGASDDRDFASDFER1232ASF2
+        inActive:
+          type: string
+          format: date-time
+          description: timestamp when invoice was deleted
+        referenceNumber:
+          type: string
+          description: invoice reference number
+          example: 4141414
+        payType:
+          type: string
+          description: type of payment
+        details:
+          type: array
+          description: list of GL items for invoice
+          items:
+            $ref: '#/components/schemas/invoiceDetail'
     getProviderList:
       type: object
       properties:
@@ -1217,77 +1396,33 @@ components:
           description: list of insurance policies for provider
           items:
             $ref: '#/components/schemas/apiProviderInsurance'
-    listInvoices:
+    payInvoices:
       type: object
       properties:
-        invoiceID:
+        paymentID:
           type: integer
-          description: unique identifier for the invoice
-          example: 76891
-        assocCode:
+          description: unique identifier for payment
+          example: 86753098
+    apiProviderInsurance:
+      type: object
+      properties:
+        type:
           type: string
-          description: unique identifer for an association
-          example: 999
-        providerID:
-          type: integer
-          description: unique identifer for the service provider
-          example: 678
-        isExpensed:
-          type: boolean
-          description: if **true** invoice has been approved and expensed in GL, else, **false**
+          description: type of insurance
+          example: general liability
         accountNo:
           type: string
-          description: account number from invoice
-          example: 2255880012
-        invoiceNo:
-          type: string
-          description: invoice number from invoice
-        invoiceDate:
+          description: insurance policy account number
+          example: 12365412311
+        expiration:
           type: string
           format: date-time
-          description: date invoice was created
-          example: '{2022-02-11T00:00:00}'
-        dueDate:
-          type: string
-          format: date-time
-          description: invoice due date
-          example: '{2022-02-11T00:00:00}'
-        total:
-          type: integer
-          format: decimal
-          description: invoice total amount
-          example: 777.77
-        fileName:
-          type: string
-          description: invoice attachment file name
-          example: invoice.pdf
-        file:
-          type: string
-          description: base 64 encoded string of invoice image
-          example: ADFASBNADFGASDDRDFASDFER1232ASF2
-        inActive:
-          type: string
-          format: date-time
-          description: timestamp when invoice was deleted
-        referenceNumber:
-          type: string
-          description: invoice reference number
-          example: 4141414
-        payType:
-          type: string
-          description: type of payment
-        details:
-          type: array
-          description: list of GL items for invoice
-          items:
-            $ref: '#/components/schemas/invoiceDetail'
-    responseSuccess:
-      type: object
-      properties:
-        status:
-          type: string
-          description: unique identifier for payment
-          example: success
+          description: expiration date of the insurance policy
+          example: '2019-08-16T13:16:41.847'
+        isRequired:
+          type: boolean
+          description: if **true** insurance policy is required, else **false**
+          example: false
     getBoardInvoice:
       type: object
       properties:
@@ -1350,6 +1485,39 @@ components:
           description: list of GL items for invoice
           items:
             $ref: '#/components/schemas/invoiceDetail'
+    getGLList:
+      type: object
+      properties:
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 123
+        glAccountID:
+          type: string
+          description: unique identifier for the GL account
+          example: 12365412311
+        code:
+          type: string
+          description: GL code
+          example: '89'
+        description:
+          type: string
+          description: GL account description
+          example: Default GL
+        glType:
+          type: string
+          description: the gl type (Asset, Expense, Income, Liability) for each gl code
+          example: Asset
+        lastModified:
+          type: string
+          format: date-time
+          description: date the GL was last modified
+          example: '2019-08-16T13:16:41.847'
+        inactive:
+          type: string
+          format: date-time
+          description: timestamp of when the GL was deleted or configured as not usable
+          example: '2021-04-12T13:42:31.247'
     getAnnualBankAccountBalance:
       type: object
       properties:
@@ -1390,6 +1558,126 @@ components:
             date: '2023-01-31'
           - balance: 486657.75
             date: '2023-02-28'
+    invoiceIDs:
+      type: object
+      properties:
+        invoiceID:
+          type: array
+          items:
+            type: integer
+            example:
+            - '543123'
+            - '876987'
+            - '134561'
+    glTransactionHistory:
+      type: object
+      properties:
+        assocCode:
+          type: string
+          description: unique identifier for an association
+          example: ASQ
+        glCode:
+          type: string
+          description: unique general ledger code
+          example: 15
+        glDescription:
+          type: string
+          description: text description for the gl code
+          example: Assessment
+        glType:
+          type: string
+          description: general ledger account type.
+          enum:
+          - Income
+          - Expense
+          - Asset
+          - Equity
+          - Liability
+        fundDescription:
+          type: string
+          description: fund name
+          example: Operating
+        balances:
+          type: array
+          items:
+            $ref: '#/components/schemas/transactionBalances'
+          example:
+          - glBalance: 37390
+            date: '2022-03-31T00:00:00'
+          - glBalance: 37390.75
+            date: '2022-04-30T00:00:00'
+          - glBalance: 37390.75
+            date: '2022-05-31T00:00:00'
+          - glBalance: 37390.75
+            date: '2022-06-30T00:00:00'
+          - glBalance: 37390.75
+            date: '2022-07-31T00:00:00'
+          - glBalance: 486657.75
+            date: '2022-08-31T00:00:00'
+          - glBalance: 486657.75
+            date: '2022-09-30T00:00:00'
+          - glBalance: 486657.75
+            date: '2022-10-31T00:00:00'
+          - glBalance: 486657.75
+            date: '2022-11-30T00:00:00'
+          - glBalance: 486657.75
+            date: '2022-12-31T00:00:00'
+          - glBalance: 486657.75
+            date: '2023-01-31T00:00:00'
+          - glBalance: 486657.75
+            date: '2023-02-28T00:00:00'
+    getBankAccountList:
+      type: object
+      properties:
+        assocCode:
+          type: string
+          description: unique identifer for an association
+          example: 123
+        bankAccountID:
+          type: integer
+          description: unique identifier for the bank account
+          example: 123654
+        description:
+          type: string
+          description: bank account description
+          example: Gorgc's Savings
+        glAccountID:
+          type: string
+          description: unique identifier for the GL account
+          example: 12
+        aba:
+          type: string
+          description: bank account routing number
+          example: 12332
+        accountNumber:
+          type: string
+          description: bank account number
+          example: 867530990909
+        balance:
+          type: integer
+          format: decimal
+          description: bank account description
+          example: 77,777.77
+        accountType:
+          type: string
+          description: bank account type
+          example: Savings
+        contactName:
+          type: string
+          description: contact name for bank account
+          example: Brad Pitt
+    transactionBalances:
+      type: object
+      properties:
+        glBalance:
+          type: integer
+          format: decimal
+          description: GL balance at the specified date and time
+          example: 1445.86
+        date:
+          type: string
+          format: date-time
+          description: date that the balance was pulled from
     getBoardInvoiceList:
       type: object
       properties:
@@ -1452,292 +1740,4 @@ components:
           description: list of GL items for invoice
           items:
             $ref: '#/components/schemas/invoiceDetail'
-    getPayments:
-      type: object
-      properties:
-        paymentID:
-          type: integer
-          description: unique identifier returned from payInvoice
-          example: 1191
-        invoiceIDs:
-          type: array
-          description: list of invoice IDs
-          items:
-            type: integer
-            example: 76891, 98712, 21314
-        checkNo:
-          type: string
-          description: check number
-          example: 999123213645345
-        payType:
-          type: string
-          description: type of payment
-          example: Check
-        payDate:
-          type: string
-          format: date-time
-          description: payment date
-        status:
-          type: string
-          description: payment status
-          example: Voided
-        bankAccountID:
-          type: integer
-          description: bank account ID
-          example: 105
-        referenceNumber:
-          type: string
-          description: payment reference number
-          example: 44223358764
-    getAssociationList:
-      type: object
-      properties:
-        companyID:
-          type: string
-          description: unique identifier for company
-          example: 12378961
-        assocCode:
-          type: string
-          description: unique identifer for an association
-          example: 1
-        assocName:
-          type: string
-          description: association name
-          example: Pestilian Management Co.
-        lastModified:
-          type: string
-          format: date-time
-          description: date association was last modified
-          example: '2019-08-16T13:16:41.847'
-    invoiceDetail:
-      type: object
-      properties:
-        invoiceDetailID:
-          type: string
-          description: unique identifier for the invoice detail
-          example: 1
-        glAccountID:
-          type: string
-          description: unique identifier for the GL account
-          example: 5
-        fundID:
-          type: string
-          description: unique identifier for the fund
-          example: 10
-        description:
-          type: string
-          description: invoice detail description
-          example: expired
-        amount:
-          type: integer
-          format: date-time
-          description: invoice amount
-          example: 55.55
-    getBankAccountList:
-      type: object
-      properties:
-        assocCode:
-          type: string
-          description: unique identifer for an association
-          example: 123
-        bankAccountID:
-          type: integer
-          description: unique identifier for the bank account
-          example: 123654
-        description:
-          type: string
-          description: bank account description
-          example: Gorgc's Savings
-        glAccountID:
-          type: string
-          description: unique identifier for the GL account
-          example: 12
-        aba:
-          type: string
-          description: bank account routing number
-          example: 12332
-        accountNumber:
-          type: string
-          description: bank account number
-          example: 867530990909
-        balance:
-          type: integer
-          format: decimal
-          description: bank account description
-          example: 77,777.77
-        accountType:
-          type: string
-          description: bank account type
-          example: Savings
-        contactName:
-          type: string
-          description: contact name for bank account
-          example: Brad Pitt
-    transactionBalances:
-      type: object
-      properties:
-        glBalance:
-          type: integer
-          format: decimal
-          description: GL balance at the specified date and time
-          example: 1445.86
-        date:
-          type: string
-          format: date-time
-          description: date that the balance was pulled from
-    apiProviderInsurance:
-      type: object
-      properties:
-        type:
-          type: string
-          description: type of insurance
-          example: general liability
-        accountNo:
-          type: string
-          description: insurance policy account number
-          example: 12365412311
-        expiration:
-          type: string
-          format: date-time
-          description: expiration date of the insurance policy
-          example: '2019-08-16T13:16:41.847'
-        isRequired:
-          type: boolean
-          description: if **true** insurance policy is required, else **false**
-          example: false
-    glTransactionHistory:
-      type: object
-      properties:
-        assocCode:
-          type: string
-          description: unique identifier for an association
-          example: ASQ
-        glCode:
-          type: string
-          description: unique general ledger code
-          example: 15
-        glDescription:
-          type: string
-          description: text description for the gl code
-          example: Assessment
-        glType:
-          type: string
-          description: general ledger account type.
-          enum:
-          - Income
-          - Expense
-          - Asset
-          - Equity
-          - Liability
-        fundDescription:
-          type: string
-          description: fund name
-          example: Operating
-        balances:
-          type: array
-          items:
-            $ref: '#/components/schemas/transactionBalances'
-          example:
-          - glBalance: 37390
-            date: '2022-03-31T00:00:00'
-          - glBalance: 37390.75
-            date: '2022-04-30T00:00:00'
-          - glBalance: 37390.75
-            date: '2022-05-31T00:00:00'
-          - glBalance: 37390.75
-            date: '2022-06-30T00:00:00'
-          - glBalance: 37390.75
-            date: '2022-07-31T00:00:00'
-          - glBalance: 486657.75
-            date: '2022-08-31T00:00:00'
-          - glBalance: 486657.75
-            date: '2022-09-30T00:00:00'
-          - glBalance: 486657.75
-            date: '2022-10-31T00:00:00'
-          - glBalance: 486657.75
-            date: '2022-11-30T00:00:00'
-          - glBalance: 486657.75
-            date: '2022-12-31T00:00:00'
-          - glBalance: 486657.75
-            date: '2023-01-31T00:00:00'
-          - glBalance: 486657.75
-            date: '2023-02-28T00:00:00'
-    getFundList:
-      type: object
-      properties:
-        assocCode:
-          type: string
-          description: unique identifer for an association
-          example: 123
-        fundID:
-          type: string
-          description: unique identifier for the fund. *FundID 1 is the default Operating fund for all associations*
-          example: 12365412311
-        description:
-          type: string
-          description: fund description
-          example: Building 10
-    invoiceIDs:
-      type: object
-      properties:
-        invoiceID:
-          type: array
-          items:
-            type: integer
-            example:
-            - '543123'
-            - '876987'
-            - '134561'
-    payInvoices:
-      type: object
-      properties:
-        paymentID:
-          type: integer
-          description: unique identifier for payment
-          example: 86753098
-    getBankAccountBalance:
-      type: object
-      properties:
-        bankAccountID:
-          type: integer
-          description: unique identifier for the bank account
-          example: 86753098
-        balance:
-          type: integer
-          format: decimal
-          description: current balance
-          example: 123,456,789.25
-    getGLList:
-      type: object
-      properties:
-        assocCode:
-          type: string
-          description: unique identifer for an association
-          example: 123
-        glAccountID:
-          type: string
-          description: unique identifier for the GL account
-          example: 12365412311
-        code:
-          type: string
-          description: GL code
-          example: '89'
-        description:
-          type: string
-          description: GL account description
-          example: Default GL
-        glType:
-          type: string
-          description: the gl type (Asset, Expense, Income, Liability) for each gl code
-          example: Asset
-        lastModified:
-          type: string
-          format: date-time
-          description: date the GL was last modified
-          example: '2019-08-16T13:16:41.847'
-        inactive:
-          type: string
-          format: date-time
-          description: timestamp of when the GL was deleted or configured as not usable
-          example: '2021-04-12T13:42:31.247'
 x-internal: false
