@@ -58,7 +58,7 @@ tags_raw:
 - Real-Estate
 - Workflow-Automation
 created: '2026-07-04'
-modified: '2026-07-04'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: vantaca:vantaca-ap-api
@@ -111,6 +111,10 @@ apis:
   - type: APIReference
     url: https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0
 common:
+- url: https://www.vantaca.com/blog
+  type: Blog
+- url: https://www.vantaca.com/blog/rss.xml
+  type: BlogRSS
 - type: CapabilityMap
   url: capabilities/vantaca-capability-edges.yml
   name: Vantaca Business Capability Map
