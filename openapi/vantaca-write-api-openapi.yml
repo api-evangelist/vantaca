@@ -1527,13 +1527,6 @@ paths:
           description: internal error - internal processing error, please contact support if issue persists
 components:
   schemas:
-    createViolation:
-      type: object
-      properties:
-        actionItemID:
-          type: integer
-          description: action item number (XN Number)
-          example: 231252
     createProvider:
       type: object
       properties:
@@ -1541,6 +1534,13 @@ components:
           type: integer
           description: unique identifier for service provider
           example: 1337
+    createViolation:
+      type: object
+      properties:
+        actionItemID:
+          type: integer
+          description: action item number (XN Number)
+          example: 231252
     responseSuccess:
       type: object
       properties:
