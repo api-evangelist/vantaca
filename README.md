@@ -1,4 +1,4 @@
-# Vantaca (vantaca)
+# Vantaca
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,113 +64,120 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Vantaca is a cloud-based community association and HOA management software platform for management companies, boards, and homeowners. It covers accounting and accounts payable, homeowner accounts and ledgers, action-item workflow automation (violations, architectural/ARC requests, work orders, collections), communications, and vendor/service-provider management.
+Vantaca is a cloud-based community association and HOA management software platform for management companies, boards, and homeowners - covering accounting and accounts payable, homeowner accounts and ledgers, action-item workflow automation (violations, architectural/ARC requests, work orders, collections), communications, and vendor/service-provider management. Vantaca exposes a documented public REST API - "Vantaca's Standard APIs" (v3.8.0), a JSON web service at api.vantaca.net. The OpenAPI is published on SwaggerHub, but access is not self-serve - each Vantaca customer grants a vendor scoped credentials (company, login, pwd) to their own dataset over Basic authentication, with the vendor's IP address(es) whitelisted. Vendors request credentials via vendorsupport@vantaca.com.
 
-Vantaca exposes a **real, documented public REST API** - "Vantaca's Standard APIs" (v3.8.0), a JSON web service. The OpenAPI 3.0 definition is published on SwaggerHub, so the full endpoint surface is discoverable. **Access is documented but gated:** it is not self-serve. Each Vantaca customer (a management company) authorizes a vendor to reach that customer's own dataset, and Vantaca provisions scoped credentials plus IP whitelisting. Vendors request access via `vendorsupport@vantaca.com`.
+**Areas:** HOA · Community Association Management · CAM · Property Management · Real Estate · Accounting · Workflow Automation · Vendor Management
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/vantaca/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/vantaca/refs/heads/main/apis.yml)
+## Vantaca on APIs.io
 
-## Access Model
+Everything profiled for Vantaca is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/vantaca/](https://apis.io/providers/vantaca/)** — or go straight to one of the APIs or properties below.
 
-- **Production base URL:** `https://api.vantaca.net`
-- **Format:** JSON over HTTPS/SSL (SSL required). Both GET and POST are accepted.
-- **Authentication:** HTTP Basic authorization, plus three required parameters on **all** endpoints: `company`, `login`, `pwd`.
-- **Authorization:** Credentials are granted per-customer - a Vantaca customer grants a vendor access to their dataset; credentials vary from one customer to another.
-- **Network:** Each credential set must have one or more **whitelisted IP addresses**.
-- **Requesting access:** Email `vendorsupport@vantaca.com` to have an API user created and IPs whitelisted.
-- **Bulk reads:** Most `/read/` methods accept an optional `zip=true` parameter that returns a compressed `data.json`, recommended for company-wide pulls.
-- **Pricing:** No public, self-serve API pricing. API access is a platform capability; management companies contact Vantaca sales.
+### APIs (3)
 
-The published OpenAPI (v3.8.0) defines **75 operations** across three groups: `/read/`, `/write/`, and `/AP/` (accounts payable). The logical APIs below are an API Evangelist curation of that single specification.
+- [Vantaca /AP/ API](https://apis.io/apis/vantaca/vantaca-ap-api/) — These methods are specific to AP or Invoice related functions and can only be accessed by designated AP credentials. Note: Entering invalid dates may result…
+- [Vantaca /read/ API](https://apis.io/apis/vantaca/vantaca-read-api/) — These methods read data and can be called in bulk or for single entities for more efficient processing. </br> All calls will use the same URL path:…
+- [Vantaca /write/ API](https://apis.io/apis/vantaca/vantaca-write-api/) — These methods write data. Unless otherwise specified, all object types available are paired with individual /read/ to allow full CRUD (Create, Read, Update,…
 
-## Tags
+### Published properties
 
-- HOA
-- Community Association Management
-- CAM
-- Property Management
-- Real Estate
-- Accounting
-- Workflow Automation
-- Vendor Management
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Timestamps
+#### Agentic access (1)
 
-- **Created:** 2026-07-04
-- **Modified:** 2026-07-04
+Which operations an agent can call, which act, and which need a human in the loop.
 
-## APIs
+- [Vantaca Agentic Access](https://apis.io/agentic-access/vantaca/vantaca-agentic-access/)
 
-### Vantaca Associations API
+#### Collections (3)
 
-Retrieve the associations (communities) a vendor has been granted access to, along with association details, additional info, and address records.
+Postman and Open Collection request collections.
 
-- **API Reference:** [https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0](https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0)
-- **Base URL:** `https://api.vantaca.net`
-- **OpenAPI:** [openapi/vantaca-openapi.json](openapi/vantaca-openapi.json)
+- [Vantaca's Standard APIs /AP/ /AP/ /AP/ API](https://apis.io/collections/vantaca/open-vantaca-ap-api/)
+- [Vantaca's Standard APIs /AP/ /AP/ /read/ API](https://apis.io/collections/vantaca/open-vantaca-read-api/)
+- [Vantaca's Standard APIs /AP/ /AP/ /write/ API](https://apis.io/collections/vantaca/open-vantaca-write-api/)
 
-### Vantaca Homeowner Accounts API
+#### Security (2)
 
-Look up homeowner accounts and their financial and contact records - account info, homeowner search, transactions, assessments, tenants, and CRUD on a homeowner's address, email, phone, name, and communication/billing preferences.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **API Reference:** [https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0](https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0)
-- **Base URL:** `https://api.vantaca.net`
-- **OpenAPI:** [openapi/vantaca-openapi.json](openapi/vantaca-openapi.json)
+- [Vantaca Domain Security](https://apis.io/security/vantaca/vantaca-domain-security/)
+- [Vantaca Trust Center](https://apis.io/security/vantaca/vantaca-trust-center/)
 
-### Vantaca Accounts Payable & Ledger API
+#### Plans and pricing (1)
 
-Manage association accounting - create, read, update, pay, void, and delete invoices; list payments; retrieve GL codes, funds, bank accounts and balances, GL transaction history; and create, update, write off, or delete homeowner ledger entries.
+Published plans, tiers and prices.
 
-- **API Reference:** [https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0](https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0)
-- **Base URL:** `https://api.vantaca.net`
-- **OpenAPI:** [openapi/vantaca-openapi.json](openapi/vantaca-openapi.json)
+- [Vantaca Plans Pricing](https://apis.io/plans/vantaca/vantaca-plans-pricing/)
 
-### Vantaca Work Orders API
+#### Rate limits (1)
 
-List and create work-order action items against an association, part of Vantaca's action-item workflow engine.
+Published request limits.
 
-- **API Reference:** [https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0](https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0)
-- **Base URL:** `https://api.vantaca.net`
-- **OpenAPI:** [openapi/vantaca-openapi.json](openapi/vantaca-openapi.json)
+- [Vantaca Rate Limits](https://apis.io/rate-limits/vantaca/vantaca-rate-limits/)
 
-### Vantaca Violations & Compliance API
+#### FinOps (1)
 
-Retrieve violations and the CC&R rule items and violation types they reference, and create new violation action items.
+What the API costs to run, by operation.
 
-- **API Reference:** [https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0](https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0)
-- **Base URL:** `https://api.vantaca.net`
-- **OpenAPI:** [openapi/vantaca-openapi.json](openapi/vantaca-openapi.json)
+- [Vantaca Finops](https://apis.io/finops/vantaca/vantaca-finops/)
 
-### Vantaca Architectural Requests (ARC) API
+## Where to find this API
 
-List and create Architectural Review Committee (ARC) request action items for homeowner modification requests.
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- **API Reference:** [https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0](https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0)
-- **Base URL:** `https://api.vantaca.net`
-- **OpenAPI:** [openapi/vantaca-openapi.json](openapi/vantaca-openapi.json)
-
-### Vantaca Vendors & Service Providers API
-
-Manage service providers (vendors) and their insurance records - list providers and provider types, read a single provider, create and update providers, and CRUD provider insurance.
-
-- **API Reference:** [https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0](https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0)
-- **Base URL:** `https://api.vantaca.net`
-- **OpenAPI:** [openapi/vantaca-openapi.json](openapi/vantaca-openapi.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/vantaca)
 - [Website](https://www.vantaca.com)
 - [Documentation](https://app.swaggerhub.com/apis/Vantaca/vantacaStandard/3.8.0)
-- [Plans](plans/vantaca-plans-pricing.yml)
-- [Rate Limits](rate-limits/vantaca-rate-limits.yml)
-- [Fin Ops](finops/vantaca-finops.yml)
+- [Blog](https://www.vantaca.com/blog)
 
-## Review
+## API Evangelist rating
 
-Does Vantaca expose a documented public WebSocket API? **No.** Vantaca's own public API is request/response REST (Vantaca's Standard APIs v3.8.0 over HTTPS with Basic auth). No WebSocket (`ws://`/`wss://`) endpoint is documented, and no AsyncAPI document was authored. See [review.yml](review.yml).
+**Kin Score 21.4** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 41.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 10.7 |
+| Access clarity | 13.2 |
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/vantaca/](https://apis.io/providers/vantaca/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Vantaca: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/vantaca/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
